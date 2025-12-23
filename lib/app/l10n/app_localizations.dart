@@ -116,6 +116,12 @@ abstract class AppLocalizations {
   /// **'Natural food for dogs, complete and balanced. Created by nutritionists'**
   String get homeSubtitle;
 
+  /// No description provided for @homeBreedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search or type their breed'**
+  String get homeBreedLabel;
+
   /// No description provided for @homeCta.
   ///
   /// In en, this message translates to:

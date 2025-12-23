@@ -19,5 +19,8 @@ class AppLocalizationsEs extends AppLocalizations {
       'Comida natural para perros, completa y equilibrada. Elaborada por nutricionistas';
 
   @override
+  String get homeBreedLabel => 'Busca o escribe su raza';
+
+  @override
   String get homeCta => 'Crea su menú ->';
 }

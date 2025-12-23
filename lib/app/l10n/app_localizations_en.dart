@@ -19,5 +19,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Natural food for dogs, complete and balanced. Created by nutritionists';
 
   @override
+  String get homeBreedLabel => 'Search or type their breed';
+
+  @override
   String get homeCta => 'Create their menu ->';
 }
