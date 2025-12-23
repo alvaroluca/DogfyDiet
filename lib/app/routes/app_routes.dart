@@ -10,9 +10,9 @@ final appRoutes = <RouteBase>[
   GoRoute(
     path: AppPaths.home,
     builder: (context, state) => BlocProvider<OnboardingBloc>(
-      create: (_) =>
-          di.getIt<OnboardingBloc>()
-            ..add(const OnboardingEvent.loadDogBreeds()),
+      create: (_) => di.getIt<OnboardingBloc>()
+        ..add(const OnboardingEvent.loadDogBreeds())
+        ..add(const OnboardingEvent.loadOnboardingData()),
       child: const HomePage(),
     ),
   ),

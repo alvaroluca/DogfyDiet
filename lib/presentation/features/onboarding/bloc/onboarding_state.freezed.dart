@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OnboardingState {
 
- OnboardingStatus get status; List<DogBreed> get dogBreeds; String? get errorMessage;
+ OnboardingStatus get status; OnboardingData get onboardingData; List<DogBreed> get dogBreeds; String? get errorMessage;
 /// Create a copy of OnboardingState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $OnboardingStateCopyWith<OnboardingState> get copyWith => _$OnboardingStateCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.dogBreeds, dogBreeds)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingState&&(identical(other.status, status) || other.status == status)&&(identical(other.onboardingData, onboardingData) || other.onboardingData == onboardingData)&&const DeepCollectionEquality().equals(other.dogBreeds, dogBreeds)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(dogBreeds),errorMessage);
+int get hashCode => Object.hash(runtimeType,status,onboardingData,const DeepCollectionEquality().hash(dogBreeds),errorMessage);
 
 @override
 String toString() {
-  return 'OnboardingState(status: $status, dogBreeds: $dogBreeds, errorMessage: $errorMessage)';
+  return 'OnboardingState(status: $status, onboardingData: $onboardingData, dogBreeds: $dogBreeds, errorMessage: $errorMessage)';
 }
 
 
@@ -45,11 +45,11 @@ abstract mixin class $OnboardingStateCopyWith<$Res>  {
   factory $OnboardingStateCopyWith(OnboardingState value, $Res Function(OnboardingState) _then) = _$OnboardingStateCopyWithImpl;
 @useResult
 $Res call({
- OnboardingStatus status, List<DogBreed> dogBreeds, String? errorMessage
+ OnboardingStatus status, OnboardingData onboardingData, List<DogBreed> dogBreeds, String? errorMessage
 });
 
 
-
+$OnboardingDataCopyWith<$Res> get onboardingData;
 
 }
 /// @nodoc
@@ -62,15 +62,25 @@ class _$OnboardingStateCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? dogBreeds = null,Object? errorMessage = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? onboardingData = null,Object? dogBreeds = null,Object? errorMessage = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as OnboardingStatus,dogBreeds: null == dogBreeds ? _self.dogBreeds : dogBreeds // ignore: cast_nullable_to_non_nullable
+as OnboardingStatus,onboardingData: null == onboardingData ? _self.onboardingData : onboardingData // ignore: cast_nullable_to_non_nullable
+as OnboardingData,dogBreeds: null == dogBreeds ? _self.dogBreeds : dogBreeds // ignore: cast_nullable_to_non_nullable
 as List<DogBreed>,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
-
+/// Create a copy of OnboardingState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OnboardingDataCopyWith<$Res> get onboardingData {
+  
+  return $OnboardingDataCopyWith<$Res>(_self.onboardingData, (value) {
+    return _then(_self.copyWith(onboardingData: value));
+  });
+}
 }
 
 
@@ -152,10 +162,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( OnboardingStatus status,  List<DogBreed> dogBreeds,  String? errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( OnboardingStatus status,  OnboardingData onboardingData,  List<DogBreed> dogBreeds,  String? errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OnboardingState() when $default != null:
-return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
+return $default(_that.status,_that.onboardingData,_that.dogBreeds,_that.errorMessage);case _:
   return orElse();
 
 }
@@ -173,10 +183,10 @@ return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( OnboardingStatus status,  List<DogBreed> dogBreeds,  String? errorMessage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( OnboardingStatus status,  OnboardingData onboardingData,  List<DogBreed> dogBreeds,  String? errorMessage)  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingState():
-return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
+return $default(_that.status,_that.onboardingData,_that.dogBreeds,_that.errorMessage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -193,10 +203,10 @@ return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( OnboardingStatus status,  List<DogBreed> dogBreeds,  String? errorMessage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( OnboardingStatus status,  OnboardingData onboardingData,  List<DogBreed> dogBreeds,  String? errorMessage)?  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingState() when $default != null:
-return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
+return $default(_that.status,_that.onboardingData,_that.dogBreeds,_that.errorMessage);case _:
   return null;
 
 }
@@ -208,10 +218,11 @@ return $default(_that.status,_that.dogBreeds,_that.errorMessage);case _:
 
 
 class _OnboardingState extends OnboardingState {
-  const _OnboardingState({this.status = OnboardingStatus.initial, final  List<DogBreed> dogBreeds = const <DogBreed>[], this.errorMessage}): _dogBreeds = dogBreeds,super._();
+  const _OnboardingState({this.status = OnboardingStatus.initial, this.onboardingData = const OnboardingData(), final  List<DogBreed> dogBreeds = const <DogBreed>[], this.errorMessage}): _dogBreeds = dogBreeds,super._();
   
 
 @override@JsonKey() final  OnboardingStatus status;
+@override@JsonKey() final  OnboardingData onboardingData;
  final  List<DogBreed> _dogBreeds;
 @override@JsonKey() List<DogBreed> get dogBreeds {
   if (_dogBreeds is EqualUnmodifiableListView) return _dogBreeds;
@@ -231,16 +242,16 @@ _$OnboardingStateCopyWith<_OnboardingState> get copyWith => __$OnboardingStateCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._dogBreeds, _dogBreeds)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingState&&(identical(other.status, status) || other.status == status)&&(identical(other.onboardingData, onboardingData) || other.onboardingData == onboardingData)&&const DeepCollectionEquality().equals(other._dogBreeds, _dogBreeds)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_dogBreeds),errorMessage);
+int get hashCode => Object.hash(runtimeType,status,onboardingData,const DeepCollectionEquality().hash(_dogBreeds),errorMessage);
 
 @override
 String toString() {
-  return 'OnboardingState(status: $status, dogBreeds: $dogBreeds, errorMessage: $errorMessage)';
+  return 'OnboardingState(status: $status, onboardingData: $onboardingData, dogBreeds: $dogBreeds, errorMessage: $errorMessage)';
 }
 
 
@@ -251,11 +262,11 @@ abstract mixin class _$OnboardingStateCopyWith<$Res> implements $OnboardingState
   factory _$OnboardingStateCopyWith(_OnboardingState value, $Res Function(_OnboardingState) _then) = __$OnboardingStateCopyWithImpl;
 @override @useResult
 $Res call({
- OnboardingStatus status, List<DogBreed> dogBreeds, String? errorMessage
+ OnboardingStatus status, OnboardingData onboardingData, List<DogBreed> dogBreeds, String? errorMessage
 });
 
 
-
+@override $OnboardingDataCopyWith<$Res> get onboardingData;
 
 }
 /// @nodoc
@@ -268,16 +279,26 @@ class __$OnboardingStateCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? dogBreeds = null,Object? errorMessage = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? onboardingData = null,Object? dogBreeds = null,Object? errorMessage = freezed,}) {
   return _then(_OnboardingState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as OnboardingStatus,dogBreeds: null == dogBreeds ? _self._dogBreeds : dogBreeds // ignore: cast_nullable_to_non_nullable
+as OnboardingStatus,onboardingData: null == onboardingData ? _self.onboardingData : onboardingData // ignore: cast_nullable_to_non_nullable
+as OnboardingData,dogBreeds: null == dogBreeds ? _self._dogBreeds : dogBreeds // ignore: cast_nullable_to_non_nullable
 as List<DogBreed>,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
 
-
+/// Create a copy of OnboardingState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OnboardingDataCopyWith<$Res> get onboardingData {
+  
+  return $OnboardingDataCopyWith<$Res>(_self.onboardingData, (value) {
+    return _then(_self.copyWith(onboardingData: value));
+  });
+}
 }
 
 // dart format on

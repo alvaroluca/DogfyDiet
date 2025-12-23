@@ -1,4 +1,5 @@
 import 'package:dogfydiet/domain/entities/dog_breed.dart';
+import 'package:dogfydiet/domain/entities/onboarding_data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'onboarding_state.freezed.dart';
@@ -9,6 +10,7 @@ enum OnboardingStatus { initial, loading, loaded, submitting, success, error }
 abstract class OnboardingState with _$OnboardingState {
   const factory OnboardingState({
     @Default(OnboardingStatus.initial) OnboardingStatus status,
+    @Default(OnboardingData()) OnboardingData onboardingData,
     @Default(<DogBreed>[]) List<DogBreed> dogBreeds,
     String? errorMessage,
   }) = _OnboardingState;

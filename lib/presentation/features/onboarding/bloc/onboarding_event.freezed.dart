@@ -55,11 +55,13 @@ extension OnboardingEventPatterns on OnboardingEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
-return loadDogBreeds(_that);case _:
+return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
+return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
+return updateBreed(_that);case _:
   return orElse();
 
 }
@@ -77,11 +79,13 @@ return loadDogBreeds(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds():
-return loadDogBreeds(_that);case _:
+return loadDogBreeds(_that);case LoadOnboardingData():
+return loadOnboardingData(_that);case UpdateBreed():
+return updateBreed(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -98,11 +102,13 @@ return loadDogBreeds(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
-return loadDogBreeds(_that);case _:
+return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
+return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
+return updateBreed(_that);case _:
   return null;
 
 }
@@ -119,10 +125,12 @@ return loadDogBreeds(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
-return loadDogBreeds();case _:
+return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
+return loadOnboardingData();case UpdateBreed() when updateBreed != null:
+return updateBreed(_that.breedId);case _:
   return orElse();
 
 }
@@ -140,10 +148,12 @@ return loadDogBreeds();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds():
-return loadDogBreeds();case _:
+return loadDogBreeds();case LoadOnboardingData():
+return loadOnboardingData();case UpdateBreed():
+return updateBreed(_that.breedId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -160,10 +170,12 @@ return loadDogBreeds();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
-return loadDogBreeds();case _:
+return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
+return loadOnboardingData();case UpdateBreed() when updateBreed != null:
+return updateBreed(_that.breedId);case _:
   return null;
 
 }
@@ -202,5 +214,103 @@ String toString() {
 
 
 
+
+/// @nodoc
+
+
+class LoadOnboardingData implements OnboardingEvent {
+  const LoadOnboardingData();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoadOnboardingData);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'OnboardingEvent.loadOnboardingData()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UpdateBreed implements OnboardingEvent {
+  const UpdateBreed(this.breedId);
+  
+
+ final  int breedId;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateBreedCopyWith<UpdateBreed> get copyWith => _$UpdateBreedCopyWithImpl<UpdateBreed>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateBreed&&(identical(other.breedId, breedId) || other.breedId == breedId));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,breedId);
+
+@override
+String toString() {
+  return 'OnboardingEvent.updateBreed(breedId: $breedId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UpdateBreedCopyWith<$Res> implements $OnboardingEventCopyWith<$Res> {
+  factory $UpdateBreedCopyWith(UpdateBreed value, $Res Function(UpdateBreed) _then) = _$UpdateBreedCopyWithImpl;
+@useResult
+$Res call({
+ int breedId
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateBreedCopyWithImpl<$Res>
+    implements $UpdateBreedCopyWith<$Res> {
+  _$UpdateBreedCopyWithImpl(this._self, this._then);
+
+  final UpdateBreed _self;
+  final $Res Function(UpdateBreed) _then;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? breedId = null,}) {
+  return _then(UpdateBreed(
+null == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
 
 // dart format on
