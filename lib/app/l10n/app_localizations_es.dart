@@ -10,4 +10,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get appTitle => 'Dogfy Diet';
+
+  @override
+  String get homeTitle => 'Pon comida de verdad en el bol de tu perro';
+
+  @override
+  String get homeSubtitle =>
+      'Comida natural para perros, completa y equilibrada. Elaborada por nutricionistas';
+
+  @override
+  String get homeCta => 'Crea su menú ->';
 }

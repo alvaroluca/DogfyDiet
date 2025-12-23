@@ -10,4 +10,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTitle => 'Dogfy Diet';
+
+  @override
+  String get homeTitle => 'Put real food in your dog\'s bowl';
+
+  @override
+  String get homeSubtitle =>
+      'Natural food for dogs, complete and balanced. Created by nutritionists';
+
+  @override
+  String get homeCta => 'Create their menu ->';
 }

@@ -103,6 +103,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Dogfy Diet'**
   String get appTitle;
+
+  /// No description provided for @homeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Put real food in your dog\'s bowl'**
+  String get homeTitle;
+
+  /// No description provided for @homeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural food for dogs, complete and balanced. Created by nutritionists'**
+  String get homeSubtitle;
+
+  /// No description provided for @homeCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Create their menu ->'**
+  String get homeCta;
 }
 
 class _AppLocalizationsDelegate
