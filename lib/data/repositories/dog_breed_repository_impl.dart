@@ -1,6 +1,6 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
-import 'package:dogfydiet/data/repositories/datasources/remote_data_source/dog_breed_remote_data_source.dart';
+import 'package:dogfydiet/data/datasources/remote_data_source/dog_breed_remote_data_source.dart';
 import 'package:dogfydiet/domain/entities/dog_breed.dart';
 import 'package:dogfydiet/domain/repositories/dog_breed_repository.dart';
 

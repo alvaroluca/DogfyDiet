@@ -4,4 +4,5 @@ class AppConstants {
 
   // Cache
   static const String languageKey = 'language';
+  static const String onboardingDataKey = 'ONBOARDING_DATA';
 }

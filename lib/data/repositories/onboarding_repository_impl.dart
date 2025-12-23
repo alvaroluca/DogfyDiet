@@ -1,0 +1,37 @@
+import 'package:dogfydiet/app/types/repository_error.dart';
+import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/data/datasources/local_data_source/onboarding_local_data_source.dart';
+import 'package:dogfydiet/data/models/onboarding_data_model.dart';
+import 'package:dogfydiet/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/domain/repositories/onboarding_repository.dart';
+
+class OnboardingRepositoryImpl implements OnboardingRepository {
+  final OnboardingLocalDataSource onboardingLocalDataSource;
+
+  OnboardingRepositoryImpl(this.onboardingLocalDataSource);
+
+  @override
+  Future<Result<OnboardingData>> getOnboardingData() async {
+    try {
+      final dataModel = await onboardingLocalDataSource.getOnboardingData();
+      return Result.success(dataModel.toEntity());
+    } on Exception catch (e) {
+      return Result.failure(
+        error: RepositoryError.unknown(message: e.toString()),
+      );
+    }
+  }
+
+  @override
+  Future<Result<bool>> saveOnboardingData(OnboardingData data) async {
+    try {
+      final model = OnboardingDataModel.fromEntity(data);
+      await onboardingLocalDataSource.saveOnboardingData(model);
+      return const Result.success(true);
+    } on Exception catch (e) {
+      return Result.failure(
+        error: RepositoryError.unknown(message: e.toString()),
+      );
+    }
+  }
+}
