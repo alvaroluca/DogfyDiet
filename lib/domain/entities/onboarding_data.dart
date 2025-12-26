@@ -8,4 +8,15 @@ abstract class OnboardingData with _$OnboardingData {
       _OnboardingData;
 
   const OnboardingData._();
+
+  bool isStepComplete(int step) {
+    switch (step) {
+      case 0:
+        return breedId != null;
+      case 1:
+        return dogName != null && dogName!.isNotEmpty;
+      default:
+        return false;
+    }
+  }
 }

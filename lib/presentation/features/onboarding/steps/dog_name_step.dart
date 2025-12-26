@@ -3,7 +3,7 @@ import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
-import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name_cubit.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name/dog_name_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
