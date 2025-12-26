@@ -127,6 +127,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create their menu ->'**
   String get homeCta;
+
+  /// No description provided for @onboardingContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get onboardingContinue;
+
+  /// No description provided for @breedSelectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What is your dog\'s breed?'**
+  String get breedSelectionTitle;
 }
 
 class _AppLocalizationsDelegate

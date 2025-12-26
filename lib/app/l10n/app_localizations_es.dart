@@ -23,4 +23,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get homeCta => 'Crea su menú ->';
+
+  @override
+  String get onboardingContinue => 'Continuar';
+
+  @override
+  String get breedSelectionTitle => '¿Cuál es la raza de tu perrete?';
 }

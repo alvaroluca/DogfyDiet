@@ -1,14 +1,16 @@
 import 'package:dogfydiet/app/constants/app_assets.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
+import 'package:dogfydiet/app/routes/app_path.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/widgets/custom_button.dart';
+import 'package:dogfydiet/presentation/widgets/custom_dropdown.dart';
 import 'package:dogfydiet/presentation/widgets/dogfy_app_bar.dart';
 import 'package:dogfydiet/presentation/widgets/lottie_custom.dart';
-import 'package:dogfydiet/presentation/widgets/rounded_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -46,9 +48,10 @@ class HomePage extends StatelessWidget {
                       if (state.dogBreeds.isEmpty) {
                         return const SizedBox.shrink();
                       }
-                      return RoundedDropdown<int>(
+                      return CustomDropdown<int>(
                         value: state.onboardingData.breedId,
                         labelText: l10n.homeBreedLabel,
+                        isRounded: true,
                         items: state.dogBreeds
                             .map(
                               (breed) => DropdownMenuItem<int>(
@@ -77,7 +80,10 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    child: CustomButton(onPressed: () {}, text: l10n.homeCta),
+                    child: CustomButton(
+                      onPressed: () => context.go(AppPaths.onboarding),
+                      text: l10n.homeCta,
+                    ),
                   ),
                 ],
               );

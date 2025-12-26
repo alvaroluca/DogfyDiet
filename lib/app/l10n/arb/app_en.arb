@@ -3,5 +3,7 @@
     "homeTitle": "Put real food in your dog's bowl",
     "homeSubtitle": "Natural food for dogs, complete and balanced. Created by nutritionists",
     "homeBreedLabel": "Search or type their breed",
-    "homeCta": "Create their menu ->"
+    "homeCta": "Create their menu ->",
+    "onboardingContinue": "Continue",
+    "breedSelectionTitle": "What is your dog's breed?"
 }
