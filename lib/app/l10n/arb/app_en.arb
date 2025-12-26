@@ -44,5 +44,41 @@
     },
     "birthDateYearLabel": "Year",
     "birthDateMonthLabel": "Month",
-    "birthDateInfoBox": "Why is it important? Caloric needs vary according to your dog's age, but we will perfectly adapt to their life stage."
+    "birthDateInfoBox": "Why is it important? Caloric needs vary according to your dog's age, but we will perfectly adapt to their life stage.",
+    "weightStepOptionThin": "A bit skinny: Narrow waist and clearly visible ribs.",
+    "weightStepOptionNormal": "Fit: Waist is visible and ribs are easy to feel.",
+    "weightStepOptionFat": "A bit chubby: Waist is not visible and ribs are hard to feel.",
+    "weightStepTitle": "Which silhouette best represents {dogName}?",
+    "@weightStepTitle": {
+        "description": "Title for the visual weight step, includes the dog's name",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "weightStepSubtitle": "Select the figure that most closely matches their weight and shape",
+    "weightStepBottomText": "{dogName}'s weight is about",
+    "@weightStepBottomText": {
+        "description": "Bottom text for the weight step, includes the dog's name",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "weightStepKg": "kg",
+    "activityLowDescription": "Couch dog: daily walks less than 1h. Loves a good nap and being super chill.",
+    "activityMediumDescription": "Zen dog: daily walks 1-2h. Enjoys good walks but also knows when to rest.",
+    "activityHighDescription": "Tornado dog: daily walks more than 2h. So much energy!",
+    "activityLevelTitle": "What's {dogName}'s activity level?",
+    "@activityLevelTitle": {
+        "description": "Title for the activity step, includes the dog's name",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "activityLevelSubtitle": "This helps us give you better recommendations"
 }

@@ -83,4 +83,54 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get birthDateInfoBox =>
       'Why is it important? Caloric needs vary according to your dog\'s age, but we will perfectly adapt to their life stage.';
+
+  @override
+  String get weightStepOptionThin =>
+      'A bit skinny: Narrow waist and clearly visible ribs.';
+
+  @override
+  String get weightStepOptionNormal =>
+      'Fit: Waist is visible and ribs are easy to feel.';
+
+  @override
+  String get weightStepOptionFat =>
+      'A bit chubby: Waist is not visible and ribs are hard to feel.';
+
+  @override
+  String weightStepTitle(String dogName) {
+    return 'Which silhouette best represents $dogName?';
+  }
+
+  @override
+  String get weightStepSubtitle =>
+      'Select the figure that most closely matches their weight and shape';
+
+  @override
+  String weightStepBottomText(String dogName) {
+    return '$dogName\'s weight is about';
+  }
+
+  @override
+  String get weightStepKg => 'kg';
+
+  @override
+  String get activityLowDescription =>
+      'Couch dog: daily walks less than 1h. Loves a good nap and being super chill.';
+
+  @override
+  String get activityMediumDescription =>
+      'Zen dog: daily walks 1-2h. Enjoys good walks but also knows when to rest.';
+
+  @override
+  String get activityHighDescription =>
+      'Tornado dog: daily walks more than 2h. So much energy!';
+
+  @override
+  String activityLevelTitle(String dogName) {
+    return 'What\'s $dogName\'s activity level?';
+  }
+
+  @override
+  String get activityLevelSubtitle =>
+      'This helps us give you better recommendations';
 }

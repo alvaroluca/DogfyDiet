@@ -1,4 +1,6 @@
+import 'package:dogfydiet/domain/entities/activity_level_type.dart';
 import 'package:dogfydiet/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'onboarding_data_model.g.dart';
@@ -10,6 +12,9 @@ class OnboardingDataModel {
   final String? gender;
   final bool? isSterilized;
   final DateTime? birthDate;
+  final WeightShapeType weightShape;
+  final double? weightValue;
+  final ActivityLevelType activityLevel;
 
   const OnboardingDataModel({
     this.breedId,
@@ -17,6 +22,9 @@ class OnboardingDataModel {
     this.gender,
     this.isSterilized,
     this.birthDate,
+    this.weightShape = WeightShapeType.normal,
+    this.weightValue,
+    this.activityLevel = ActivityLevelType.medium,
   });
 
   factory OnboardingDataModel.fromJson(Map<String, dynamic> json) =>
@@ -30,6 +38,9 @@ class OnboardingDataModel {
     gender: gender,
     isSterilized: isSterilized,
     birthDate: birthDate,
+    weightShape: weightShape,
+    weightValue: weightValue,
+    activityLevel: activityLevel,
   );
   factory OnboardingDataModel.fromEntity(OnboardingData entity) =>
       OnboardingDataModel(
@@ -38,5 +49,8 @@ class OnboardingDataModel {
         gender: entity.gender,
         isSterilized: entity.isSterilized,
         birthDate: entity.birthDate,
+        weightShape: entity.weightShape,
+        weightValue: entity.weightValue,
+        activityLevel: entity.activityLevel,
       );
 }

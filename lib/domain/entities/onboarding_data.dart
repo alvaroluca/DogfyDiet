@@ -1,3 +1,5 @@
+import 'package:dogfydiet/domain/entities/activity_level_type.dart';
+import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'onboarding_data.freezed.dart';
@@ -10,6 +12,9 @@ abstract class OnboardingData with _$OnboardingData {
     String? gender,
     bool? isSterilized,
     DateTime? birthDate,
+    @Default(WeightShapeType.normal) WeightShapeType weightShape,
+    double? weightValue,
+    @Default(ActivityLevelType.medium) ActivityLevelType activityLevel,
   }) = _OnboardingData;
 
   const OnboardingData._();
@@ -24,6 +29,10 @@ abstract class OnboardingData with _$OnboardingData {
         return gender != null && gender!.isNotEmpty && isSterilized != null;
       case 3:
         return birthDate?.year != null && birthDate?.month != null;
+      case 4:
+        return weightValue != null && weightValue! > 0.0;
+      case 5:
+        return true;
       default:
         return false;
     }

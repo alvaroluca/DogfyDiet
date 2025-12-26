@@ -11,6 +11,7 @@ import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/birth_date/birth_date_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name/dog_name_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/onboarding_step/onboarding_step_cubit.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/weight/weight_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

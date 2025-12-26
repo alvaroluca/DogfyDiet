@@ -44,6 +44,42 @@
     },
     "birthDateYearLabel": "Año",
     "birthDateMonthLabel": "Mes",
-    "birthDateInfoBox": "¿Por qué es importante? Las necesidades calóricas varían según la edad de tu perro, pero nos adaptaremos perfectamente a su momento vital."
+    "birthDateInfoBox": "¿Por qué es importante? Las necesidades calóricas varían según la edad de tu perro, pero nos adaptaremos perfectamente a su momento vital.",
+    "weightStepOptionThin": "Un poco flaquito: Cintura estrecha y se le ven claramente las costillas.",
+    "weightStepOptionNormal": "Hecho un figurín: La cintura es visible y sus costillas son fáciles de palpar.",
+    "weightStepOptionFat": "Un poco rellenito: La cintura no es visible y sus costillas son difíciles de palpar.",
+    "weightStepTitle": "¿Qué silueta representa mejor a {dogName}?",
+    "@weightStepTitle": {
+        "description": "Título para el step de peso visual, incluye el nombre del perro",
+        "placeholders": {
+            "dogName": { 
+                "type": "String" 
+            }
+        }
+    },
+    "weightStepSubtitle": "Selecciona la figura que más se asemeja en cuanto a su peso y forma",
+    "weightStepBottomText": "El peso de {dogName} es más o menos de",
+    "@weightStepBottomText": {
+        "description": "Texto inferior para el step de peso, incluye el nombre del perro",
+        "placeholders": {
+            "dogName": { 
+                "type": "String" 
+            }
+        }
+    },
+    "weightStepKg": "kg",
+    "activityLowDescription": "Perro alfombra: paseos diarios de menos de 1h. Lo que más le gusta es echarse una buena siesta  y estar bien tranquilito.",
+    "activityMediumDescription": "Perro zen: paseos diarios de 1 a 2h. Sabe disfrutar de buenas caminatas, pero también sabe cuándo descansar",
+    "activityHighDescription": "Perro terremoto: paseos diarios de más de 2h. ¡No veas qué torbellino de energía!",
+    "activityLevelTitle": "¿Cuál es el nivel de actividad de {dogName}?",
+    "@activityLevelTitle": {
+        "description": "Título para el step de actividad, incluye el nombre del perro",
+        "placeholders": {
+            "dogName": { 
+                "type": "String" 
+            }
+        }
+    },
+    "activityLevelSubtitle": "Esto nos ayuda a ofrecerte mejores recomendaciones"
 }
   

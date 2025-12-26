@@ -83,4 +83,54 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get birthDateInfoBox =>
       '¿Por qué es importante? Las necesidades calóricas varían según la edad de tu perro, pero nos adaptaremos perfectamente a su momento vital.';
+
+  @override
+  String get weightStepOptionThin =>
+      'Un poco flaquito: Cintura estrecha y se le ven claramente las costillas.';
+
+  @override
+  String get weightStepOptionNormal =>
+      'Hecho un figurín: La cintura es visible y sus costillas son fáciles de palpar.';
+
+  @override
+  String get weightStepOptionFat =>
+      'Un poco rellenito: La cintura no es visible y sus costillas son difíciles de palpar.';
+
+  @override
+  String weightStepTitle(String dogName) {
+    return '¿Qué silueta representa mejor a $dogName?';
+  }
+
+  @override
+  String get weightStepSubtitle =>
+      'Selecciona la figura que más se asemeja en cuanto a su peso y forma';
+
+  @override
+  String weightStepBottomText(String dogName) {
+    return 'El peso de $dogName es más o menos de';
+  }
+
+  @override
+  String get weightStepKg => 'kg';
+
+  @override
+  String get activityLowDescription =>
+      'Perro alfombra: paseos diarios de menos de 1h. Lo que más le gusta es echarse una buena siesta  y estar bien tranquilito.';
+
+  @override
+  String get activityMediumDescription =>
+      'Perro zen: paseos diarios de 1 a 2h. Sabe disfrutar de buenas caminatas, pero también sabe cuándo descansar';
+
+  @override
+  String get activityHighDescription =>
+      'Perro terremoto: paseos diarios de más de 2h. ¡No veas qué torbellino de energía!';
+
+  @override
+  String activityLevelTitle(String dogName) {
+    return '¿Cuál es el nivel de actividad de $dogName?';
+  }
+
+  @override
+  String get activityLevelSubtitle =>
+      'Esto nos ayuda a ofrecerte mejores recomendaciones';
 }

@@ -229,6 +229,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Why is it important? Caloric needs vary according to your dog\'s age, but we will perfectly adapt to their life stage.'**
   String get birthDateInfoBox;
+
+  /// No description provided for @weightStepOptionThin.
+  ///
+  /// In en, this message translates to:
+  /// **'A bit skinny: Narrow waist and clearly visible ribs.'**
+  String get weightStepOptionThin;
+
+  /// No description provided for @weightStepOptionNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Fit: Waist is visible and ribs are easy to feel.'**
+  String get weightStepOptionNormal;
+
+  /// No description provided for @weightStepOptionFat.
+  ///
+  /// In en, this message translates to:
+  /// **'A bit chubby: Waist is not visible and ribs are hard to feel.'**
+  String get weightStepOptionFat;
+
+  /// Title for the visual weight step, includes the dog's name
+  ///
+  /// In en, this message translates to:
+  /// **'Which silhouette best represents {dogName}?'**
+  String weightStepTitle(String dogName);
+
+  /// No description provided for @weightStepSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select the figure that most closely matches their weight and shape'**
+  String get weightStepSubtitle;
+
+  /// Bottom text for the weight step, includes the dog's name
+  ///
+  /// In en, this message translates to:
+  /// **'{dogName}\'s weight is about'**
+  String weightStepBottomText(String dogName);
+
+  /// No description provided for @weightStepKg.
+  ///
+  /// In en, this message translates to:
+  /// **'kg'**
+  String get weightStepKg;
+
+  /// No description provided for @activityLowDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Couch dog: daily walks less than 1h. Loves a good nap and being super chill.'**
+  String get activityLowDescription;
+
+  /// No description provided for @activityMediumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Zen dog: daily walks 1-2h. Enjoys good walks but also knows when to rest.'**
+  String get activityMediumDescription;
+
+  /// No description provided for @activityHighDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Tornado dog: daily walks more than 2h. So much energy!'**
+  String get activityHighDescription;
+
+  /// Title for the activity step, includes the dog's name
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s {dogName}\'s activity level?'**
+  String activityLevelTitle(String dogName);
+
+  /// No description provided for @activityLevelSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This helps us give you better recommendations'**
+  String get activityLevelSubtitle;
 }
 
 class _AppLocalizationsDelegate

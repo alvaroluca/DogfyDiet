@@ -1,3 +1,5 @@
+import 'package:dogfydiet/domain/entities/activity_level_type.dart';
+import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'onboarding_event.freezed.dart';
@@ -13,4 +15,11 @@ class OnboardingEvent with _$OnboardingEvent {
       UpdateSterilization;
   const factory OnboardingEvent.updateBirthDate(DateTime birthDate) =
       UpdateBirthDate;
+  const factory OnboardingEvent.updateWeightShape(WeightShapeType weightShape) =
+      UpdateWeightShape;
+  const factory OnboardingEvent.updateWeightValue(double value) =
+      UpdateWeightValue;
+  const factory OnboardingEvent.updateActivityLevel(
+    ActivityLevelType activityLevel,
+  ) = UpdateActivityLevel;
 }

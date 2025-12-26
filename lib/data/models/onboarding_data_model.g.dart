@@ -15,6 +15,16 @@ OnboardingDataModel _$OnboardingDataModelFromJson(Map<String, dynamic> json) =>
       birthDate: json['birthDate'] == null
           ? null
           : DateTime.parse(json['birthDate'] as String),
+      weightShape:
+          $enumDecodeNullable(_$WeightShapeTypeEnumMap, json['weightShape']) ??
+          WeightShapeType.normal,
+      weightValue: (json['weightValue'] as num?)?.toDouble(),
+      activityLevel:
+          $enumDecodeNullable(
+            _$ActivityLevelTypeEnumMap,
+            json['activityLevel'],
+          ) ??
+          ActivityLevelType.medium,
     );
 
 Map<String, dynamic> _$OnboardingDataModelToJson(
@@ -25,4 +35,19 @@ Map<String, dynamic> _$OnboardingDataModelToJson(
   'gender': instance.gender,
   'isSterilized': instance.isSterilized,
   'birthDate': instance.birthDate?.toIso8601String(),
+  'weightShape': _$WeightShapeTypeEnumMap[instance.weightShape]!,
+  'weightValue': instance.weightValue,
+  'activityLevel': _$ActivityLevelTypeEnumMap[instance.activityLevel]!,
+};
+
+const _$WeightShapeTypeEnumMap = {
+  WeightShapeType.thin: 'thin',
+  WeightShapeType.normal: 'normal',
+  WeightShapeType.fat: 'fat',
+};
+
+const _$ActivityLevelTypeEnumMap = {
+  ActivityLevelType.low: 'low',
+  ActivityLevelType.medium: 'medium',
+  ActivityLevelType.high: 'high',
 };

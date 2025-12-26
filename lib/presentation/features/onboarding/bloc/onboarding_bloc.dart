@@ -27,6 +27,9 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<UpdateGender>(_onUpdateGender);
     on<UpdateSterilization>(_onUpdateSterilization);
     on<UpdateBirthDate>(_onUpdateBirthDate);
+    on<UpdateWeightShape>(_onUpdateWeightShape);
+    on<UpdateWeightValue>(_onUpdateWeightValue);
+    on<UpdateActivityLevel>(_onUpdateActivityLevel);
   }
 
   Future<void> _onLoadDogBreeds(
@@ -110,6 +113,37 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   ) async {
     final updatedData = state.onboardingData.copyWith(
       birthDate: event.birthDate,
+    );
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateWeightShape(
+    UpdateWeightShape event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(
+      weightShape: event.weightShape,
+    );
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateWeightValue(
+    UpdateWeightValue event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(weightValue: event.value);
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateActivityLevel(
+    UpdateActivityLevel event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(
+      activityLevel: event.activityLevel,
     );
     emit(state.copyWith(onboardingData: updatedData));
     await _saveData(updatedData);
