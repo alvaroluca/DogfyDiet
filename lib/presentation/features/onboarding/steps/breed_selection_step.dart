@@ -3,6 +3,7 @@ import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/widgets/custom_dropdown.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_step_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,12 +23,7 @@ class BreedSelectionStep extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 8),
-            Text(
-              l10n.breedSelectionTitle,
-              style: Theme.of(context).textTheme.headlineSmall,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
+            OnboardingStepHeader(title: l10n.breedSelectionTitle),
             CustomDropdown<int>(
               value: state.onboardingData.breedId,
               labelText: l10n.homeBreedLabel,

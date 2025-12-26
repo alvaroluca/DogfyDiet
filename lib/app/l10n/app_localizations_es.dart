@@ -44,4 +44,43 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get dogNameInfoBox =>
       '¡Qué emoción! Estás a punto de mejorar la vida de tu bichón maltés a través de una alimentación 100% natural.';
+
+  @override
+  String genderTitle(String dogName) {
+    return '¡Queremos conocer a $dogName!';
+  }
+
+  @override
+  String get genderMale => 'Macho';
+
+  @override
+  String get genderFemale => 'Hembra';
+
+  @override
+  String get sterilizationQuestion => '¿Está esterilizado/a?';
+
+  @override
+  String get commonYes => 'Sí';
+
+  @override
+  String get commonNo => 'No';
+
+  @override
+  String get genderSterilizationInfoBox =>
+      '¿Por qué es importante? Después de la esterilización, se requieren ajustes en la ración, ya que el perro suele tener menor gasto calórico.';
+
+  @override
+  String birthDateTitle(String dogName) {
+    return '¿Cuándo nació $dogName?';
+  }
+
+  @override
+  String get birthDateYearLabel => 'Año';
+
+  @override
+  String get birthDateMonthLabel => 'Mes';
+
+  @override
+  String get birthDateInfoBox =>
+      '¿Por qué es importante? Las necesidades calóricas varían según la edad de tu perro, pero nos adaptaremos perfectamente a su momento vital.';
 }

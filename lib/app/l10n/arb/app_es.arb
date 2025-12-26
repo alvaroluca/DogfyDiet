@@ -17,6 +17,33 @@
     },
     "dogNameLabel": "Mi perrhijo se llama...",
     "dogNameMultiCta": "¿Tienes más de un perro?",  
-    "dogNameInfoBox": "¡Qué emoción! Estás a punto de mejorar la vida de tu bichón maltés a través de una alimentación 100% natural."
+    "dogNameInfoBox": "¡Qué emoción! Estás a punto de mejorar la vida de tu bichón maltés a través de una alimentación 100% natural.",
+    "genderTitle": "¡Queremos conocer a {dogName}!",
+    "@genderTitle": {
+        "description": "Título para la pantalla de sexo del perro",
+        "placeholders": {
+            "dogName": {
+                "type": "String"
+            }
+        }
+    },
+    "genderMale": "Macho",
+    "genderFemale": "Hembra",
+    "sterilizationQuestion": "¿Está esterilizado/a?",
+    "commonYes": "Sí",
+    "commonNo": "No",
+    "genderSterilizationInfoBox": "¿Por qué es importante? Después de la esterilización, se requieren ajustes en la ración, ya que el perro suele tener menor gasto calórico.",
+    "birthDateTitle": "¿Cuándo nació {dogName}?",
+    "@birthDateTitle": {
+        "description": "Pregunta por la fecha de nacimiento del perro",
+        "placeholders": {
+            "dogName": {
+                "type": "String"
+            }
+        }
+    },
+    "birthDateYearLabel": "Año",
+    "birthDateMonthLabel": "Mes",
+    "birthDateInfoBox": "¿Por qué es importante? Las necesidades calóricas varían según la edad de tu perro, pero nos adaptaremos perfectamente a su momento vital."
 }
   

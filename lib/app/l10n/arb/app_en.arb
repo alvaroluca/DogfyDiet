@@ -17,5 +17,32 @@
     },
     "dogNameLabel": "My dog's name is...",
     "dogNameMultiCta": "Do you have more than one dog?",
-    "dogNameInfoBox": "How exciting! You're about to improve your Maltese's life with 100% natural food."
+    "dogNameInfoBox": "How exciting! You're about to improve your Maltese's life with 100% natural food.",
+    "genderTitle": "We want to know {dogName}!",
+    "@genderTitle": {
+        "description": "Title for the dog's gender screen",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "sterilizationQuestion": "Is your dog neutered/spayed?",
+    "commonYes": "Yes",
+    "commonNo": "No",
+    "genderSterilizationInfoBox": "Why is it important? After sterilization, adjustments are needed in the food portion, as dogs usually have lower caloric expenditure.",
+    "birthDateTitle": "When was {dogName} born?",
+    "@birthDateTitle": {
+        "description": "Question about the dog's birth date",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "birthDateYearLabel": "Year",
+    "birthDateMonthLabel": "Month",
+    "birthDateInfoBox": "Why is it important? Caloric needs vary according to your dog's age, but we will perfectly adapt to their life stage."
 }

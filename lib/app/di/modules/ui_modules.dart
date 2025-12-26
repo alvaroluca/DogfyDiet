@@ -9,4 +9,5 @@ void _uiModulesInit() => getIt
     ),
   )
   ..registerFactory(() => DogNameCubit())
-  ..registerFactory(() => OnboardingStepCubit());
+  ..registerFactory(() => OnboardingStepCubit())
+  ..registerFactory(() => BirthDateCubit());

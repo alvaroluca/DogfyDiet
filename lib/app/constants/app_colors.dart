@@ -10,4 +10,7 @@ class AppColors {
 
   // Onboarding background color
   static const int onboardingBackground = 0xFFEDF8F8; // #edf8f8
+
+  // Chip color
+  static const int chipSelectedColor = 0xFFFFEE99; // Amarillo claro #ffee99
 }

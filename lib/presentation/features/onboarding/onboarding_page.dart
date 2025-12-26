@@ -3,9 +3,11 @@ import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/app/routes/app_path.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/birth_date_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/breed_selection_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/onboarding_step/onboarding_step_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/dog_name_step.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/gender_sterilization_step.dart';
 import 'package:dogfydiet/presentation/widgets/dogfy_app_bar.dart';
 import 'package:dogfydiet/presentation/widgets/navigation_button.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,10 @@ class OnboardingPage extends StatelessWidget {
         return const BreedSelectionStep();
       case 1:
         return const DogNameStep();
+      case 2:
+        return const GenderSterilizationStep();
+      case 3:
+        return const BirthDateStep();
       default:
         return const SizedBox();
     }

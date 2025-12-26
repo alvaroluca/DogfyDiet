@@ -55,14 +55,17 @@ extension OnboardingEventPatterns on OnboardingEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,TResult Function( UpdateDogName value)?  updateDogName,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,TResult Function( UpdateDogName value)?  updateDogName,TResult Function( UpdateGender value)?  updateGender,TResult Function( UpdateSterilization value)?  updateSterilization,TResult Function( UpdateBirthDate value)?  updateBirthDate,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
 return updateBreed(_that);case UpdateDogName() when updateDogName != null:
-return updateDogName(_that);case _:
+return updateDogName(_that);case UpdateGender() when updateGender != null:
+return updateGender(_that);case UpdateSterilization() when updateSterilization != null:
+return updateSterilization(_that);case UpdateBirthDate() when updateBirthDate != null:
+return updateBirthDate(_that);case _:
   return orElse();
 
 }
@@ -80,14 +83,17 @@ return updateDogName(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,required TResult Function( UpdateDogName value)  updateDogName,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,required TResult Function( UpdateDogName value)  updateDogName,required TResult Function( UpdateGender value)  updateGender,required TResult Function( UpdateSterilization value)  updateSterilization,required TResult Function( UpdateBirthDate value)  updateBirthDate,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds():
 return loadDogBreeds(_that);case LoadOnboardingData():
 return loadOnboardingData(_that);case UpdateBreed():
 return updateBreed(_that);case UpdateDogName():
-return updateDogName(_that);case _:
+return updateDogName(_that);case UpdateGender():
+return updateGender(_that);case UpdateSterilization():
+return updateSterilization(_that);case UpdateBirthDate():
+return updateBirthDate(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +110,17 @@ return updateDogName(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,TResult? Function( UpdateDogName value)?  updateDogName,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,TResult? Function( UpdateDogName value)?  updateDogName,TResult? Function( UpdateGender value)?  updateGender,TResult? Function( UpdateSterilization value)?  updateSterilization,TResult? Function( UpdateBirthDate value)?  updateBirthDate,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
 return updateBreed(_that);case UpdateDogName() when updateDogName != null:
-return updateDogName(_that);case _:
+return updateDogName(_that);case UpdateGender() when updateGender != null:
+return updateGender(_that);case UpdateSterilization() when updateSterilization != null:
+return updateSterilization(_that);case UpdateBirthDate() when updateBirthDate != null:
+return updateBirthDate(_that);case _:
   return null;
 
 }
@@ -128,13 +137,16 @@ return updateDogName(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,TResult Function( String dogName)?  updateDogName,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,TResult Function( String dogName)?  updateDogName,TResult Function( String gender)?  updateGender,TResult Function( bool isSterilized)?  updateSterilization,TResult Function( DateTime birthDate)?  updateBirthDate,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData();case UpdateBreed() when updateBreed != null:
 return updateBreed(_that.breedId);case UpdateDogName() when updateDogName != null:
-return updateDogName(_that.dogName);case _:
+return updateDogName(_that.dogName);case UpdateGender() when updateGender != null:
+return updateGender(_that.gender);case UpdateSterilization() when updateSterilization != null:
+return updateSterilization(_that.isSterilized);case UpdateBirthDate() when updateBirthDate != null:
+return updateBirthDate(_that.birthDate);case _:
   return orElse();
 
 }
@@ -152,13 +164,16 @@ return updateDogName(_that.dogName);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,required TResult Function( String dogName)  updateDogName,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,required TResult Function( String dogName)  updateDogName,required TResult Function( String gender)  updateGender,required TResult Function( bool isSterilized)  updateSterilization,required TResult Function( DateTime birthDate)  updateBirthDate,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds():
 return loadDogBreeds();case LoadOnboardingData():
 return loadOnboardingData();case UpdateBreed():
 return updateBreed(_that.breedId);case UpdateDogName():
-return updateDogName(_that.dogName);case _:
+return updateDogName(_that.dogName);case UpdateGender():
+return updateGender(_that.gender);case UpdateSterilization():
+return updateSterilization(_that.isSterilized);case UpdateBirthDate():
+return updateBirthDate(_that.birthDate);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +190,16 @@ return updateDogName(_that.dogName);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,TResult? Function( String dogName)?  updateDogName,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,TResult? Function( String dogName)?  updateDogName,TResult? Function( String gender)?  updateGender,TResult? Function( bool isSterilized)?  updateSterilization,TResult? Function( DateTime birthDate)?  updateBirthDate,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData();case UpdateBreed() when updateBreed != null:
 return updateBreed(_that.breedId);case UpdateDogName() when updateDogName != null:
-return updateDogName(_that.dogName);case _:
+return updateDogName(_that.dogName);case UpdateGender() when updateGender != null:
+return updateGender(_that.gender);case UpdateSterilization() when updateSterilization != null:
+return updateSterilization(_that.isSterilized);case UpdateBirthDate() when updateBirthDate != null:
+return updateBirthDate(_that.birthDate);case _:
   return null;
 
 }
@@ -379,6 +397,204 @@ class _$UpdateDogNameCopyWithImpl<$Res>
   return _then(UpdateDogName(
 null == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
 as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class UpdateGender implements OnboardingEvent {
+  const UpdateGender(this.gender);
+  
+
+ final  String gender;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateGenderCopyWith<UpdateGender> get copyWith => _$UpdateGenderCopyWithImpl<UpdateGender>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateGender&&(identical(other.gender, gender) || other.gender == gender));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,gender);
+
+@override
+String toString() {
+  return 'OnboardingEvent.updateGender(gender: $gender)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UpdateGenderCopyWith<$Res> implements $OnboardingEventCopyWith<$Res> {
+  factory $UpdateGenderCopyWith(UpdateGender value, $Res Function(UpdateGender) _then) = _$UpdateGenderCopyWithImpl;
+@useResult
+$Res call({
+ String gender
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateGenderCopyWithImpl<$Res>
+    implements $UpdateGenderCopyWith<$Res> {
+  _$UpdateGenderCopyWithImpl(this._self, this._then);
+
+  final UpdateGender _self;
+  final $Res Function(UpdateGender) _then;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? gender = null,}) {
+  return _then(UpdateGender(
+null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class UpdateSterilization implements OnboardingEvent {
+  const UpdateSterilization(this.isSterilized);
+  
+
+ final  bool isSterilized;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateSterilizationCopyWith<UpdateSterilization> get copyWith => _$UpdateSterilizationCopyWithImpl<UpdateSterilization>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateSterilization&&(identical(other.isSterilized, isSterilized) || other.isSterilized == isSterilized));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,isSterilized);
+
+@override
+String toString() {
+  return 'OnboardingEvent.updateSterilization(isSterilized: $isSterilized)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UpdateSterilizationCopyWith<$Res> implements $OnboardingEventCopyWith<$Res> {
+  factory $UpdateSterilizationCopyWith(UpdateSterilization value, $Res Function(UpdateSterilization) _then) = _$UpdateSterilizationCopyWithImpl;
+@useResult
+$Res call({
+ bool isSterilized
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateSterilizationCopyWithImpl<$Res>
+    implements $UpdateSterilizationCopyWith<$Res> {
+  _$UpdateSterilizationCopyWithImpl(this._self, this._then);
+
+  final UpdateSterilization _self;
+  final $Res Function(UpdateSterilization) _then;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? isSterilized = null,}) {
+  return _then(UpdateSterilization(
+null == isSterilized ? _self.isSterilized : isSterilized // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class UpdateBirthDate implements OnboardingEvent {
+  const UpdateBirthDate(this.birthDate);
+  
+
+ final  DateTime birthDate;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateBirthDateCopyWith<UpdateBirthDate> get copyWith => _$UpdateBirthDateCopyWithImpl<UpdateBirthDate>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateBirthDate&&(identical(other.birthDate, birthDate) || other.birthDate == birthDate));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,birthDate);
+
+@override
+String toString() {
+  return 'OnboardingEvent.updateBirthDate(birthDate: $birthDate)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UpdateBirthDateCopyWith<$Res> implements $OnboardingEventCopyWith<$Res> {
+  factory $UpdateBirthDateCopyWith(UpdateBirthDate value, $Res Function(UpdateBirthDate) _then) = _$UpdateBirthDateCopyWithImpl;
+@useResult
+$Res call({
+ DateTime birthDate
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateBirthDateCopyWithImpl<$Res>
+    implements $UpdateBirthDateCopyWith<$Res> {
+  _$UpdateBirthDateCopyWithImpl(this._self, this._then);
+
+  final UpdateBirthDate _self;
+  final $Res Function(UpdateBirthDate) _then;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? birthDate = null,}) {
+  return _then(UpdateBirthDate(
+null == birthDate ? _self.birthDate : birthDate // ignore: cast_nullable_to_non_nullable
+as DateTime,
   ));
 }
 

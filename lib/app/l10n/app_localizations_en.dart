@@ -44,4 +44,43 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get dogNameInfoBox =>
       'How exciting! You\'re about to improve your Maltese\'s life with 100% natural food.';
+
+  @override
+  String genderTitle(String dogName) {
+    return 'We want to know $dogName!';
+  }
+
+  @override
+  String get genderMale => 'Male';
+
+  @override
+  String get genderFemale => 'Female';
+
+  @override
+  String get sterilizationQuestion => 'Is your dog neutered/spayed?';
+
+  @override
+  String get commonYes => 'Yes';
+
+  @override
+  String get commonNo => 'No';
+
+  @override
+  String get genderSterilizationInfoBox =>
+      'Why is it important? After sterilization, adjustments are needed in the food portion, as dogs usually have lower caloric expenditure.';
+
+  @override
+  String birthDateTitle(String dogName) {
+    return 'When was $dogName born?';
+  }
+
+  @override
+  String get birthDateYearLabel => 'Year';
+
+  @override
+  String get birthDateMonthLabel => 'Month';
+
+  @override
+  String get birthDateInfoBox =>
+      'Why is it important? Caloric needs vary according to your dog\'s age, but we will perfectly adapt to their life stage.';
 }

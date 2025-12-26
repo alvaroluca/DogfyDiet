@@ -8,6 +8,7 @@ import 'package:dogfydiet/domain/usecases/get_dog_breeds.dart';
 import 'package:dogfydiet/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/domain/usecases/save_onboarding_data.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/birth_date/birth_date_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name/dog_name_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/onboarding_step/onboarding_step_cubit.dart';
 import 'package:get_it/get_it.dart';

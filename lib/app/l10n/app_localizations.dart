@@ -163,6 +163,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'How exciting! You\'re about to improve your Maltese\'s life with 100% natural food.'**
   String get dogNameInfoBox;
+
+  /// Title for the dog's gender screen
+  ///
+  /// In en, this message translates to:
+  /// **'We want to know {dogName}!'**
+  String genderTitle(String dogName);
+
+  /// No description provided for @genderMale.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get genderMale;
+
+  /// No description provided for @genderFemale.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get genderFemale;
+
+  /// No description provided for @sterilizationQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Is your dog neutered/spayed?'**
+  String get sterilizationQuestion;
+
+  /// No description provided for @commonYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get commonYes;
+
+  /// No description provided for @commonNo.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get commonNo;
+
+  /// No description provided for @genderSterilizationInfoBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Why is it important? After sterilization, adjustments are needed in the food portion, as dogs usually have lower caloric expenditure.'**
+  String get genderSterilizationInfoBox;
+
+  /// Question about the dog's birth date
+  ///
+  /// In en, this message translates to:
+  /// **'When was {dogName} born?'**
+  String birthDateTitle(String dogName);
+
+  /// No description provided for @birthDateYearLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get birthDateYearLabel;
+
+  /// No description provided for @birthDateMonthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get birthDateMonthLabel;
+
+  /// No description provided for @birthDateInfoBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Why is it important? Caloric needs vary according to your dog\'s age, but we will perfectly adapt to their life stage.'**
+  String get birthDateInfoBox;
 }
 
 class _AppLocalizationsDelegate

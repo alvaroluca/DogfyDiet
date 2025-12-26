@@ -1,9 +1,10 @@
-import 'package:dogfydiet/app/constants/app_colors.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name/dog_name_cubit.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_info_box.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_step_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -39,12 +40,9 @@ class DogNameStep extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 8),
-                  Text(
-                    l10n.dogNameTitleWithBreed(breedName),
-                    style: Theme.of(context).textTheme.headlineSmall,
-                    textAlign: TextAlign.center,
+                  OnboardingStepHeader(
+                    title: l10n.dogNameTitleWithBreed(breedName),
                   ),
-                  const SizedBox(height: 16),
                   TextField(
                     controller: cubit.controller,
                     decoration: InputDecoration(
@@ -62,18 +60,7 @@ class DogNameStep extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(AppColors.onboardingBackground),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      l10n.dogNameInfoBox,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                  OnboardingInfoBox(title: l10n.dogNameInfoBox),
                 ],
               );
             },
