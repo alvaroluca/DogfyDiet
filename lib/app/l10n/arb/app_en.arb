@@ -80,5 +80,28 @@
             } 
         }
     },
-    "activityLevelSubtitle": "This helps us give you better recommendations"
+    "activityLevelSubtitle": "This helps us give you better recommendations",
+    "pathologiesTitle": "Does {dogName} have any health issues?",
+    "@pathologiesTitle": {
+        "description": "Question about the dog's health issues",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "pathologiesInfoBox": "Every dog is unique! Don't worry, we will adapt our menu to their case whenever possible. If your dog's condition does not appear in the form, send an email to nutricionistas@dogfydiet.com.",
+    "foodProfileSelectiveDescription": "The selective: picky eater, often doesn't finish their meal and gets bored of food (wait until they try Dogfy!)",
+    "foodProfileGourmetDescription": "The gourmet: loves trying new flavors, but won't settle for just anything",
+    "foodProfileGluttonDescription": "The glutton: devours all kinds of food as if it were their last meal",
+    "foodProfileTitle": "What kind of foodie is your dog?",
+    "foodProfileSubtitle": "Choose the option that best describes {dogName}.",
+    "@foodProfileSubtitle": {
+        "description": "Subtitle for the food profile, includes the dog's name",
+        "placeholders": { 
+            "dogName": { 
+                "type": "String" 
+            } 
+        }
+    }
 }

@@ -12,6 +12,10 @@ class AppAssets {
   static const String activityLow = '$_icons/activity_1.svg';
   static const String activityMedium = '$_icons/activity_2.svg';
   static const String activityHigh = '$_icons/activity_3.svg';
+  // food appetite
+  static const String foodSelective = '$_icons/food_1.svg';
+  static const String foodGourmet = '$_icons/food_2.svg';
+  static const String foodGlutton = '$_icons/food_3.svg';
 
   static const String _lotties = 'assets/lotties';
   static const String dogHome = '$_lotties/dog_home.json';

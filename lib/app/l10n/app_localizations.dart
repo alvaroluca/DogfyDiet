@@ -301,6 +301,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This helps us give you better recommendations'**
   String get activityLevelSubtitle;
+
+  /// Question about the dog's health issues
+  ///
+  /// In en, this message translates to:
+  /// **'Does {dogName} have any health issues?'**
+  String pathologiesTitle(String dogName);
+
+  /// No description provided for @pathologiesInfoBox.
+  ///
+  /// In en, this message translates to:
+  /// **'Every dog is unique! Don\'t worry, we will adapt our menu to their case whenever possible. If your dog\'s condition does not appear in the form, send an email to nutricionistas@dogfydiet.com.'**
+  String get pathologiesInfoBox;
+
+  /// No description provided for @foodProfileSelectiveDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The selective: picky eater, often doesn\'t finish their meal and gets bored of food (wait until they try Dogfy!)'**
+  String get foodProfileSelectiveDescription;
+
+  /// No description provided for @foodProfileGourmetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The gourmet: loves trying new flavors, but won\'t settle for just anything'**
+  String get foodProfileGourmetDescription;
+
+  /// No description provided for @foodProfileGluttonDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The glutton: devours all kinds of food as if it were their last meal'**
+  String get foodProfileGluttonDescription;
+
+  /// No description provided for @foodProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What kind of foodie is your dog?'**
+  String get foodProfileTitle;
+
+  /// Subtitle for the food profile, includes the dog's name
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the option that best describes {dogName}.'**
+  String foodProfileSubtitle(String dogName);
 }
 
 class _AppLocalizationsDelegate

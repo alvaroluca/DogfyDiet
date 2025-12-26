@@ -1,4 +1,5 @@
 import 'package:dogfydiet/domain/entities/activity_level_type.dart';
+import 'package:dogfydiet/domain/entities/food_profile_type.dart';
 import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -15,6 +16,8 @@ abstract class OnboardingData with _$OnboardingData {
     @Default(WeightShapeType.normal) WeightShapeType weightShape,
     double? weightValue,
     @Default(ActivityLevelType.medium) ActivityLevelType activityLevel,
+    @Default(false) bool hasPathologies,
+    @Default(FoodProfileType.gourmet) FoodProfileType foodProfile,
   }) = _OnboardingData;
 
   const OnboardingData._();
@@ -32,6 +35,10 @@ abstract class OnboardingData with _$OnboardingData {
       case 4:
         return weightValue != null && weightValue! > 0.0;
       case 5:
+        return true;
+      case 6:
+        return true;
+      case 7:
         return true;
       default:
         return false;

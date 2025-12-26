@@ -133,4 +133,33 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get activityLevelSubtitle =>
       'Esto nos ayuda a ofrecerte mejores recomendaciones';
+
+  @override
+  String pathologiesTitle(String dogName) {
+    return '¿Tiene $dogName alguna patología?';
+  }
+
+  @override
+  String get pathologiesInfoBox =>
+      'Cada perro es un mundo ¡No te preocupes! Adaptaremos nuestro menú a su caso, siempre que sea posible. Si la patología de tu perro no aparece en el formulario, envía un correo a nutricionistas@dogfydiet.com.';
+
+  @override
+  String get foodProfileSelectiveDescription =>
+      'El selectivo: es de paladar exigente, suele costarle terminar su ración y se cansa de la comida (verás qué cambio cuando pruebe Dogfy)';
+
+  @override
+  String get foodProfileGourmetDescription =>
+      'El gourmet: le encanta probar nuevos sabores, pero no se conforma con cualquier cosa';
+
+  @override
+  String get foodProfileGluttonDescription =>
+      'El glotón: devora todo tipo de comida como si no fuera a probar bocado nunca más';
+
+  @override
+  String get foodProfileTitle => '¿Qué crítico gastronómico es tu perro?';
+
+  @override
+  String foodProfileSubtitle(String dogName) {
+    return 'Elige la opción que mejor describa a $dogName.';
+  }
 }

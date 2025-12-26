@@ -1,4 +1,5 @@
 import 'package:dogfydiet/domain/entities/activity_level_type.dart';
+import 'package:dogfydiet/domain/entities/food_profile_type.dart';
 import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -22,4 +23,8 @@ class OnboardingEvent with _$OnboardingEvent {
   const factory OnboardingEvent.updateActivityLevel(
     ActivityLevelType activityLevel,
   ) = UpdateActivityLevel;
+  const factory OnboardingEvent.updateHasPathologies(bool hasPathologies) =
+      UpdateHasPathologies;
+  const factory OnboardingEvent.updateFoodProfile(FoodProfileType foodProfile) =
+      UpdateFoodProfile;
 }

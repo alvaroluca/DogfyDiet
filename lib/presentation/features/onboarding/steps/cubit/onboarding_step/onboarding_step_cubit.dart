@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingStepCubit extends Cubit<int> {
-  final int totalSteps = 6;
+  final int totalSteps = 8;
   OnboardingStepCubit({int initialStep = 0}) : super(initialStep);
 
   void nextStep() {

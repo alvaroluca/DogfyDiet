@@ -1,4 +1,5 @@
 import 'package:dogfydiet/domain/entities/activity_level_type.dart';
+import 'package:dogfydiet/domain/entities/food_profile_type.dart';
 import 'package:dogfydiet/domain/entities/onboarding_data.dart';
 import 'package:dogfydiet/domain/entities/weight_shape_type.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -15,6 +16,8 @@ class OnboardingDataModel {
   final WeightShapeType weightShape;
   final double? weightValue;
   final ActivityLevelType activityLevel;
+  final bool hasPathologies;
+  final FoodProfileType foodProfile;
 
   const OnboardingDataModel({
     this.breedId,
@@ -25,6 +28,8 @@ class OnboardingDataModel {
     this.weightShape = WeightShapeType.normal,
     this.weightValue,
     this.activityLevel = ActivityLevelType.medium,
+    this.hasPathologies = false,
+    this.foodProfile = FoodProfileType.gourmet,
   });
 
   factory OnboardingDataModel.fromJson(Map<String, dynamic> json) =>
@@ -41,6 +46,8 @@ class OnboardingDataModel {
     weightShape: weightShape,
     weightValue: weightValue,
     activityLevel: activityLevel,
+    hasPathologies: hasPathologies,
+    foodProfile: foodProfile,
   );
   factory OnboardingDataModel.fromEntity(OnboardingData entity) =>
       OnboardingDataModel(
@@ -52,5 +59,7 @@ class OnboardingDataModel {
         weightShape: entity.weightShape,
         weightValue: entity.weightValue,
         activityLevel: entity.activityLevel,
+        hasPathologies: entity.hasPathologies,
+        foodProfile: entity.foodProfile,
       );
 }

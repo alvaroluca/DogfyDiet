@@ -25,6 +25,10 @@ OnboardingDataModel _$OnboardingDataModelFromJson(Map<String, dynamic> json) =>
             json['activityLevel'],
           ) ??
           ActivityLevelType.medium,
+      hasPathologies: json['hasPathologies'] as bool? ?? false,
+      foodProfile:
+          $enumDecodeNullable(_$FoodProfileTypeEnumMap, json['foodProfile']) ??
+          FoodProfileType.gourmet,
     );
 
 Map<String, dynamic> _$OnboardingDataModelToJson(
@@ -38,6 +42,8 @@ Map<String, dynamic> _$OnboardingDataModelToJson(
   'weightShape': _$WeightShapeTypeEnumMap[instance.weightShape]!,
   'weightValue': instance.weightValue,
   'activityLevel': _$ActivityLevelTypeEnumMap[instance.activityLevel]!,
+  'hasPathologies': instance.hasPathologies,
+  'foodProfile': _$FoodProfileTypeEnumMap[instance.foodProfile]!,
 };
 
 const _$WeightShapeTypeEnumMap = {
@@ -50,4 +56,10 @@ const _$ActivityLevelTypeEnumMap = {
   ActivityLevelType.low: 'low',
   ActivityLevelType.medium: 'medium',
   ActivityLevelType.high: 'high',
+};
+
+const _$FoodProfileTypeEnumMap = {
+  FoodProfileType.selective: 'selective',
+  FoodProfileType.gourmet: 'gourmet',
+  FoodProfileType.glutton: 'glutton',
 };

@@ -80,6 +80,29 @@
             }
         }
     },
-    "activityLevelSubtitle": "Esto nos ayuda a ofrecerte mejores recomendaciones"
+    "activityLevelSubtitle": "Esto nos ayuda a ofrecerte mejores recomendaciones",
+    "pathologiesTitle": "¿Tiene {dogName} alguna patología?",
+    "@pathologiesTitle": {
+        "description": "Pregunta por patologías del perro",
+        "placeholders": {
+            "dogName": {
+                "type": "String"
+            }
+        }
+    },
+    "pathologiesInfoBox": "Cada perro es un mundo ¡No te preocupes! Adaptaremos nuestro menú a su caso, siempre que sea posible. Si la patología de tu perro no aparece en el formulario, envía un correo a nutricionistas@dogfydiet.com.",
+    "foodProfileSelectiveDescription": "El selectivo: es de paladar exigente, suele costarle terminar su ración y se cansa de la comida (verás qué cambio cuando pruebe Dogfy)",
+    "foodProfileGourmetDescription": "El gourmet: le encanta probar nuevos sabores, pero no se conforma con cualquier cosa",
+    "foodProfileGluttonDescription": "El glotón: devora todo tipo de comida como si no fuera a probar bocado nunca más",
+    "foodProfileTitle": "¿Qué crítico gastronómico es tu perro?",
+    "foodProfileSubtitle": "Elige la opción que mejor describa a {dogName}.",
+    "@foodProfileSubtitle": {
+        "description": "Subtítulo para el perfil gastronómico, incluye el nombre del perro",
+        "placeholders": {
+            "dogName": {
+                "type": "String"
+            }
+        }
+    }
 }
   

@@ -133,4 +133,33 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get activityLevelSubtitle =>
       'This helps us give you better recommendations';
+
+  @override
+  String pathologiesTitle(String dogName) {
+    return 'Does $dogName have any health issues?';
+  }
+
+  @override
+  String get pathologiesInfoBox =>
+      'Every dog is unique! Don\'t worry, we will adapt our menu to their case whenever possible. If your dog\'s condition does not appear in the form, send an email to nutricionistas@dogfydiet.com.';
+
+  @override
+  String get foodProfileSelectiveDescription =>
+      'The selective: picky eater, often doesn\'t finish their meal and gets bored of food (wait until they try Dogfy!)';
+
+  @override
+  String get foodProfileGourmetDescription =>
+      'The gourmet: loves trying new flavors, but won\'t settle for just anything';
+
+  @override
+  String get foodProfileGluttonDescription =>
+      'The glutton: devours all kinds of food as if it were their last meal';
+
+  @override
+  String get foodProfileTitle => 'What kind of foodie is your dog?';
+
+  @override
+  String foodProfileSubtitle(String dogName) {
+    return 'Choose the option that best describes $dogName.';
+  }
 }
