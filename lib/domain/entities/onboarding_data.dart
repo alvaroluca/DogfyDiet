@@ -4,7 +4,8 @@ part 'onboarding_data.freezed.dart';
 
 @freezed
 abstract class OnboardingData with _$OnboardingData {
-  const factory OnboardingData({int? breedId}) = _OnboardingData;
+  const factory OnboardingData({int? breedId, String? dogName}) =
+      _OnboardingData;
 
   const OnboardingData._();
 }

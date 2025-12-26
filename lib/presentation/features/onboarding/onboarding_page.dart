@@ -4,6 +4,7 @@ import 'package:dogfydiet/app/routes/app_path.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/breed_selection_step.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/dog_name_step.dart';
 import 'package:dogfydiet/presentation/widgets/custom_button.dart';
 import 'package:dogfydiet/presentation/widgets/dogfy_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class OnboardingPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  const Expanded(child: BreedSelectionStep()),
+                  const Expanded(child: DogNameStep()),
                   const SizedBox(height: 24),
                   Row(
                     children: [

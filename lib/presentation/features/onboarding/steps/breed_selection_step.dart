@@ -22,15 +22,10 @@ class BreedSelectionStep extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 8),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  l10n.breedSelectionTitle,
-                  style: Theme.of(context).textTheme.headlineSmall,
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            Text(
+              l10n.breedSelectionTitle,
+              style: Theme.of(context).textTheme.headlineSmall,
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             CustomDropdown<int>(

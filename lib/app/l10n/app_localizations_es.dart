@@ -29,4 +29,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get breedSelectionTitle => '¿Cuál es la raza de tu perrete?';
+
+  @override
+  String dogNameTitleWithBreed(String breedName) {
+    return '¿Cómo se llama tu $breedName?';
+  }
+
+  @override
+  String get dogNameLabel => 'Mi perrhijo se llama...';
+
+  @override
+  String get dogNameMultiCta => '¿Tienes más de un perro?';
+
+  @override
+  String get dogNameInfoBox =>
+      '¡Qué emoción! Estás a punto de mejorar la vida de tu bichón maltés a través de una alimentación 100% natural.';
 }

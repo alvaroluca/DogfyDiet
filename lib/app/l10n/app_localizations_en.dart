@@ -29,4 +29,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get breedSelectionTitle => 'What is your dog\'s breed?';
+
+  @override
+  String dogNameTitleWithBreed(String breedName) {
+    return 'What\'s your $breedName\'s name?';
+  }
+
+  @override
+  String get dogNameLabel => 'My dog\'s name is...';
+
+  @override
+  String get dogNameMultiCta => 'Do you have more than one dog?';
+
+  @override
+  String get dogNameInfoBox =>
+      'How exciting! You\'re about to improve your Maltese\'s life with 100% natural food.';
 }

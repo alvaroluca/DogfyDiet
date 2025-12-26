@@ -5,6 +5,18 @@
     "homeBreedLabel": "Busca o escribe su raza",
     "homeCta": "Crea su menú ->",
     "onboardingContinue": "Continuar",
-    "breedSelectionTitle": "¿Cuál es la raza de tu perrete?"
+    "breedSelectionTitle": "¿Cuál es la raza de tu perrete?",
+    "dogNameTitleWithBreed": "¿Cómo se llama tu {breedName}?",
+    "@dogNameTitleWithBreed": {
+        "description": "Título pidiendo el nombre del perro incluyendo la raza",
+        "placeholders": {
+            "breedName": { 
+                "type": "String" 
+            }
+        }
+    },
+    "dogNameLabel": "Mi perrhijo se llama...",
+    "dogNameMultiCta": "¿Tienes más de un perro?",  
+    "dogNameInfoBox": "¡Qué emoción! Estás a punto de mejorar la vida de tu bichón maltés a través de una alimentación 100% natural."
 }
   

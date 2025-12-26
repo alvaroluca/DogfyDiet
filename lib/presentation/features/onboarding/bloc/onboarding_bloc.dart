@@ -23,6 +23,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<LoadDogBreeds>(_onLoadDogBreeds);
     on<LoadOnboardingData>(_onLoadOnboardingData);
     on<UpdateBreed>(_onUpdateBreed);
+    on<UpdateDogName>(_onUpdateDogName);
   }
 
   Future<void> _onLoadDogBreeds(
@@ -67,6 +68,15 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     Emitter<OnboardingState> emit,
   ) async {
     final updatedData = state.onboardingData.copyWith(breedId: event.breedId);
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateDogName(
+    UpdateDogName event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(dogName: event.dogName);
     emit(state.copyWith(onboardingData: updatedData));
     await _saveData(updatedData);
   }

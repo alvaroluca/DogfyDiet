@@ -55,13 +55,14 @@ extension OnboardingEventPatterns on OnboardingEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,TResult Function( UpdateDogName value)?  updateDogName,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
-return updateBreed(_that);case _:
+return updateBreed(_that);case UpdateDogName() when updateDogName != null:
+return updateDogName(_that);case _:
   return orElse();
 
 }
@@ -79,13 +80,14 @@ return updateBreed(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,required TResult Function( UpdateDogName value)  updateDogName,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds():
 return loadDogBreeds(_that);case LoadOnboardingData():
 return loadOnboardingData(_that);case UpdateBreed():
-return updateBreed(_that);case _:
+return updateBreed(_that);case UpdateDogName():
+return updateDogName(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -102,13 +104,14 @@ return updateBreed(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,TResult? Function( UpdateDogName value)?  updateDogName,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds(_that);case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData(_that);case UpdateBreed() when updateBreed != null:
-return updateBreed(_that);case _:
+return updateBreed(_that);case UpdateDogName() when updateDogName != null:
+return updateDogName(_that);case _:
   return null;
 
 }
@@ -125,12 +128,13 @@ return updateBreed(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,TResult Function( String dogName)?  updateDogName,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData();case UpdateBreed() when updateBreed != null:
-return updateBreed(_that.breedId);case _:
+return updateBreed(_that.breedId);case UpdateDogName() when updateDogName != null:
+return updateDogName(_that.dogName);case _:
   return orElse();
 
 }
@@ -148,12 +152,13 @@ return updateBreed(_that.breedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,required TResult Function( String dogName)  updateDogName,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds():
 return loadDogBreeds();case LoadOnboardingData():
 return loadOnboardingData();case UpdateBreed():
-return updateBreed(_that.breedId);case _:
+return updateBreed(_that.breedId);case UpdateDogName():
+return updateDogName(_that.dogName);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -170,12 +175,13 @@ return updateBreed(_that.breedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,TResult? Function( String dogName)?  updateDogName,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
 return loadOnboardingData();case UpdateBreed() when updateBreed != null:
-return updateBreed(_that.breedId);case _:
+return updateBreed(_that.breedId);case UpdateDogName() when updateDogName != null:
+return updateDogName(_that.dogName);case _:
   return null;
 
 }
@@ -307,6 +313,72 @@ class _$UpdateBreedCopyWithImpl<$Res>
   return _then(UpdateBreed(
 null == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
 as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class UpdateDogName implements OnboardingEvent {
+  const UpdateDogName(this.dogName);
+  
+
+ final  String dogName;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateDogNameCopyWith<UpdateDogName> get copyWith => _$UpdateDogNameCopyWithImpl<UpdateDogName>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateDogName&&(identical(other.dogName, dogName) || other.dogName == dogName));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,dogName);
+
+@override
+String toString() {
+  return 'OnboardingEvent.updateDogName(dogName: $dogName)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $UpdateDogNameCopyWith<$Res> implements $OnboardingEventCopyWith<$Res> {
+  factory $UpdateDogNameCopyWith(UpdateDogName value, $Res Function(UpdateDogName) _then) = _$UpdateDogNameCopyWithImpl;
+@useResult
+$Res call({
+ String dogName
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateDogNameCopyWithImpl<$Res>
+    implements $UpdateDogNameCopyWith<$Res> {
+  _$UpdateDogNameCopyWithImpl(this._self, this._then);
+
+  final UpdateDogName _self;
+  final $Res Function(UpdateDogName) _then;
+
+/// Create a copy of OnboardingEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? dogName = null,}) {
+  return _then(UpdateDogName(
+null == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

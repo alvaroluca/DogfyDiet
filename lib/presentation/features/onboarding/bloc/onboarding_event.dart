@@ -7,4 +7,5 @@ class OnboardingEvent with _$OnboardingEvent {
   const factory OnboardingEvent.loadDogBreeds() = LoadDogBreeds;
   const factory OnboardingEvent.loadOnboardingData() = LoadOnboardingData;
   const factory OnboardingEvent.updateBreed(int breedId) = UpdateBreed;
+  const factory OnboardingEvent.updateDogName(String dogName) = UpdateDogName;
 }

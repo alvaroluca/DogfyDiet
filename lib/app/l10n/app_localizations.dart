@@ -139,6 +139,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What is your dog\'s breed?'**
   String get breedSelectionTitle;
+
+  /// Title asking for the dog's name including the breed
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s your {breedName}\'s name?'**
+  String dogNameTitleWithBreed(String breedName);
+
+  /// No description provided for @dogNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'My dog\'s name is...'**
+  String get dogNameLabel;
+
+  /// No description provided for @dogNameMultiCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you have more than one dog?'**
+  String get dogNameMultiCta;
+
+  /// No description provided for @dogNameInfoBox.
+  ///
+  /// In en, this message translates to:
+  /// **'How exciting! You\'re about to improve your Maltese\'s life with 100% natural food.'**
+  String get dogNameInfoBox;
 }
 
 class _AppLocalizationsDelegate

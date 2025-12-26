@@ -7,4 +7,7 @@ class AppColors {
 
   // Progressbar color
   static const int yellowStep = 0xFFF0BF4C; // Amarillo #f0bf4c
+
+  // Onboarding background color
+  static const int onboardingBackground = 0xFFEDF8F8; // #edf8f8
 }

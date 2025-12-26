@@ -5,5 +5,17 @@
     "homeBreedLabel": "Search or type their breed",
     "homeCta": "Create their menu ->",
     "onboardingContinue": "Continue",
-    "breedSelectionTitle": "What is your dog's breed?"
+    "breedSelectionTitle": "What is your dog's breed?",
+    "dogNameTitleWithBreed": "What's your {breedName}'s name?",
+    "@dogNameTitleWithBreed": {
+        "description": "Title asking for the dog's name including the breed",
+        "placeholders": { 
+            "breedName": { 
+                "type": "String" 
+            } 
+        }
+    },
+    "dogNameLabel": "My dog's name is...",
+    "dogNameMultiCta": "Do you have more than one dog?",
+    "dogNameInfoBox": "How exciting! You're about to improve your Maltese's life with 100% natural food."
 }

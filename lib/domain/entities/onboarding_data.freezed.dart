@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OnboardingData {
 
- int? get breedId;
+ int? get breedId; String? get dogName;
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $OnboardingDataCopyWith<OnboardingData> get copyWith => _$OnboardingDataCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,breedId);
+int get hashCode => Object.hash(runtimeType,breedId,dogName);
 
 @override
 String toString() {
-  return 'OnboardingData(breedId: $breedId)';
+  return 'OnboardingData(breedId: $breedId, dogName: $dogName)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $OnboardingDataCopyWith<$Res>  {
   factory $OnboardingDataCopyWith(OnboardingData value, $Res Function(OnboardingData) _then) = _$OnboardingDataCopyWithImpl;
 @useResult
 $Res call({
- int? breedId
+ int? breedId, String? dogName
 });
 
 
@@ -62,10 +62,11 @@ class _$OnboardingDataCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? breedId = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? breedId = freezed,Object? dogName = freezed,}) {
   return _then(_self.copyWith(
 breedId: freezed == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,dogName: freezed == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -150,10 +151,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? breedId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? breedId,  String? dogName)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OnboardingData() when $default != null:
-return $default(_that.breedId);case _:
+return $default(_that.breedId,_that.dogName);case _:
   return orElse();
 
 }
@@ -171,10 +172,10 @@ return $default(_that.breedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? breedId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? breedId,  String? dogName)  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingData():
-return $default(_that.breedId);case _:
+return $default(_that.breedId,_that.dogName);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -191,10 +192,10 @@ return $default(_that.breedId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? breedId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? breedId,  String? dogName)?  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingData() when $default != null:
-return $default(_that.breedId);case _:
+return $default(_that.breedId,_that.dogName);case _:
   return null;
 
 }
@@ -206,10 +207,11 @@ return $default(_that.breedId);case _:
 
 
 class _OnboardingData extends OnboardingData {
-  const _OnboardingData({this.breedId}): super._();
+  const _OnboardingData({this.breedId, this.dogName}): super._();
   
 
 @override final  int? breedId;
+@override final  String? dogName;
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
@@ -221,16 +223,16 @@ _$OnboardingDataCopyWith<_OnboardingData> get copyWith => __$OnboardingDataCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,breedId);
+int get hashCode => Object.hash(runtimeType,breedId,dogName);
 
 @override
 String toString() {
-  return 'OnboardingData(breedId: $breedId)';
+  return 'OnboardingData(breedId: $breedId, dogName: $dogName)';
 }
 
 
@@ -241,7 +243,7 @@ abstract mixin class _$OnboardingDataCopyWith<$Res> implements $OnboardingDataCo
   factory _$OnboardingDataCopyWith(_OnboardingData value, $Res Function(_OnboardingData) _then) = __$OnboardingDataCopyWithImpl;
 @override @useResult
 $Res call({
- int? breedId
+ int? breedId, String? dogName
 });
 
 
@@ -258,10 +260,11 @@ class __$OnboardingDataCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? breedId = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? breedId = freezed,Object? dogName = freezed,}) {
   return _then(_OnboardingData(
 breedId: freezed == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,dogName: freezed == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
