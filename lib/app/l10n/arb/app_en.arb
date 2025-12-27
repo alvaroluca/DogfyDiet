@@ -118,5 +118,9 @@
     "ownerLocationPermissionDeniedTitle": "Location permission denied",
     "ownerLocationPermissionDeniedDialog": "To autocomplete your address, allow location access in your device settings. You can also enter your address manually.",
     "ownerInfoInfoBox": "By continuing, your progress will be saved and you will be accepting the terms and conditions and privacy policy to receive the best feeding recommendations.",
-    "onboardingSubmit": "Send"
+    "onboardingSubmit": "Send",
+    "onboardingExitDialogTitle": "Are you sure you want to leave?",
+    "onboardingExitDialogContent": "You're very close to letting your dog enjoy their food like never before.",
+    "onboardingExitContinueLater": "Continue later",
+    "onboardingExitStay": "Alright, I'll stay"
 }

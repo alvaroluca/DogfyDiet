@@ -31,36 +31,50 @@ class OnboardingStepSection<T> extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         OnboardingStepHeader(title: title, subtitle: subtitle),
-        const SizedBox(height: 24),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: List.generate(options.length, (i) {
             final option = options[i];
             final isSelected = selectedIndex == i;
-            return GestureDetector(
-              onTap: () => onTap(option),
-              child: Opacity(
-                opacity: isSelected ? 1.0 : 0.5,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: SvgPicture.asset(assetBuilder(option), height: 90),
+            return Expanded(
+              child: GestureDetector(
+                onTap: () => onTap(option),
+                child: Opacity(
+                  opacity: isSelected ? 1.0 : 0.5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final double size = (constraints.maxWidth * 0.9)
+                              .clamp(0, 90);
+                          return SvgPicture.asset(
+                            assetBuilder(option),
+                            height: size,
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ),
             );
           }),
         ),
-        const SizedBox(height: 24),
-        StepProgressWithCircle(
-          selectedIndex: selectedIndex,
-          steps: 3,
-          circleSize: 30,
-          height: 44,
-          topOffset: 4,
+        const SizedBox(height: 8),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: StepProgressWithCircle(
+            selectedIndex: selectedIndex,
+            steps: 3,
+            circleSize: 30,
+            height: 44,
+            topOffset: 4,
+          ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 24.0, bottom: 8.0),
+          padding: const EdgeInsets.only(top: 16),
           child: Text(
             description,
             textAlign: TextAlign.left,

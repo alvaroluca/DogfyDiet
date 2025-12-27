@@ -187,4 +187,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingSubmit => 'Send';
+
+  @override
+  String get onboardingExitDialogTitle => 'Are you sure you want to leave?';
+
+  @override
+  String get onboardingExitDialogContent =>
+      'You\'re very close to letting your dog enjoy their food like never before.';
+
+  @override
+  String get onboardingExitContinueLater => 'Continue later';
+
+  @override
+  String get onboardingExitStay => 'Alright, I\'ll stay';
 }

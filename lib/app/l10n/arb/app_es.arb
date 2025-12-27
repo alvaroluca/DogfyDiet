@@ -118,6 +118,10 @@
     "ownerLocationPermissionDeniedTitle": "Permiso de ubicación denegado",
     "ownerLocationPermissionDeniedDialog": "Para autocompletar tu dirección, permite el acceso a la ubicación en los ajustes del dispositivo. También puedes introducir tu dirección manualmente.",
     "ownerInfoInfoBox": "Al continuar, se guardará tu proceso y estarás aceptando los términos y condiciones y la política de privacidad para recibir las mejores recomendaciones sobre alimentación.",
-    "onboardingSubmit": "Enviar"
+    "onboardingSubmit": "Enviar",
+    "onboardingExitDialogTitle": "¿Seguro que quieres marcharte?",
+    "onboardingExitDialogContent": "Queda muy poquito para que tu perro empiece a disfrutar de su comida como nunca.",
+    "onboardingExitContinueLater": "Continuar luego",
+    "onboardingExitStay": "Venga, me quedo"
 }
   

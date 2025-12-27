@@ -19,21 +19,23 @@ class FoodProfileStep extends StatelessWidget {
         final dogName = state.onboardingData.dogName ?? '';
         final selectedIndex = state.onboardingData.foodProfile.index;
         const options = FoodProfileType.values;
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            OnboardingStepSection<FoodProfileType>(
-              title: l10n.foodProfileTitle,
-              subtitle: l10n.foodProfileSubtitle(dogName),
-              options: options,
-              selectedIndex: selectedIndex,
-              onTap: (option) {
-                bloc.add(OnboardingEvent.updateFoodProfile(option));
-              },
-              assetBuilder: (option) => option.asset,
-              description: options[selectedIndex].description(l10n),
-            ),
-          ],
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              OnboardingStepSection<FoodProfileType>(
+                title: l10n.foodProfileTitle,
+                subtitle: l10n.foodProfileSubtitle(dogName),
+                options: options,
+                selectedIndex: selectedIndex,
+                onTap: (option) {
+                  bloc.add(OnboardingEvent.updateFoodProfile(option));
+                },
+                assetBuilder: (option) => option.asset,
+                description: options[selectedIndex].description(l10n),
+              ),
+            ],
+          ),
         );
       },
     );

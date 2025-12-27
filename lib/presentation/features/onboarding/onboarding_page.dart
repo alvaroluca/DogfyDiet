@@ -11,6 +11,7 @@ import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/onboardin
 import 'package:dogfydiet/presentation/features/onboarding/steps/dog_name_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/food_profile_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/gender_sterilization_step.dart';
+import 'package:dogfydiet/presentation/features/onboarding/steps/owner_info_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/pathologies_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/weight_step.dart';
 import 'package:dogfydiet/presentation/widgets/dogfy_app_bar.dart';
@@ -40,16 +41,57 @@ class OnboardingPage extends StatelessWidget {
         return const PathologiesStep();
       case 7:
         return const FoodProfileStep();
+      case 8:
+        return const OwnerInfoStep();
       default:
         return const SizedBox();
     }
+  }
+
+  void showExitDialog({
+    required BuildContext context,
+    required VoidCallback onLeave,
+    required VoidCallback onStay,
+  }) {
+    final l10n = context.l10n;
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.onboardingExitDialogTitle),
+        content: Text(l10n.onboardingExitDialogContent),
+        actions: [
+          TextButton(
+            onPressed: onLeave,
+            child: Text(l10n.onboardingExitContinueLater),
+          ),
+          ElevatedButton(
+            onPressed: onStay,
+            child: Text(l10n.onboardingExitStay),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final bloc = context.read<OnboardingBloc>();
-    return BlocBuilder<OnboardingBloc, OnboardingState>(
+    return BlocConsumer<OnboardingBloc, OnboardingState>(
+      listener: (context, state) {
+        if (state.status == OnboardingStatus.success) {
+          context.go(AppPaths.home);
+        } else if (state.status == OnboardingStatus.error &&
+            state.errorMessage != null &&
+            !state.errorMessage!.toLowerCase().contains('location')) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage!),
+              backgroundColor: Theme.of(context).colorScheme.error,
+            ),
+          );
+        }
+      },
       builder: (context, state) {
         if (state.status == OnboardingStatus.loading) {
           return const Center(child: CircularProgressIndicator());
@@ -58,12 +100,21 @@ class OnboardingPage extends StatelessWidget {
           builder: (context, currentStep) {
             final cubit = context.read<OnboardingStepCubit>();
             return Scaffold(
+              resizeToAvoidBottomInset: false,
               appBar: DogfyAppBar(
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
                   onPressed: () async {
                     if (currentStep == 0) {
-                      context.go(AppPaths.home);
+                      showExitDialog(
+                        context: context,
+                        onLeave: () {
+                          context.pop();
+                          bloc.add(const OnboardingEvent.resetBreed());
+                          context.go(AppPaths.home);
+                        },
+                        onStay: () => context.pop(),
+                      );
                     } else {
                       cubit.previousStep();
                     }
@@ -72,20 +123,29 @@ class OnboardingPage extends StatelessWidget {
               ),
               body: SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: LinearProgressIndicator(
-                          value: (currentStep + 1) / cubit.totalSteps,
-                          minHeight: 4,
-                          backgroundColor: Colors.grey.shade300,
-                          color: const Color(AppColors.yellowStep),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 24),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: LinearProgressIndicator(
+                                  value: (currentStep + 1) / cubit.totalSteps,
+                                  minHeight: 4,
+                                  backgroundColor: Colors.grey.shade300,
+                                  color: const Color(AppColors.yellowStep),
+                                ),
+                              ),
+                              const SizedBox(height: 32),
+                              _getStepWidget(currentStep),
+                            ],
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 32),
-                      Expanded(child: _getStepWidget(currentStep)),
                       const SizedBox(height: 24),
                       NavigationButtons(
                         isStepComplete: state.onboardingData.isStepComplete(
@@ -105,6 +165,7 @@ class OnboardingPage extends StatelessWidget {
                           }
                         },
                       ),
+                      const SizedBox(height: 24),
                     ],
                   ),
                 ),

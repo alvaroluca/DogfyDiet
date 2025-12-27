@@ -21,33 +21,34 @@ class BreedSelectionStep extends StatelessWidget {
         if (state.dogBreeds.isEmpty) {
           return const Center(child: CircularProgressIndicator());
         }
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 8),
-            const OnboardingCircleImage(imageAsset: AppAssets.lupa),
-            const SizedBox(height: 16),
-            OnboardingStepHeader(title: l10n.breedSelectionTitle),
-            const SizedBox(height: 16),
-            CustomDropdown<int>(
-              value: state.onboardingData.breedId,
-              labelText: l10n.homeBreedLabel,
-              items: state.dogBreeds
-                  .map(
-                    (breed) => DropdownMenuItem<int>(
-                      value: breed.id,
-                      child: Text(breed.name),
-                    ),
-                  )
-                  .toList(),
-              onChanged: (id) {
-                if (id != null) {
-                  bloc.add(OnboardingEvent.updateBreed(id));
-                }
-              },
-            ),
-            const Expanded(child: SizedBox()),
-          ],
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 8),
+              const OnboardingCircleImage(imageAsset: AppAssets.lupa),
+              const SizedBox(height: 16),
+              OnboardingStepHeader(title: l10n.breedSelectionTitle),
+              CustomDropdown<int>(
+                value: state.onboardingData.breedId,
+                labelText: l10n.homeBreedLabel,
+                items: state.dogBreeds
+                    .map(
+                      (breed) => DropdownMenuItem<int>(
+                        value: breed.id,
+                        child: Text(breed.name),
+                      ),
+                    )
+                    .toList(),
+                onChanged: (id) {
+                  if (id != null) {
+                    bloc.add(OnboardingEvent.updateBreed(id));
+                  }
+                },
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
         );
       },
     );

@@ -33,4 +33,5 @@ class OnboardingEvent with _$OnboardingEvent {
       UpdateOwnerName;
   const factory OnboardingEvent.fetchLocation() = FetchLocation;
   const factory OnboardingEvent.submitSubscription() = SubmitSubscriptionEvent;
+  const factory OnboardingEvent.resetBreed() = ResetBreed;
 }

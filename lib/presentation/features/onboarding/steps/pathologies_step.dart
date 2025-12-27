@@ -22,37 +22,41 @@ class PathologiesStep extends StatelessWidget {
         final dogName = state.onboardingData.dogName ?? '';
         final hasPathologies = state.onboardingData.hasPathologies;
 
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 8),
-            const OnboardingCircleImage(imageAsset: AppAssets.corazon),
-            const SizedBox(height: 16),
-            OnboardingStepHeader(title: l10n.pathologiesTitle(dogName)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomChoiceChip(
-                  label: l10n.commonYes,
-                  selected: hasPathologies == true,
-                  position: 0,
-                  onTap: () => bloc.add(
-                    const OnboardingEvent.updateHasPathologies(true),
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 8),
+              const OnboardingCircleImage(imageAsset: AppAssets.corazon),
+              const SizedBox(height: 16),
+              OnboardingStepHeader(title: l10n.pathologiesTitle(dogName)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomChoiceChip(
+                    label: l10n.commonYes,
+                    selected: hasPathologies == true,
+                    position: 0,
+                    onTap: () => bloc.add(
+                      const OnboardingEvent.updateHasPathologies(true),
+                    ),
                   ),
-                ),
-                CustomChoiceChip(
-                  label: l10n.commonNo,
-                  selected: hasPathologies == false,
-                  position: 1,
-                  onTap: () => bloc.add(
-                    const OnboardingEvent.updateHasPathologies(false),
+                  CustomChoiceChip(
+                    label: l10n.commonNo,
+                    selected: hasPathologies == false,
+                    position: 1,
+                    onTap: () => bloc.add(
+                      const OnboardingEvent.updateHasPathologies(false),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            const Spacer(),
-            OnboardingInfoBox(title: l10n.pathologiesInfoBox),
-          ],
+                ],
+              ),
+              const SizedBox(height: 16),
+              OnboardingInfoBox(title: l10n.pathologiesInfoBox),
+              const SizedBox(height: 24),
+            ],
+          ),
         );
       },
     );

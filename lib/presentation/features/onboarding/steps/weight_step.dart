@@ -38,45 +38,50 @@ class WeightStep extends StatelessWidget {
           child: BlocBuilder<WeightCubit, double>(
             builder: (context, value) {
               final cubit = context.read<WeightCubit>();
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  OnboardingStepSection<WeightShapeType>(
-                    title: l10n.weightStepTitle(dogName),
-                    subtitle: l10n.weightStepSubtitle,
-                    options: options,
-                    selectedIndex: selectedIndex,
-                    onTap: (option) {
-                      bloc.add(OnboardingEvent.updateWeightShape(option));
-                      final defaultWeight = option.defaultWeight;
-                      cubit.setWeight(defaultWeight);
-                    },
-                    assetBuilder: (option) => option.asset,
-                    description: options[selectedIndex].description(l10n),
-                  ),
-                  const SizedBox(height: 24),
-                  Text(l10n.weightStepBottomText(dogName)),
-                  const SizedBox(height: 8),
-                  SizedBox(
-                    width: 100,
-                    child: TextField(
-                      controller: cubit.controller,
-                      keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true,
-                      ),
-                      decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        suffix: Padding(
-                          padding: const EdgeInsets.only(right: 4.0),
-                          child: Text(
-                            l10n.weightStepKg,
-                            style: Theme.of(context).textTheme.bodyMedium,
+              return SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    OnboardingStepSection<WeightShapeType>(
+                      title: l10n.weightStepTitle(dogName),
+                      subtitle: l10n.weightStepSubtitle,
+                      options: options,
+                      selectedIndex: selectedIndex,
+                      onTap: (option) {
+                        bloc.add(OnboardingEvent.updateWeightShape(option));
+                        final defaultWeight = option.defaultWeight;
+                        cubit.setWeight(defaultWeight);
+                      },
+                      assetBuilder: (option) => option.asset,
+                      description: options[selectedIndex].description(l10n),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(l10n.weightStepBottomText(dogName)),
+                    const SizedBox(height: 8),
+                    SizedBox(
+                      width: 100,
+                      child: TextField(
+                        controller: cubit.controller,
+                        keyboardType: const TextInputType.numberWithOptions(
+                          decimal: true,
+                        ),
+                        decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          suffix: Padding(
+                            padding: const EdgeInsets.only(right: 4.0),
+                            child: Text(
+                              l10n.weightStepKg,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             },
           ),

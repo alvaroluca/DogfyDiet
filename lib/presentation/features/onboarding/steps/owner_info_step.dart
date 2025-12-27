@@ -42,57 +42,64 @@ class OwnerInfoStep extends StatelessWidget {
             cubit.locationController.text = location;
           }
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 8),
-              const OnboardingCircleImage(imageAsset: AppAssets.dedo),
-              const SizedBox(height: 16),
-              OnboardingStepHeader(title: l10n.ownerInfoTitle(dogName)),
-              TextField(
-                controller: cubit.nameController,
-                decoration: InputDecoration(
-                  labelText: l10n.ownerNameLabel,
-                  border: const OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 24),
-              TextField(
-                controller: cubit.locationController,
-                decoration: InputDecoration(
-                  labelText: l10n.ownerLocationLabel,
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    icon: state.isLocationLoading
-                        ? const SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Icon(Icons.my_location),
-                    onPressed: state.isLocationLoading
-                        ? null
-                        : () => bloc.add(const OnboardingEvent.fetchLocation()),
+          return SingleChildScrollView(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 8),
+                const OnboardingCircleImage(imageAsset: AppAssets.dedo),
+                const SizedBox(height: 16),
+                OnboardingStepHeader(title: l10n.ownerInfoTitle(dogName)),
+                TextField(
+                  controller: cubit.nameController,
+                  decoration: InputDecoration(
+                    labelText: l10n.ownerNameLabel,
+                    border: const OutlineInputBorder(),
                   ),
                 ),
-                enabled: !state.isLocationLoading,
-              ),
-              const SizedBox(height: 8),
-              if (state.errorMessage != null &&
-                  state.errorMessage!.toLowerCase().contains('location'))
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    '${l10n.ownerLocationPermissionDeniedTitle}: ${l10n.ownerLocationPermissionDeniedDialog}',
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.error,
-                      fontSize: 12,
+                const SizedBox(height: 24),
+                TextField(
+                  controller: cubit.locationController,
+                  decoration: InputDecoration(
+                    labelText: l10n.ownerLocationLabel,
+                    border: const OutlineInputBorder(),
+                    suffixIcon: IconButton(
+                      icon: state.isLocationLoading
+                          ? const SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Icon(Icons.my_location),
+                      onPressed: state.isLocationLoading
+                          ? null
+                          : () =>
+                                bloc.add(const OnboardingEvent.fetchLocation()),
                     ),
                   ),
+                  enabled: !state.isLocationLoading,
                 ),
-              const Spacer(),
-              OnboardingInfoBox(title: l10n.ownerInfoInfoBox),
-            ],
+                const SizedBox(height: 8),
+                if (state.errorMessage != null &&
+                    state.errorMessage!.toLowerCase().contains('location'))
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      '${l10n.ownerLocationPermissionDeniedTitle}: ${l10n.ownerLocationPermissionDeniedDialog}',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.error,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                const SizedBox(height: 16),
+                OnboardingInfoBox(title: l10n.ownerInfoInfoBox),
+                const SizedBox(height: 24),
+              ],
+            ),
           );
         },
       ),

@@ -21,59 +21,63 @@ class GenderSterilizationStep extends StatelessWidget {
       builder: (context, state) {
         final gender = state.onboardingData.gender;
         final isSterilized = state.onboardingData.isSterilized;
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 8),
-            const OnboardingCircleImage(imageAsset: AppAssets.mirada),
-            const SizedBox(height: 16),
-            OnboardingStepHeader(
-              title: l10n.genderTitle(state.onboardingData.dogName ?? ''),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomChoiceChip(
-                  label: l10n.genderMale,
-                  selected: gender == 'male',
-                  position: 0,
-                  onTap: () =>
-                      bloc.add(const OnboardingEvent.updateGender('male')),
-                ),
-                CustomChoiceChip(
-                  label: l10n.genderFemale,
-                  selected: gender == 'female',
-                  position: 1,
-                  onTap: () =>
-                      bloc.add(const OnboardingEvent.updateGender('female')),
-                ),
-              ],
-            ),
-            const SizedBox(height: 24),
-            OnboardingStepHeader(title: l10n.sterilizationQuestion),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomChoiceChip(
-                  label: l10n.commonYes,
-                  selected: isSterilized == true,
-                  position: 0,
-                  onTap: () =>
-                      bloc.add(const OnboardingEvent.updateSterilization(true)),
-                ),
-                CustomChoiceChip(
-                  label: l10n.commonNo,
-                  selected: isSterilized == false,
-                  position: 1,
-                  onTap: () => bloc.add(
-                    const OnboardingEvent.updateSterilization(false),
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 8),
+              const OnboardingCircleImage(imageAsset: AppAssets.mirada),
+              const SizedBox(height: 16),
+              OnboardingStepHeader(
+                title: l10n.genderTitle(state.onboardingData.dogName ?? ''),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomChoiceChip(
+                    label: l10n.genderMale,
+                    selected: gender == 'male',
+                    position: 0,
+                    onTap: () =>
+                        bloc.add(const OnboardingEvent.updateGender('male')),
                   ),
-                ),
-              ],
-            ),
-            const Spacer(),
-            OnboardingInfoBox(title: l10n.genderSterilizationInfoBox),
-          ],
+                  CustomChoiceChip(
+                    label: l10n.genderFemale,
+                    selected: gender == 'female',
+                    position: 1,
+                    onTap: () =>
+                        bloc.add(const OnboardingEvent.updateGender('female')),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+              OnboardingStepHeader(title: l10n.sterilizationQuestion),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomChoiceChip(
+                    label: l10n.commonYes,
+                    selected: isSterilized == true,
+                    position: 0,
+                    onTap: () => bloc.add(
+                      const OnboardingEvent.updateSterilization(true),
+                    ),
+                  ),
+                  CustomChoiceChip(
+                    label: l10n.commonNo,
+                    selected: isSterilized == false,
+                    position: 1,
+                    onTap: () => bloc.add(
+                      const OnboardingEvent.updateSterilization(false),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              OnboardingInfoBox(title: l10n.genderSterilizationInfoBox),
+              const SizedBox(height: 24),
+            ],
+          ),
         );
       },
     );

@@ -188,4 +188,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get onboardingSubmit => 'Enviar';
+
+  @override
+  String get onboardingExitDialogTitle => '¿Seguro que quieres marcharte?';
+
+  @override
+  String get onboardingExitDialogContent =>
+      'Queda muy poquito para que tu perro empiece a disfrutar de su comida como nunca.';
+
+  @override
+  String get onboardingExitContinueLater => 'Continuar luego';
+
+  @override
+  String get onboardingExitStay => 'Venga, me quedo';
 }

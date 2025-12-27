@@ -385,6 +385,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get onboardingSubmit;
+
+  /// No description provided for @onboardingExitDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to leave?'**
+  String get onboardingExitDialogTitle;
+
+  /// No description provided for @onboardingExitDialogContent.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re very close to letting your dog enjoy their food like never before.'**
+  String get onboardingExitDialogContent;
+
+  /// No description provided for @onboardingExitContinueLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue later'**
+  String get onboardingExitContinueLater;
+
+  /// No description provided for @onboardingExitStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Alright, I\'ll stay'**
+  String get onboardingExitStay;
 }
 
 class _AppLocalizationsDelegate

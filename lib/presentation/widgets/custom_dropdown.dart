@@ -31,7 +31,7 @@ class CustomDropdown<T> extends StatelessWidget {
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 12,
-          vertical: 14,
+          vertical: 16,
         ),
       ),
     );

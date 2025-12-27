@@ -32,65 +32,68 @@ class BirthDateStep extends StatelessWidget {
                 bloc.add(OnboardingEvent.updateBirthDate(newDate));
               }
 
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 8),
-                  const OnboardingCircleImage(imageAsset: AppAssets.tarta),
-                  const SizedBox(height: 16),
-                  OnboardingStepHeader(
-                    title: l10n.birthDateTitle(
-                      onboardingState.onboardingData.dogName ?? '',
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 8),
+                    const OnboardingCircleImage(imageAsset: AppAssets.tarta),
+                    const SizedBox(height: 16),
+                    OnboardingStepHeader(
+                      title: l10n.birthDateTitle(
+                        onboardingState.onboardingData.dogName ?? '',
+                      ),
                     ),
-                  ),
-                  DropdownButtonFormField<int?>(
-                    value: state.selectedYear,
-                    decoration: InputDecoration(
-                      labelText: l10n.birthDateYearLabel,
-                      border: const OutlineInputBorder(),
+                    DropdownButtonFormField<int?>(
+                      value: state.selectedYear,
+                      decoration: InputDecoration(
+                        labelText: l10n.birthDateYearLabel,
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: state.years
+                          .map(
+                            (year) => DropdownMenuItem<int?>(
+                              value: year,
+                              child: Text(year.toString()),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (year) {
+                        context.read<BirthDateCubit>().updateYear(year);
+                        final month = state.selectedMonth;
+                        if (year != null && month != null) {
+                          updateDate(year, month);
+                        }
+                      },
                     ),
-                    items: state.years
-                        .map(
-                          (year) => DropdownMenuItem<int?>(
-                            value: year,
-                            child: Text(year.toString()),
-                          ),
-                        )
-                        .toList(),
-                    onChanged: (year) {
-                      context.read<BirthDateCubit>().updateYear(year);
-                      final month = state.selectedMonth;
-                      if (year != null && month != null) {
-                        updateDate(year, month);
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  DropdownButtonFormField<int?>(
-                    value: state.selectedMonth,
-                    decoration: InputDecoration(
-                      labelText: l10n.birthDateMonthLabel,
-                      border: const OutlineInputBorder(),
+                    const SizedBox(height: 16),
+                    DropdownButtonFormField<int?>(
+                      value: state.selectedMonth,
+                      decoration: InputDecoration(
+                        labelText: l10n.birthDateMonthLabel,
+                        border: const OutlineInputBorder(),
+                      ),
+                      items: state.months
+                          .map(
+                            (month) => DropdownMenuItem<int?>(
+                              value: month,
+                              child: Text(month.toString().padLeft(2, '0')),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (month) {
+                        final year = state.selectedYear ?? DateTime.now().year;
+                        context.read<BirthDateCubit>().updateMonth(month);
+                        if (month != null) {
+                          updateDate(year, month);
+                        }
+                      },
                     ),
-                    items: state.months
-                        .map(
-                          (month) => DropdownMenuItem<int?>(
-                            value: month,
-                            child: Text(month.toString().padLeft(2, '0')),
-                          ),
-                        )
-                        .toList(),
-                    onChanged: (month) {
-                      final year = state.selectedYear ?? DateTime.now().year;
-                      context.read<BirthDateCubit>().updateMonth(month);
-                      if (month != null) {
-                        updateDate(year, month);
-                      }
-                    },
-                  ),
-                  const Spacer(),
-                  OnboardingInfoBox(title: l10n.birthDateInfoBox),
-                ],
+                    const SizedBox(height: 16),
+                    OnboardingInfoBox(title: l10n.birthDateInfoBox),
+                    const SizedBox(height: 24),
+                  ],
+                ),
               );
             },
           ),

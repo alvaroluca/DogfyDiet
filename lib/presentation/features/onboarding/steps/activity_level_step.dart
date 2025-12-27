@@ -19,21 +19,23 @@ class ActivityLevelStep extends StatelessWidget {
         final dogName = state.onboardingData.dogName ?? '';
         final selectedIndex = state.onboardingData.activityLevel.index;
         const options = ActivityLevelType.values;
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            OnboardingStepSection<ActivityLevelType>(
-              title: l10n.activityLevelTitle(dogName),
-              subtitle: l10n.activityLevelSubtitle,
-              options: options,
-              selectedIndex: selectedIndex,
-              onTap: (option) {
-                bloc.add(OnboardingEvent.updateActivityLevel(option));
-              },
-              assetBuilder: (option) => option.asset,
-              description: options[selectedIndex].description(l10n),
-            ),
-          ],
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              OnboardingStepSection<ActivityLevelType>(
+                title: l10n.activityLevelTitle(dogName),
+                subtitle: l10n.activityLevelSubtitle,
+                options: options,
+                selectedIndex: selectedIndex,
+                onTap: (option) {
+                  bloc.add(OnboardingEvent.updateActivityLevel(option));
+                },
+                assetBuilder: (option) => option.asset,
+                description: options[selectedIndex].description(l10n),
+              ),
+            ],
+          ),
         );
       },
     );

@@ -42,6 +42,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<UpdateOwnerName>(_onUpdateOwnerName);
     on<FetchLocation>(_onFetchLocation);
     on<SubmitSubscriptionEvent>(_onSubmitSubscription);
+    on<ResetBreed>(_onResetBreed);
   }
 
   Future<void> _onLoadDogBreeds(
@@ -245,6 +246,15 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         await _saveData(const OnboardingData());
       },
     );
+  }
+
+  Future<void> _onResetBreed(
+    ResetBreed event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    const resetData = OnboardingData();
+    emit(state.copyWith(onboardingData: resetData));
+    await _saveData(resetData);
   }
 
   Future<void> _saveData(OnboardingData data) async {

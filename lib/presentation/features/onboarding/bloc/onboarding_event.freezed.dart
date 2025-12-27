@@ -55,7 +55,7 @@ extension OnboardingEventPatterns on OnboardingEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,TResult Function( UpdateDogName value)?  updateDogName,TResult Function( UpdateGender value)?  updateGender,TResult Function( UpdateSterilization value)?  updateSterilization,TResult Function( UpdateBirthDate value)?  updateBirthDate,TResult Function( UpdateWeightShape value)?  updateWeightShape,TResult Function( UpdateWeightValue value)?  updateWeightValue,TResult Function( UpdateActivityLevel value)?  updateActivityLevel,TResult Function( UpdateHasPathologies value)?  updateHasPathologies,TResult Function( UpdateFoodProfile value)?  updateFoodProfile,TResult Function( UpdateLocation value)?  updateLocation,TResult Function( UpdateOwnerName value)?  updateOwnerName,TResult Function( FetchLocation value)?  fetchLocation,TResult Function( SubmitSubscriptionEvent value)?  submitSubscription,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoadDogBreeds value)?  loadDogBreeds,TResult Function( LoadOnboardingData value)?  loadOnboardingData,TResult Function( UpdateBreed value)?  updateBreed,TResult Function( UpdateDogName value)?  updateDogName,TResult Function( UpdateGender value)?  updateGender,TResult Function( UpdateSterilization value)?  updateSterilization,TResult Function( UpdateBirthDate value)?  updateBirthDate,TResult Function( UpdateWeightShape value)?  updateWeightShape,TResult Function( UpdateWeightValue value)?  updateWeightValue,TResult Function( UpdateActivityLevel value)?  updateActivityLevel,TResult Function( UpdateHasPathologies value)?  updateHasPathologies,TResult Function( UpdateFoodProfile value)?  updateFoodProfile,TResult Function( UpdateLocation value)?  updateLocation,TResult Function( UpdateOwnerName value)?  updateOwnerName,TResult Function( FetchLocation value)?  fetchLocation,TResult Function( SubmitSubscriptionEvent value)?  submitSubscription,TResult Function( ResetBreed value)?  resetBreed,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
@@ -74,7 +74,8 @@ return updateFoodProfile(_that);case UpdateLocation() when updateLocation != nul
 return updateLocation(_that);case UpdateOwnerName() when updateOwnerName != null:
 return updateOwnerName(_that);case FetchLocation() when fetchLocation != null:
 return fetchLocation(_that);case SubmitSubscriptionEvent() when submitSubscription != null:
-return submitSubscription(_that);case _:
+return submitSubscription(_that);case ResetBreed() when resetBreed != null:
+return resetBreed(_that);case _:
   return orElse();
 
 }
@@ -92,7 +93,7 @@ return submitSubscription(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,required TResult Function( UpdateDogName value)  updateDogName,required TResult Function( UpdateGender value)  updateGender,required TResult Function( UpdateSterilization value)  updateSterilization,required TResult Function( UpdateBirthDate value)  updateBirthDate,required TResult Function( UpdateWeightShape value)  updateWeightShape,required TResult Function( UpdateWeightValue value)  updateWeightValue,required TResult Function( UpdateActivityLevel value)  updateActivityLevel,required TResult Function( UpdateHasPathologies value)  updateHasPathologies,required TResult Function( UpdateFoodProfile value)  updateFoodProfile,required TResult Function( UpdateLocation value)  updateLocation,required TResult Function( UpdateOwnerName value)  updateOwnerName,required TResult Function( FetchLocation value)  fetchLocation,required TResult Function( SubmitSubscriptionEvent value)  submitSubscription,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoadDogBreeds value)  loadDogBreeds,required TResult Function( LoadOnboardingData value)  loadOnboardingData,required TResult Function( UpdateBreed value)  updateBreed,required TResult Function( UpdateDogName value)  updateDogName,required TResult Function( UpdateGender value)  updateGender,required TResult Function( UpdateSterilization value)  updateSterilization,required TResult Function( UpdateBirthDate value)  updateBirthDate,required TResult Function( UpdateWeightShape value)  updateWeightShape,required TResult Function( UpdateWeightValue value)  updateWeightValue,required TResult Function( UpdateActivityLevel value)  updateActivityLevel,required TResult Function( UpdateHasPathologies value)  updateHasPathologies,required TResult Function( UpdateFoodProfile value)  updateFoodProfile,required TResult Function( UpdateLocation value)  updateLocation,required TResult Function( UpdateOwnerName value)  updateOwnerName,required TResult Function( FetchLocation value)  fetchLocation,required TResult Function( SubmitSubscriptionEvent value)  submitSubscription,required TResult Function( ResetBreed value)  resetBreed,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds():
@@ -111,7 +112,8 @@ return updateFoodProfile(_that);case UpdateLocation():
 return updateLocation(_that);case UpdateOwnerName():
 return updateOwnerName(_that);case FetchLocation():
 return fetchLocation(_that);case SubmitSubscriptionEvent():
-return submitSubscription(_that);case _:
+return submitSubscription(_that);case ResetBreed():
+return resetBreed(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -128,7 +130,7 @@ return submitSubscription(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,TResult? Function( UpdateDogName value)?  updateDogName,TResult? Function( UpdateGender value)?  updateGender,TResult? Function( UpdateSterilization value)?  updateSterilization,TResult? Function( UpdateBirthDate value)?  updateBirthDate,TResult? Function( UpdateWeightShape value)?  updateWeightShape,TResult? Function( UpdateWeightValue value)?  updateWeightValue,TResult? Function( UpdateActivityLevel value)?  updateActivityLevel,TResult? Function( UpdateHasPathologies value)?  updateHasPathologies,TResult? Function( UpdateFoodProfile value)?  updateFoodProfile,TResult? Function( UpdateLocation value)?  updateLocation,TResult? Function( UpdateOwnerName value)?  updateOwnerName,TResult? Function( FetchLocation value)?  fetchLocation,TResult? Function( SubmitSubscriptionEvent value)?  submitSubscription,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoadDogBreeds value)?  loadDogBreeds,TResult? Function( LoadOnboardingData value)?  loadOnboardingData,TResult? Function( UpdateBreed value)?  updateBreed,TResult? Function( UpdateDogName value)?  updateDogName,TResult? Function( UpdateGender value)?  updateGender,TResult? Function( UpdateSterilization value)?  updateSterilization,TResult? Function( UpdateBirthDate value)?  updateBirthDate,TResult? Function( UpdateWeightShape value)?  updateWeightShape,TResult? Function( UpdateWeightValue value)?  updateWeightValue,TResult? Function( UpdateActivityLevel value)?  updateActivityLevel,TResult? Function( UpdateHasPathologies value)?  updateHasPathologies,TResult? Function( UpdateFoodProfile value)?  updateFoodProfile,TResult? Function( UpdateLocation value)?  updateLocation,TResult? Function( UpdateOwnerName value)?  updateOwnerName,TResult? Function( FetchLocation value)?  fetchLocation,TResult? Function( SubmitSubscriptionEvent value)?  submitSubscription,TResult? Function( ResetBreed value)?  resetBreed,}){
 final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
@@ -147,7 +149,8 @@ return updateFoodProfile(_that);case UpdateLocation() when updateLocation != nul
 return updateLocation(_that);case UpdateOwnerName() when updateOwnerName != null:
 return updateOwnerName(_that);case FetchLocation() when fetchLocation != null:
 return fetchLocation(_that);case SubmitSubscriptionEvent() when submitSubscription != null:
-return submitSubscription(_that);case _:
+return submitSubscription(_that);case ResetBreed() when resetBreed != null:
+return resetBreed(_that);case _:
   return null;
 
 }
@@ -164,7 +167,7 @@ return submitSubscription(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,TResult Function( String dogName)?  updateDogName,TResult Function( String gender)?  updateGender,TResult Function( bool isSterilized)?  updateSterilization,TResult Function( DateTime birthDate)?  updateBirthDate,TResult Function( WeightShapeType weightShape)?  updateWeightShape,TResult Function( double value)?  updateWeightValue,TResult Function( ActivityLevelType activityLevel)?  updateActivityLevel,TResult Function( bool hasPathologies)?  updateHasPathologies,TResult Function( FoodProfileType foodProfile)?  updateFoodProfile,TResult Function( String location)?  updateLocation,TResult Function( String ownerName)?  updateOwnerName,TResult Function()?  fetchLocation,TResult Function()?  submitSubscription,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loadDogBreeds,TResult Function()?  loadOnboardingData,TResult Function( int breedId)?  updateBreed,TResult Function( String dogName)?  updateDogName,TResult Function( String gender)?  updateGender,TResult Function( bool isSterilized)?  updateSterilization,TResult Function( DateTime birthDate)?  updateBirthDate,TResult Function( WeightShapeType weightShape)?  updateWeightShape,TResult Function( double value)?  updateWeightValue,TResult Function( ActivityLevelType activityLevel)?  updateActivityLevel,TResult Function( bool hasPathologies)?  updateHasPathologies,TResult Function( FoodProfileType foodProfile)?  updateFoodProfile,TResult Function( String location)?  updateLocation,TResult Function( String ownerName)?  updateOwnerName,TResult Function()?  fetchLocation,TResult Function()?  submitSubscription,TResult Function()?  resetBreed,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
@@ -182,7 +185,8 @@ return updateFoodProfile(_that.foodProfile);case UpdateLocation() when updateLoc
 return updateLocation(_that.location);case UpdateOwnerName() when updateOwnerName != null:
 return updateOwnerName(_that.ownerName);case FetchLocation() when fetchLocation != null:
 return fetchLocation();case SubmitSubscriptionEvent() when submitSubscription != null:
-return submitSubscription();case _:
+return submitSubscription();case ResetBreed() when resetBreed != null:
+return resetBreed();case _:
   return orElse();
 
 }
@@ -200,7 +204,7 @@ return submitSubscription();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,required TResult Function( String dogName)  updateDogName,required TResult Function( String gender)  updateGender,required TResult Function( bool isSterilized)  updateSterilization,required TResult Function( DateTime birthDate)  updateBirthDate,required TResult Function( WeightShapeType weightShape)  updateWeightShape,required TResult Function( double value)  updateWeightValue,required TResult Function( ActivityLevelType activityLevel)  updateActivityLevel,required TResult Function( bool hasPathologies)  updateHasPathologies,required TResult Function( FoodProfileType foodProfile)  updateFoodProfile,required TResult Function( String location)  updateLocation,required TResult Function( String ownerName)  updateOwnerName,required TResult Function()  fetchLocation,required TResult Function()  submitSubscription,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loadDogBreeds,required TResult Function()  loadOnboardingData,required TResult Function( int breedId)  updateBreed,required TResult Function( String dogName)  updateDogName,required TResult Function( String gender)  updateGender,required TResult Function( bool isSterilized)  updateSterilization,required TResult Function( DateTime birthDate)  updateBirthDate,required TResult Function( WeightShapeType weightShape)  updateWeightShape,required TResult Function( double value)  updateWeightValue,required TResult Function( ActivityLevelType activityLevel)  updateActivityLevel,required TResult Function( bool hasPathologies)  updateHasPathologies,required TResult Function( FoodProfileType foodProfile)  updateFoodProfile,required TResult Function( String location)  updateLocation,required TResult Function( String ownerName)  updateOwnerName,required TResult Function()  fetchLocation,required TResult Function()  submitSubscription,required TResult Function()  resetBreed,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds():
 return loadDogBreeds();case LoadOnboardingData():
@@ -218,7 +222,8 @@ return updateFoodProfile(_that.foodProfile);case UpdateLocation():
 return updateLocation(_that.location);case UpdateOwnerName():
 return updateOwnerName(_that.ownerName);case FetchLocation():
 return fetchLocation();case SubmitSubscriptionEvent():
-return submitSubscription();case _:
+return submitSubscription();case ResetBreed():
+return resetBreed();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -235,7 +240,7 @@ return submitSubscription();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,TResult? Function( String dogName)?  updateDogName,TResult? Function( String gender)?  updateGender,TResult? Function( bool isSterilized)?  updateSterilization,TResult? Function( DateTime birthDate)?  updateBirthDate,TResult? Function( WeightShapeType weightShape)?  updateWeightShape,TResult? Function( double value)?  updateWeightValue,TResult? Function( ActivityLevelType activityLevel)?  updateActivityLevel,TResult? Function( bool hasPathologies)?  updateHasPathologies,TResult? Function( FoodProfileType foodProfile)?  updateFoodProfile,TResult? Function( String location)?  updateLocation,TResult? Function( String ownerName)?  updateOwnerName,TResult? Function()?  fetchLocation,TResult? Function()?  submitSubscription,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loadDogBreeds,TResult? Function()?  loadOnboardingData,TResult? Function( int breedId)?  updateBreed,TResult? Function( String dogName)?  updateDogName,TResult? Function( String gender)?  updateGender,TResult? Function( bool isSterilized)?  updateSterilization,TResult? Function( DateTime birthDate)?  updateBirthDate,TResult? Function( WeightShapeType weightShape)?  updateWeightShape,TResult? Function( double value)?  updateWeightValue,TResult? Function( ActivityLevelType activityLevel)?  updateActivityLevel,TResult? Function( bool hasPathologies)?  updateHasPathologies,TResult? Function( FoodProfileType foodProfile)?  updateFoodProfile,TResult? Function( String location)?  updateLocation,TResult? Function( String ownerName)?  updateOwnerName,TResult? Function()?  fetchLocation,TResult? Function()?  submitSubscription,TResult? Function()?  resetBreed,}) {final _that = this;
 switch (_that) {
 case LoadDogBreeds() when loadDogBreeds != null:
 return loadDogBreeds();case LoadOnboardingData() when loadOnboardingData != null:
@@ -253,7 +258,8 @@ return updateFoodProfile(_that.foodProfile);case UpdateLocation() when updateLoc
 return updateLocation(_that.location);case UpdateOwnerName() when updateOwnerName != null:
 return updateOwnerName(_that.ownerName);case FetchLocation() when fetchLocation != null:
 return fetchLocation();case SubmitSubscriptionEvent() when submitSubscription != null:
-return submitSubscription();case _:
+return submitSubscription();case ResetBreed() when resetBreed != null:
+return resetBreed();case _:
   return null;
 
 }
@@ -1173,6 +1179,38 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'OnboardingEvent.submitSubscription()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ResetBreed implements OnboardingEvent {
+  const ResetBreed();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetBreed);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'OnboardingEvent.resetBreed()';
 }
 
 

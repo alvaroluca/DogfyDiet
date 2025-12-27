@@ -38,34 +38,40 @@ class DogNameStep extends StatelessWidget {
               if (cubit.controller.text != dogName) {
                 cubit.controller.text = dogName;
               }
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 8),
-                  const OnboardingCircleImage(imageAsset: AppAssets.lapiz),
-                  const SizedBox(height: 16),
-                  OnboardingStepHeader(
-                    title: l10n.dogNameTitleWithBreed(breedName),
-                  ),
-                  TextField(
-                    controller: cubit.controller,
-                    decoration: InputDecoration(
-                      labelText: l10n.dogNameLabel,
-                      border: const OutlineInputBorder(),
+              return SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 8),
+                    const OnboardingCircleImage(imageAsset: AppAssets.lapiz),
+                    const SizedBox(height: 16),
+                    OnboardingStepHeader(
+                      title: l10n.dogNameTitleWithBreed(breedName),
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: TextButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.add),
-                      label: Text(l10n.dogNameMultiCta),
+                    TextField(
+                      controller: cubit.controller,
+                      decoration: InputDecoration(
+                        labelText: l10n.dogNameLabel,
+                        border: const OutlineInputBorder(),
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  OnboardingInfoBox(title: l10n.dogNameInfoBox),
-                ],
+                    const SizedBox(height: 16),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton.icon(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add),
+                        label: Text(l10n.dogNameMultiCta),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    OnboardingInfoBox(title: l10n.dogNameInfoBox),
+                    const SizedBox(height: 24),
+                  ],
+                ),
               );
             },
           ),
