@@ -7,6 +7,7 @@ void _uiModulesInit() => getIt
       getOnboardingData: getIt(),
       saveOnboardingData: getIt(),
       getCurrentLocation: getIt(),
+      submitSubscription: getIt(),
     ),
   )
   ..registerFactory(() => DogNameCubit())

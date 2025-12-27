@@ -32,4 +32,5 @@ class OnboardingEvent with _$OnboardingEvent {
   const factory OnboardingEvent.updateOwnerName(String ownerName) =
       UpdateOwnerName;
   const factory OnboardingEvent.fetchLocation() = FetchLocation;
+  const factory OnboardingEvent.submitSubscription() = SubmitSubscriptionEvent;
 }

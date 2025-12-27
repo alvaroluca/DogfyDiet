@@ -5,7 +5,7 @@ void _repositoryModulesInit() => getIt
     () => DogBreedRepositoryImpl(getIt()),
   )
   ..registerLazySingleton<OnboardingRepository>(
-    () => OnboardingRepositoryImpl(getIt()),
+    () => OnboardingRepositoryImpl(getIt(), getIt()),
   )
   ..registerLazySingleton<LocationRepository>(
     () => LocationRepositoryImpl(getIt(), getIt(), getIt()),

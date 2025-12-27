@@ -5,6 +5,7 @@ import 'package:dogfydiet/domain/usecases/get_current_location.dart';
 import 'package:dogfydiet/domain/usecases/get_dog_breeds.dart';
 import 'package:dogfydiet/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/domain/usecases/save_onboarding_data.dart';
+import 'package:dogfydiet/domain/usecases/submit_subscription.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,12 +17,14 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final GetOnboardingData getOnboardingData;
   final SaveOnboardingData saveOnboardingData;
   final GetCurrentLocation getCurrentLocation;
+  final SubmitSubscription submitSubscription;
 
   OnboardingBloc({
     required this.getDogBreeds,
     required this.getOnboardingData,
     required this.saveOnboardingData,
     required this.getCurrentLocation,
+    required this.submitSubscription,
   }) : super(const OnboardingState()) {
     on<LoadDogBreeds>(_onLoadDogBreeds);
     on<LoadOnboardingData>(_onLoadOnboardingData);
@@ -38,6 +41,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<UpdateLocation>(_onUpdateLocation);
     on<UpdateOwnerName>(_onUpdateOwnerName);
     on<FetchLocation>(_onFetchLocation);
+    on<SubmitSubscriptionEvent>(_onSubmitSubscription);
   }
 
   Future<void> _onLoadDogBreeds(
@@ -217,6 +221,28 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
           state.copyWith(onboardingData: updatedData, isLocationLoading: false),
         );
         await _saveData(updatedData);
+      },
+    );
+  }
+
+  Future<void> _onSubmitSubscription(
+    SubmitSubscriptionEvent event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    emit(state.copyWith(status: OnboardingStatus.submitting));
+
+    final result = await submitSubscription(state.onboardingData);
+
+    result.when(
+      failure: (RepositoryError error) => emit(
+        state.copyWith(
+          status: OnboardingStatus.error,
+          errorMessage: error.message,
+        ),
+      ),
+      success: (success) async {
+        emit(state.copyWith(status: OnboardingStatus.success));
+        await _saveData(const OnboardingData());
       },
     );
   }

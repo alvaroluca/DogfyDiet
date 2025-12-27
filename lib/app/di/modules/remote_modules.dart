@@ -6,4 +6,7 @@ void _remoteModulesInit() => getIt
   )
   ..registerLazySingleton<LocationRemoteDataSource>(
     () => LocationRemoteDataSourceImpl(),
+  )
+  ..registerLazySingleton<SubscriptionRemoteDataSource>(
+    () => SubscriptionRemoteDataSourceImpl(),
   );

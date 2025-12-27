@@ -3,6 +3,7 @@ import 'package:dogfydiet/data/datasources/local_data_source/onboarding_local_da
 import 'package:dogfydiet/data/datasources/local_data_source/permission_local_data_source.dart';
 import 'package:dogfydiet/data/datasources/remote_data_source/dog_breed_remote_data_source.dart';
 import 'package:dogfydiet/data/datasources/remote_data_source/location_remote_data_source.dart';
+import 'package:dogfydiet/data/datasources/remote_data_source/subscription_remote_data_source.dart';
 import 'package:dogfydiet/data/repositories/dog_breed_repository_impl.dart';
 import 'package:dogfydiet/data/repositories/location_repository_impl.dart';
 import 'package:dogfydiet/data/repositories/onboarding_repository_impl.dart';
@@ -13,6 +14,7 @@ import 'package:dogfydiet/domain/usecases/get_current_location.dart';
 import 'package:dogfydiet/domain/usecases/get_dog_breeds.dart';
 import 'package:dogfydiet/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/domain/usecases/save_onboarding_data.dart';
+import 'package:dogfydiet/domain/usecases/submit_subscription.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/birth_date/birth_date_cubit.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/cubit/dog_name/dog_name_cubit.dart';

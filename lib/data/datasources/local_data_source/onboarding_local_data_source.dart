@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract class OnboardingLocalDataSource {
   Future<OnboardingDataModel> getOnboardingData();
   Future<void> saveOnboardingData(OnboardingDataModel onboardingDataModel);
+  Future<void> clearOnboardingData();
 }
 
 class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
@@ -34,5 +35,10 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       AppConstants.onboardingDataKey,
       jsonString,
     );
+  }
+
+  @override
+  Future<void> clearOnboardingData() async {
+    await sharedPreferences.remove(AppConstants.onboardingDataKey);
   }
 }

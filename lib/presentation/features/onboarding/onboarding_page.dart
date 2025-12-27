@@ -2,6 +2,7 @@ import 'package:dogfydiet/app/constants/app_colors.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/app/routes/app_path.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/activity_level_step.dart';
 import 'package:dogfydiet/presentation/features/onboarding/steps/birth_date_step.dart';
@@ -47,6 +48,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final bloc = context.read<OnboardingBloc>();
     return BlocBuilder<OnboardingBloc, OnboardingState>(
       builder: (context, state) {
         if (state.status == OnboardingStatus.loading) {
@@ -93,7 +95,15 @@ class OnboardingPage extends StatelessWidget {
                         nextButtonText: currentStep == cubit.totalSteps - 1
                             ? l10n.onboardingSubmit
                             : l10n.onboardingContinue,
-                        onNext: () => cubit.nextStep(),
+                        onNext: () {
+                          if (currentStep == cubit.totalSteps - 1) {
+                            bloc.add(
+                              const OnboardingEvent.submitSubscription(),
+                            );
+                          } else {
+                            cubit.nextStep();
+                          }
+                        },
                       ),
                     ],
                   ),
