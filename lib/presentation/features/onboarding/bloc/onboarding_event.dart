@@ -27,4 +27,9 @@ class OnboardingEvent with _$OnboardingEvent {
       UpdateHasPathologies;
   const factory OnboardingEvent.updateFoodProfile(FoodProfileType foodProfile) =
       UpdateFoodProfile;
+  const factory OnboardingEvent.updateLocation(String location) =
+      UpdateLocation;
+  const factory OnboardingEvent.updateOwnerName(String ownerName) =
+      UpdateOwnerName;
+  const factory OnboardingEvent.fetchLocation() = FetchLocation;
 }

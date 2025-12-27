@@ -18,6 +18,8 @@ class OnboardingDataModel {
   final ActivityLevelType activityLevel;
   final bool hasPathologies;
   final FoodProfileType foodProfile;
+  final String? ownerName;
+  final String? location;
 
   const OnboardingDataModel({
     this.breedId,
@@ -30,6 +32,8 @@ class OnboardingDataModel {
     this.activityLevel = ActivityLevelType.medium,
     this.hasPathologies = false,
     this.foodProfile = FoodProfileType.gourmet,
+    this.ownerName,
+    this.location,
   });
 
   factory OnboardingDataModel.fromJson(Map<String, dynamic> json) =>
@@ -48,6 +52,8 @@ class OnboardingDataModel {
     activityLevel: activityLevel,
     hasPathologies: hasPathologies,
     foodProfile: foodProfile,
+    ownerName: ownerName,
+    location: location,
   );
   factory OnboardingDataModel.fromEntity(OnboardingData entity) =>
       OnboardingDataModel(
@@ -61,5 +67,7 @@ class OnboardingDataModel {
         activityLevel: entity.activityLevel,
         hasPathologies: entity.hasPathologies,
         foodProfile: entity.foodProfile,
+        ownerName: entity.ownerName,
+        location: entity.location,
       );
 }

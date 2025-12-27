@@ -1,6 +1,7 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
 import 'package:dogfydiet/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/domain/usecases/get_current_location.dart';
 import 'package:dogfydiet/domain/usecases/get_dog_breeds.dart';
 import 'package:dogfydiet/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/domain/usecases/save_onboarding_data.dart';
@@ -14,11 +15,13 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final GetDogBreeds getDogBreeds;
   final GetOnboardingData getOnboardingData;
   final SaveOnboardingData saveOnboardingData;
+  final GetCurrentLocation getCurrentLocation;
 
   OnboardingBloc({
     required this.getDogBreeds,
     required this.getOnboardingData,
     required this.saveOnboardingData,
+    required this.getCurrentLocation,
   }) : super(const OnboardingState()) {
     on<LoadDogBreeds>(_onLoadDogBreeds);
     on<LoadOnboardingData>(_onLoadOnboardingData);
@@ -32,6 +35,9 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<UpdateActivityLevel>(_onUpdateActivityLevel);
     on<UpdateHasPathologies>(_onUpdateHasPathologies);
     on<UpdateFoodProfile>(_onUpdateFoodProfile);
+    on<UpdateLocation>(_onUpdateLocation);
+    on<UpdateOwnerName>(_onUpdateOwnerName);
+    on<FetchLocation>(_onFetchLocation);
   }
 
   Future<void> _onLoadDogBreeds(
@@ -171,6 +177,48 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     );
     emit(state.copyWith(onboardingData: updatedData));
     await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateLocation(
+    UpdateLocation event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(location: event.location);
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onUpdateOwnerName(
+    UpdateOwnerName event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    final updatedData = state.onboardingData.copyWith(
+      ownerName: event.ownerName,
+    );
+    emit(state.copyWith(onboardingData: updatedData));
+    await _saveData(updatedData);
+  }
+
+  Future<void> _onFetchLocation(
+    FetchLocation event,
+    Emitter<OnboardingState> emit,
+  ) async {
+    emit(state.copyWith(isLocationLoading: true));
+
+    final result = await getCurrentLocation();
+
+    result.when(
+      failure: (RepositoryError error) => emit(
+        state.copyWith(isLocationLoading: false, errorMessage: error.message),
+      ),
+      success: (location) async {
+        final updatedData = state.onboardingData.copyWith(location: location);
+        emit(
+          state.copyWith(onboardingData: updatedData, isLocationLoading: false),
+        );
+        await _saveData(updatedData);
+      },
+    );
   }
 
   Future<void> _saveData(OnboardingData data) async {

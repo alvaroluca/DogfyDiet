@@ -343,6 +343,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose the option that best describes {dogName}.'**
   String foodProfileSubtitle(String dogName);
+
+  /// Title for the owner info step, includes the dog's name and location
+  ///
+  /// In en, this message translates to:
+  /// **'{dogName}\'s special menu is almost ready!'**
+  String ownerInfoTitle(String dogName);
+
+  /// No description provided for @ownerNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get ownerNameLabel;
+
+  /// No description provided for @ownerLocationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get ownerLocationLabel;
+
+  /// No description provided for @ownerLocationPermissionDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission denied'**
+  String get ownerLocationPermissionDeniedTitle;
+
+  /// No description provided for @ownerLocationPermissionDeniedDialog.
+  ///
+  /// In en, this message translates to:
+  /// **'To autocomplete your address, allow location access in your device settings. You can also enter your address manually.'**
+  String get ownerLocationPermissionDeniedDialog;
+
+  /// No description provided for @ownerInfoInfoBox.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, your progress will be saved and you will be accepting the terms and conditions and privacy policy to receive the best feeding recommendations.'**
+  String get ownerInfoInfoBox;
+
+  /// No description provided for @onboardingSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get onboardingSubmit;
 }
 
 class _AppLocalizationsDelegate

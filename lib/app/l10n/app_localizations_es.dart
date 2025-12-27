@@ -162,4 +162,30 @@ class AppLocalizationsEs extends AppLocalizations {
   String foodProfileSubtitle(String dogName) {
     return 'Elige la opción que mejor describa a $dogName.';
   }
+
+  @override
+  String ownerInfoTitle(String dogName) {
+    return '¡El menú especial para $dogName está casi listo!';
+  }
+
+  @override
+  String get ownerNameLabel => 'Tu nombre';
+
+  @override
+  String get ownerLocationLabel => 'Ubicación';
+
+  @override
+  String get ownerLocationPermissionDeniedTitle =>
+      'Permiso de ubicación denegado';
+
+  @override
+  String get ownerLocationPermissionDeniedDialog =>
+      'Para autocompletar tu dirección, permite el acceso a la ubicación en los ajustes del dispositivo. También puedes introducir tu dirección manualmente.';
+
+  @override
+  String get ownerInfoInfoBox =>
+      'Al continuar, se guardará tu proceso y estarás aceptando los términos y condiciones y la política de privacidad para recibir las mejores recomendaciones sobre alimentación.';
+
+  @override
+  String get onboardingSubmit => 'Enviar';
 }

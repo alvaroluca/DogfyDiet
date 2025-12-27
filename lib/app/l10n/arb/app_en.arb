@@ -103,5 +103,20 @@
                 "type": "String" 
             } 
         }
-    }
+    },
+    "ownerInfoTitle": "{dogName}'s special menu is almost ready!",
+    "@ownerInfoTitle": {
+        "description": "Title for the owner info step, includes the dog's name and location",
+        "placeholders": {
+            "dogName": { 
+                "type": "String"
+            }
+        }
+    },
+    "ownerNameLabel": "Your name",
+    "ownerLocationLabel": "Location",
+    "ownerLocationPermissionDeniedTitle": "Location permission denied",
+    "ownerLocationPermissionDeniedDialog": "To autocomplete your address, allow location access in your device settings. You can also enter your address manually.",
+    "ownerInfoInfoBox": "By continuing, your progress will be saved and you will be accepting the terms and conditions and privacy policy to receive the best feeding recommendations.",
+    "onboardingSubmit": "Send"
 }

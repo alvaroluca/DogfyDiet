@@ -6,9 +6,11 @@ void _uiModulesInit() => getIt
       getDogBreeds: getIt(),
       getOnboardingData: getIt(),
       saveOnboardingData: getIt(),
+      getCurrentLocation: getIt(),
     ),
   )
   ..registerFactory(() => DogNameCubit())
   ..registerFactory(() => OnboardingStepCubit())
   ..registerFactory(() => BirthDateCubit())
-  ..registerFactory(() => WeightCubit(weight: getIt()));
+  ..registerFactory(() => WeightCubit(weight: getIt()))
+  ..registerFactory(() => OwnerInfoCubit());

@@ -90,7 +90,9 @@ class OnboardingPage extends StatelessWidget {
                           currentStep,
                         ),
                         isLoading: state.status == OnboardingStatus.submitting,
-                        nextButtonText: l10n.onboardingContinue,
+                        nextButtonText: currentStep == cubit.totalSteps - 1
+                            ? l10n.onboardingSubmit
+                            : l10n.onboardingContinue,
                         onNext: () => cubit.nextStep(),
                       ),
                     ],

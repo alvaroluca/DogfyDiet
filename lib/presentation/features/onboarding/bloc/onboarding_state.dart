@@ -13,6 +13,7 @@ abstract class OnboardingState with _$OnboardingState {
     @Default(OnboardingData()) OnboardingData onboardingData,
     @Default(<DogBreed>[]) List<DogBreed> dogBreeds,
     String? errorMessage,
+    @Default(false) bool isLocationLoading,
   }) = _OnboardingState;
 
   const OnboardingState._();

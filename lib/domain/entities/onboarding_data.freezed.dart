@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OnboardingData {
 
- int? get breedId; String? get dogName; String? get gender; bool? get isSterilized; DateTime? get birthDate; WeightShapeType get weightShape; double? get weightValue; ActivityLevelType get activityLevel; bool get hasPathologies; FoodProfileType get foodProfile;
+ int? get breedId; String? get dogName; String? get gender; bool? get isSterilized; DateTime? get birthDate; WeightShapeType get weightShape; double? get weightValue; ActivityLevelType get activityLevel; bool get hasPathologies; FoodProfileType get foodProfile; String? get ownerName; String? get location;
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $OnboardingDataCopyWith<OnboardingData> get copyWith => _$OnboardingDataCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.isSterilized, isSterilized) || other.isSterilized == isSterilized)&&(identical(other.birthDate, birthDate) || other.birthDate == birthDate)&&(identical(other.weightShape, weightShape) || other.weightShape == weightShape)&&(identical(other.weightValue, weightValue) || other.weightValue == weightValue)&&(identical(other.activityLevel, activityLevel) || other.activityLevel == activityLevel)&&(identical(other.hasPathologies, hasPathologies) || other.hasPathologies == hasPathologies)&&(identical(other.foodProfile, foodProfile) || other.foodProfile == foodProfile));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.isSterilized, isSterilized) || other.isSterilized == isSterilized)&&(identical(other.birthDate, birthDate) || other.birthDate == birthDate)&&(identical(other.weightShape, weightShape) || other.weightShape == weightShape)&&(identical(other.weightValue, weightValue) || other.weightValue == weightValue)&&(identical(other.activityLevel, activityLevel) || other.activityLevel == activityLevel)&&(identical(other.hasPathologies, hasPathologies) || other.hasPathologies == hasPathologies)&&(identical(other.foodProfile, foodProfile) || other.foodProfile == foodProfile)&&(identical(other.ownerName, ownerName) || other.ownerName == ownerName)&&(identical(other.location, location) || other.location == location));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,breedId,dogName,gender,isSterilized,birthDate,weightShape,weightValue,activityLevel,hasPathologies,foodProfile);
+int get hashCode => Object.hash(runtimeType,breedId,dogName,gender,isSterilized,birthDate,weightShape,weightValue,activityLevel,hasPathologies,foodProfile,ownerName,location);
 
 @override
 String toString() {
-  return 'OnboardingData(breedId: $breedId, dogName: $dogName, gender: $gender, isSterilized: $isSterilized, birthDate: $birthDate, weightShape: $weightShape, weightValue: $weightValue, activityLevel: $activityLevel, hasPathologies: $hasPathologies, foodProfile: $foodProfile)';
+  return 'OnboardingData(breedId: $breedId, dogName: $dogName, gender: $gender, isSterilized: $isSterilized, birthDate: $birthDate, weightShape: $weightShape, weightValue: $weightValue, activityLevel: $activityLevel, hasPathologies: $hasPathologies, foodProfile: $foodProfile, ownerName: $ownerName, location: $location)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $OnboardingDataCopyWith<$Res>  {
   factory $OnboardingDataCopyWith(OnboardingData value, $Res Function(OnboardingData) _then) = _$OnboardingDataCopyWithImpl;
 @useResult
 $Res call({
- int? breedId, String? dogName, String? gender, bool? isSterilized, DateTime? birthDate, WeightShapeType weightShape, double? weightValue, ActivityLevelType activityLevel, bool hasPathologies, FoodProfileType foodProfile
+ int? breedId, String? dogName, String? gender, bool? isSterilized, DateTime? birthDate, WeightShapeType weightShape, double? weightValue, ActivityLevelType activityLevel, bool hasPathologies, FoodProfileType foodProfile, String? ownerName, String? location
 });
 
 
@@ -62,7 +62,7 @@ class _$OnboardingDataCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? breedId = freezed,Object? dogName = freezed,Object? gender = freezed,Object? isSterilized = freezed,Object? birthDate = freezed,Object? weightShape = null,Object? weightValue = freezed,Object? activityLevel = null,Object? hasPathologies = null,Object? foodProfile = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? breedId = freezed,Object? dogName = freezed,Object? gender = freezed,Object? isSterilized = freezed,Object? birthDate = freezed,Object? weightShape = null,Object? weightValue = freezed,Object? activityLevel = null,Object? hasPathologies = null,Object? foodProfile = null,Object? ownerName = freezed,Object? location = freezed,}) {
   return _then(_self.copyWith(
 breedId: freezed == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
 as int?,dogName: freezed == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,9 @@ as WeightShapeType,weightValue: freezed == weightValue ? _self.weightValue : wei
 as double?,activityLevel: null == activityLevel ? _self.activityLevel : activityLevel // ignore: cast_nullable_to_non_nullable
 as ActivityLevelType,hasPathologies: null == hasPathologies ? _self.hasPathologies : hasPathologies // ignore: cast_nullable_to_non_nullable
 as bool,foodProfile: null == foodProfile ? _self.foodProfile : foodProfile // ignore: cast_nullable_to_non_nullable
-as FoodProfileType,
+as FoodProfileType,ownerName: freezed == ownerName ? _self.ownerName : ownerName // ignore: cast_nullable_to_non_nullable
+as String?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -159,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile,  String? ownerName,  String? location)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OnboardingData() when $default != null:
-return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile);case _:
+return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile,_that.ownerName,_that.location);case _:
   return orElse();
 
 }
@@ -180,10 +182,10 @@ return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile,  String? ownerName,  String? location)  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingData():
-return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile);case _:
+return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile,_that.ownerName,_that.location);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +202,10 @@ return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? breedId,  String? dogName,  String? gender,  bool? isSterilized,  DateTime? birthDate,  WeightShapeType weightShape,  double? weightValue,  ActivityLevelType activityLevel,  bool hasPathologies,  FoodProfileType foodProfile,  String? ownerName,  String? location)?  $default,) {final _that = this;
 switch (_that) {
 case _OnboardingData() when $default != null:
-return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile);case _:
+return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_that.birthDate,_that.weightShape,_that.weightValue,_that.activityLevel,_that.hasPathologies,_that.foodProfile,_that.ownerName,_that.location);case _:
   return null;
 
 }
@@ -215,7 +217,7 @@ return $default(_that.breedId,_that.dogName,_that.gender,_that.isSterilized,_tha
 
 
 class _OnboardingData extends OnboardingData {
-  const _OnboardingData({this.breedId, this.dogName, this.gender, this.isSterilized, this.birthDate, this.weightShape = WeightShapeType.normal, this.weightValue, this.activityLevel = ActivityLevelType.medium, this.hasPathologies = false, this.foodProfile = FoodProfileType.gourmet}): super._();
+  const _OnboardingData({this.breedId, this.dogName, this.gender, this.isSterilized, this.birthDate, this.weightShape = WeightShapeType.normal, this.weightValue, this.activityLevel = ActivityLevelType.medium, this.hasPathologies = false, this.foodProfile = FoodProfileType.gourmet, this.ownerName, this.location}): super._();
   
 
 @override final  int? breedId;
@@ -228,6 +230,8 @@ class _OnboardingData extends OnboardingData {
 @override@JsonKey() final  ActivityLevelType activityLevel;
 @override@JsonKey() final  bool hasPathologies;
 @override@JsonKey() final  FoodProfileType foodProfile;
+@override final  String? ownerName;
+@override final  String? location;
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
@@ -239,16 +243,16 @@ _$OnboardingDataCopyWith<_OnboardingData> get copyWith => __$OnboardingDataCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.isSterilized, isSterilized) || other.isSterilized == isSterilized)&&(identical(other.birthDate, birthDate) || other.birthDate == birthDate)&&(identical(other.weightShape, weightShape) || other.weightShape == weightShape)&&(identical(other.weightValue, weightValue) || other.weightValue == weightValue)&&(identical(other.activityLevel, activityLevel) || other.activityLevel == activityLevel)&&(identical(other.hasPathologies, hasPathologies) || other.hasPathologies == hasPathologies)&&(identical(other.foodProfile, foodProfile) || other.foodProfile == foodProfile));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OnboardingData&&(identical(other.breedId, breedId) || other.breedId == breedId)&&(identical(other.dogName, dogName) || other.dogName == dogName)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.isSterilized, isSterilized) || other.isSterilized == isSterilized)&&(identical(other.birthDate, birthDate) || other.birthDate == birthDate)&&(identical(other.weightShape, weightShape) || other.weightShape == weightShape)&&(identical(other.weightValue, weightValue) || other.weightValue == weightValue)&&(identical(other.activityLevel, activityLevel) || other.activityLevel == activityLevel)&&(identical(other.hasPathologies, hasPathologies) || other.hasPathologies == hasPathologies)&&(identical(other.foodProfile, foodProfile) || other.foodProfile == foodProfile)&&(identical(other.ownerName, ownerName) || other.ownerName == ownerName)&&(identical(other.location, location) || other.location == location));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,breedId,dogName,gender,isSterilized,birthDate,weightShape,weightValue,activityLevel,hasPathologies,foodProfile);
+int get hashCode => Object.hash(runtimeType,breedId,dogName,gender,isSterilized,birthDate,weightShape,weightValue,activityLevel,hasPathologies,foodProfile,ownerName,location);
 
 @override
 String toString() {
-  return 'OnboardingData(breedId: $breedId, dogName: $dogName, gender: $gender, isSterilized: $isSterilized, birthDate: $birthDate, weightShape: $weightShape, weightValue: $weightValue, activityLevel: $activityLevel, hasPathologies: $hasPathologies, foodProfile: $foodProfile)';
+  return 'OnboardingData(breedId: $breedId, dogName: $dogName, gender: $gender, isSterilized: $isSterilized, birthDate: $birthDate, weightShape: $weightShape, weightValue: $weightValue, activityLevel: $activityLevel, hasPathologies: $hasPathologies, foodProfile: $foodProfile, ownerName: $ownerName, location: $location)';
 }
 
 
@@ -259,7 +263,7 @@ abstract mixin class _$OnboardingDataCopyWith<$Res> implements $OnboardingDataCo
   factory _$OnboardingDataCopyWith(_OnboardingData value, $Res Function(_OnboardingData) _then) = __$OnboardingDataCopyWithImpl;
 @override @useResult
 $Res call({
- int? breedId, String? dogName, String? gender, bool? isSterilized, DateTime? birthDate, WeightShapeType weightShape, double? weightValue, ActivityLevelType activityLevel, bool hasPathologies, FoodProfileType foodProfile
+ int? breedId, String? dogName, String? gender, bool? isSterilized, DateTime? birthDate, WeightShapeType weightShape, double? weightValue, ActivityLevelType activityLevel, bool hasPathologies, FoodProfileType foodProfile, String? ownerName, String? location
 });
 
 
@@ -276,7 +280,7 @@ class __$OnboardingDataCopyWithImpl<$Res>
 
 /// Create a copy of OnboardingData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? breedId = freezed,Object? dogName = freezed,Object? gender = freezed,Object? isSterilized = freezed,Object? birthDate = freezed,Object? weightShape = null,Object? weightValue = freezed,Object? activityLevel = null,Object? hasPathologies = null,Object? foodProfile = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? breedId = freezed,Object? dogName = freezed,Object? gender = freezed,Object? isSterilized = freezed,Object? birthDate = freezed,Object? weightShape = null,Object? weightValue = freezed,Object? activityLevel = null,Object? hasPathologies = null,Object? foodProfile = null,Object? ownerName = freezed,Object? location = freezed,}) {
   return _then(_OnboardingData(
 breedId: freezed == breedId ? _self.breedId : breedId // ignore: cast_nullable_to_non_nullable
 as int?,dogName: freezed == dogName ? _self.dogName : dogName // ignore: cast_nullable_to_non_nullable
@@ -288,7 +292,9 @@ as WeightShapeType,weightValue: freezed == weightValue ? _self.weightValue : wei
 as double?,activityLevel: null == activityLevel ? _self.activityLevel : activityLevel // ignore: cast_nullable_to_non_nullable
 as ActivityLevelType,hasPathologies: null == hasPathologies ? _self.hasPathologies : hasPathologies // ignore: cast_nullable_to_non_nullable
 as bool,foodProfile: null == foodProfile ? _self.foodProfile : foodProfile // ignore: cast_nullable_to_non_nullable
-as FoodProfileType,
+as FoodProfileType,ownerName: freezed == ownerName ? _self.ownerName : ownerName // ignore: cast_nullable_to_non_nullable
+as String?,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

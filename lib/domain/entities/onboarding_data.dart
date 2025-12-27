@@ -18,6 +18,8 @@ abstract class OnboardingData with _$OnboardingData {
     @Default(ActivityLevelType.medium) ActivityLevelType activityLevel,
     @Default(false) bool hasPathologies,
     @Default(FoodProfileType.gourmet) FoodProfileType foodProfile,
+    String? ownerName,
+    String? location,
   }) = _OnboardingData;
 
   const OnboardingData._();
@@ -40,6 +42,11 @@ abstract class OnboardingData with _$OnboardingData {
         return true;
       case 7:
         return true;
+      case 8:
+        return ownerName != null &&
+            ownerName!.isNotEmpty &&
+            location != null &&
+            location!.isNotEmpty;
       default:
         return false;
     }

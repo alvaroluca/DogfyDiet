@@ -29,6 +29,8 @@ OnboardingDataModel _$OnboardingDataModelFromJson(Map<String, dynamic> json) =>
       foodProfile:
           $enumDecodeNullable(_$FoodProfileTypeEnumMap, json['foodProfile']) ??
           FoodProfileType.gourmet,
+      ownerName: json['ownerName'] as String?,
+      location: json['location'] as String?,
     );
 
 Map<String, dynamic> _$OnboardingDataModelToJson(
@@ -44,6 +46,8 @@ Map<String, dynamic> _$OnboardingDataModelToJson(
   'activityLevel': _$ActivityLevelTypeEnumMap[instance.activityLevel]!,
   'hasPathologies': instance.hasPathologies,
   'foodProfile': _$FoodProfileTypeEnumMap[instance.foodProfile]!,
+  'ownerName': instance.ownerName,
+  'location': instance.location,
 };
 
 const _$WeightShapeTypeEnumMap = {
