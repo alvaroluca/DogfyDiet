@@ -19,4 +19,12 @@ class AppAssets {
 
   static const String _lotties = 'assets/lotties';
   static const String dogHome = '$_lotties/dog_home.json';
+
+  static const String _images = 'assets/images';
+  static const String lupa = '$_images/lupa.png';
+  static const String lapiz = '$_images/lapiz.png';
+  static const String mirada = '$_images/mirada.png';
+  static const String tarta = '$_images/tarta.png';
+  static const String corazon = '$_images/corazon.png';
+  static const String dedo = '$_images/dedo.png';
 }

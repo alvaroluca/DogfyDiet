@@ -1,8 +1,10 @@
+import 'package:dogfydiet/app/constants/app_assets.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
 import 'package:dogfydiet/presentation/widgets/custom_dropdown.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_circle_image.dart';
 import 'package:dogfydiet/presentation/widgets/onboarding_step_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +25,10 @@ class BreedSelectionStep extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 8),
+            const OnboardingCircleImage(imageAsset: AppAssets.lupa),
+            const SizedBox(height: 16),
             OnboardingStepHeader(title: l10n.breedSelectionTitle),
+            const SizedBox(height: 16),
             CustomDropdown<int>(
               value: state.onboardingData.breedId,
               labelText: l10n.homeBreedLabel,
@@ -41,7 +46,6 @@ class BreedSelectionStep extends StatelessWidget {
                 }
               },
             ),
-            const SizedBox(height: 12),
             const Expanded(child: SizedBox()),
           ],
         );

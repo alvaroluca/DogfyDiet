@@ -1,8 +1,10 @@
+import 'package:dogfydiet/app/constants/app_assets.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
-import 'package:dogfydiet/presentation/widgets/custom_choice_chips.dart';
+import 'package:dogfydiet/presentation/widgets/custom_choice_chip.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_circle_image.dart';
 import 'package:dogfydiet/presentation/widgets/onboarding_info_box.dart';
 import 'package:dogfydiet/presentation/widgets/onboarding_step_header.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +26,8 @@ class PathologiesStep extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 8),
+            const OnboardingCircleImage(imageAsset: AppAssets.corazon),
+            const SizedBox(height: 16),
             OnboardingStepHeader(title: l10n.pathologiesTitle(dogName)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -32,17 +36,17 @@ class PathologiesStep extends StatelessWidget {
                   label: l10n.commonYes,
                   selected: hasPathologies == true,
                   position: 0,
-                  onTap: () {
-                    bloc.add(const OnboardingEvent.updateHasPathologies(true));
-                  },
+                  onTap: () => bloc.add(
+                    const OnboardingEvent.updateHasPathologies(true),
+                  ),
                 ),
                 CustomChoiceChip(
                   label: l10n.commonNo,
                   selected: hasPathologies == false,
                   position: 1,
-                  onTap: () {
-                    bloc.add(const OnboardingEvent.updateHasPathologies(false));
-                  },
+                  onTap: () => bloc.add(
+                    const OnboardingEvent.updateHasPathologies(false),
+                  ),
                 ),
               ],
             ),

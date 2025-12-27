@@ -1,7 +1,9 @@
+import 'package:dogfydiet/app/constants/app_assets.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_event.dart';
 import 'package:dogfydiet/presentation/features/onboarding/bloc/onboarding_state.dart';
+import 'package:dogfydiet/presentation/widgets/onboarding_circle_image.dart';
 import 'package:dogfydiet/presentation/widgets/onboarding_info_box.dart';
 import 'package:dogfydiet/presentation/widgets/onboarding_step_header.dart';
 import 'package:flutter/material.dart';
@@ -35,15 +37,17 @@ class OwnerInfoStep extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<OwnerInfoCubit>();
           final dogName = state.onboardingData.dogName ?? '';
-          final blocLocation = state.onboardingData.location ?? '';
-          if (cubit.locationController.text != blocLocation) {
-            cubit.locationController.text = blocLocation;
+          final location = state.onboardingData.location ?? '';
+          if (cubit.locationController.text != location) {
+            cubit.locationController.text = location;
           }
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 8),
+              const OnboardingCircleImage(imageAsset: AppAssets.dedo),
+              const SizedBox(height: 16),
               OnboardingStepHeader(title: l10n.ownerInfoTitle(dogName)),
               TextField(
                 controller: cubit.nameController,

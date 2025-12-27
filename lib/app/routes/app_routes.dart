@@ -28,7 +28,9 @@ final appRoutes = <RouteBase>[
             ..add(const OnboardingEvent.loadDogBreeds()),
         ),
         BlocProvider<OnboardingStepCubit>(
-          create: (_) => di.getIt<OnboardingStepCubit>(),
+          create: (_) => OnboardingStepCubit(
+            initialStep: state.extra is int ? state.extra as int : 0,
+          ),
         ),
       ],
       child: const OnboardingPage(),

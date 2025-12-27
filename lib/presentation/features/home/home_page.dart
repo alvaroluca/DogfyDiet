@@ -81,7 +81,15 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: CustomButton(
-                      onPressed: () => context.go(AppPaths.onboarding),
+                      onPressed: () {
+                        if (bloc.state.onboardingData.breedId == null) {
+                          // No breed selected - Step 0
+                          context.go(AppPaths.onboarding, extra: 0);
+                        } else {
+                          // Breed selected - Step 1
+                          context.go(AppPaths.onboarding, extra: 1);
+                        }
+                      },
                       text: l10n.homeCta,
                     ),
                   ),
