@@ -89,7 +89,7 @@ Esto ejecuta todos los tests unitarios y de widgets definidos en la carpeta `tes
 
 **2. Ejecutar tests de un archivo concreto:**
 ```bash
-flutter test test/presentation/features/onboarding/steps/dog_name_step_test.dart
+flutter test test/features/onboarding/presentation/steps/dog_name_step_test.dart
 ```
 
 **3. Ver la cobertura de tests:**
@@ -120,33 +120,34 @@ dart format .
 | │   ├─ l10n/                                                         | Archivos y generación de localización.                                 |
 | │   ├─ routes/                                                       | Definición de rutas y navegación (GoRouter).                           |
 | │   ├─ types/                                                        | Tipos y enums globales.                                                |
-| ├─ data/                                                             | Modelos, repositorios, datasources (implementación).                   |
-| │   ├─ datasources/                                                  | Acceso a datos externos/locales (APIs, SharedPreferences, mocks).      |
-| │   ├─ models/                                                       | Modelos de datos y mapeos JSON.                                        |
-| │   ├─ repositories/                                                 | Implementaciones concretas de repositorios.                            |
-| ├─ domain/                                                           | Entidades y casos de uso puros (sin dependencias de Flutter).          |
-| │   ├─ entities/                                                     | Entidades del dominio.                                                 |
-| │   ├─ repositories/                                                 | Definición de interfaces de repositorios.                              |
-| │   ├─ usecases/                                                     | Casos de uso del dominio.                                              |
-| ├─ presentation/                                                     | Widgets, páginas, lógica de presentación y estado.                     |
-| │   ├─ features/                                                     | Features/pantallas principales.                                        |
-| │   │   ├─ onboarding/                                               | Flujo de onboarding (página, pasos, bloc/cubit).                       |
-| │   │   ├─ home/                                                     | Página principal.                                                      |
-| │   ├─ top_blocs/                                                    | Blocs/cubits globales (idioma, etc).                                   |
-| │   ├─ widgets/                                                      | Widgets reutilizables.                                                 |
+| ├─ features/                                                         | Features principales (onboarding, home, etc).                          |
+| │   ├─ home/                                                         | Lógica y UI de la pantalla principal.                                  |
+| │   │   ├─ presentation/pages/                                       | Páginas principales de home.                                           |
+| │   │   ├─ presentation/widgets/                                     | Widgets específicos de home.                                           |
+| │   ├─ onboarding/                                                   | Lógica y UI del flujo de onboarding.                                   |
+| │   │   ├─ data/                                                     | Datasources y repositorios propios de onboarding.                      |
+| │   │   ├─ domain/                                                   | Entidades, repositorios y usecases de onboarding.                      |
+| │   │   ├─ presentation/pages/                                       | Página principal de onboarding.                                        |
+| │   │   ├─ presentation/steps/                                       | Steps/widgets del flujo de onboarding.                                 |
+| │   │   ├─ presentation/steps/cubit/                                 | Cubits específicos de cada step.                                       |
+| │   │   ├─ presentation/cubit/                                       | Cubits generales de onboarding.                                        |
+| │   │   ├─ presentation/widgets/                                     | Widgets reutilizables de onboarding.                                   |
+| ├─ shared/                                                           | Código y recursos reutilizables entre features.                        |
+| │   ├─ bloc/                                                         | Blocs/cubits compartidos 												|
+| │   ├─ data/                                                         | Modelos, repositorios y datasources compartidos.                       |
+| │   ├─ domain/                                                       | Entidades, repositorios y usecases compartidos.                        |
+| │   ├─ widgets/                                                      | Widgets reutilizables globalmente.                                     |
+| test/                                                                | Tests unitarios, de widgets y de integración.                          |
+| ├─ features/                                                         | Tests organizados por feature.                                         |
+| │   ├─ home/                                                         | Tests de home.                                                         |
+| │   ├─ onboarding/                                                   | Tests de onboarding (steps, cubits, etc).                              |
+| ├─ shared/                                                           | Tests de lógica/modelos compartidos.                                   |
+| ├─ utils/                                                            | Helpers y utilidades para tests.                                       |
 | assets/                                                              | Recursos estáticos: imágenes, iconos, lotties, mocks.                  |
 | ├─ icons/                                                            | Iconos de la app.                                                      |
 | ├─ images/                                                           | Imágenes estáticas.                                                    |
 | ├─ lotties/                                                          | Animaciones Lottie.                                                    |
 | ├─ mocks/                                                            | Datos de ejemplo y mocks para tests/desarrollo.                        |
-| test/                                                                | Tests unitarios, de widgets y de integración.                          |
-| ├─ data/                                                             | Tests de la capa data.                                                 |
-| ├─ domain/                                                           | Tests de la capa dominio.                                              |
-| ├─ presentation/                                                     | Tests de la capa presentación.                                         |
-| │   ├─ features/                                                     | Tests de features/pantallas.                                           |
-| ├─ utils/                                                            | Helpers y utilidades para tests.                                       |
-| android/                                                             | Proyecto nativo Android.                                               |
-| ios/                                                                 | Proyecto nativo iOS.                                                   |
 | .vscode/                                                             | Configuración de VS Code (launch.json, etc).                           |
 | screenshots/                                                         | Capturas de pantalla y grabaciones de la app.                          |
 | pubspec.yaml                                                         | Configuración de dependencias y assets de Flutter.                     |
