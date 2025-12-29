@@ -1,4 +1,10 @@
-
+> ⚠️ **Nota sobre ramas y arquitecturas**
+>
+> Este repositorio contiene dos ramas principales:
+> - **main**: arquitectura original basada en capas tradicionales (`app`, `data`, `domain`, `presentation`).
+> - **feature-based** (esta rama): arquitectura basada en features, donde cada feature tiene sus propias carpetas de `data`, `domain` y `presentation`, además de una carpeta `shared` para recursos comunes.
+>
+> Cada rama tiene una estructura de carpetas diferente. Consulta este README para ver la estructura correspondiente a esta rama.
 
 ### Ejecución local en emulador o dispositivo
 
@@ -12,7 +18,7 @@ Sigue estos pasos para ejecutar la app en tu entorno local:
 
 2. **Clona el repositorio**
 	```bash
-	git clone https://github.com/alvaroluca/DogfyDietTest.git
+	git clone https://github.com/alvaroluca/DogfyDiet.git
 	```
 
 3. **Instala las dependencias**
