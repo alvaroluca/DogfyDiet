@@ -28,21 +28,45 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   }) : super(const OnboardingState()) {
     on<LoadDogBreeds>(_onLoadDogBreeds);
     on<LoadOnboardingData>(_onLoadOnboardingData);
-    on<UpdateBreed>(_onUpdateBreed);
-    on<UpdateDogName>(_onUpdateDogName);
-    on<UpdateGender>(_onUpdateGender);
-    on<UpdateSterilization>(_onUpdateSterilization);
-    on<UpdateBirthDate>(_onUpdateBirthDate);
-    on<UpdateWeightShape>(_onUpdateWeightShape);
-    on<UpdateWeightValue>(_onUpdateWeightValue);
-    on<UpdateActivityLevel>(_onUpdateActivityLevel);
-    on<UpdateHasPathologies>(_onUpdateHasPathologies);
-    on<UpdateFoodProfile>(_onUpdateFoodProfile);
-    on<UpdateLocation>(_onUpdateLocation);
-    on<UpdateOwnerName>(_onUpdateOwnerName);
+    _updateData<UpdateBreed>(
+      (data, event) => data.copyWith(breedId: event.breedId),
+    );
+    _updateData<UpdateDogName>(
+      (data, event) => data.copyWith(dogName: event.dogName),
+    );
+    _updateData<UpdateGender>(
+      (data, event) => data.copyWith(gender: event.gender),
+    );
+    _updateData<UpdateSterilization>(
+      (data, event) => data.copyWith(isSterilized: event.isSterilized),
+    );
+    _updateData<UpdateBirthDate>(
+      (data, event) => data.copyWith(birthDate: event.birthDate),
+    );
+    _updateData<UpdateWeightShape>(
+      (data, event) => data.copyWith(weightShape: event.weightShape),
+    );
+    _updateData<UpdateWeightValue>(
+      (data, event) => data.copyWith(weightValue: event.value),
+    );
+    _updateData<UpdateActivityLevel>(
+      (data, event) => data.copyWith(activityLevel: event.activityLevel),
+    );
+    _updateData<UpdateHasPathologies>(
+      (data, event) => data.copyWith(hasPathologies: event.hasPathologies),
+    );
+    _updateData<UpdateFoodProfile>(
+      (data, event) => data.copyWith(foodProfile: event.foodProfile),
+    );
+    _updateData<UpdateLocation>(
+      (data, event) => data.copyWith(location: event.location),
+    );
+    _updateData<UpdateOwnerName>(
+      (data, event) => data.copyWith(ownerName: event.ownerName),
+    );
     on<FetchLocation>(_onFetchLocation);
     on<SubmitSubscriptionEvent>(_onSubmitSubscription);
-    on<ResetBreed>(_onResetBreed);
+    _updateData<ResetBreed>((_, __) => const OnboardingData());
   }
 
   Future<void> _onLoadDogBreeds(
@@ -82,146 +106,19 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     );
   }
 
-  Future<void> _onUpdateBreed(
-    UpdateBreed event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(breedId: event.breedId);
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateDogName(
-    UpdateDogName event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(dogName: event.dogName);
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateGender(
-    UpdateGender event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(gender: event.gender);
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateSterilization(
-    UpdateSterilization event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      isSterilized: event.isSterilized,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateBirthDate(
-    UpdateBirthDate event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      birthDate: event.birthDate,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateWeightShape(
-    UpdateWeightShape event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      weightShape: event.weightShape,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateWeightValue(
-    UpdateWeightValue event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(weightValue: event.value);
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateActivityLevel(
-    UpdateActivityLevel event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      activityLevel: event.activityLevel,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateHasPathologies(
-    UpdateHasPathologies event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      hasPathologies: event.hasPathologies,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateFoodProfile(
-    UpdateFoodProfile event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      foodProfile: event.foodProfile,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateLocation(
-    UpdateLocation event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(location: event.location);
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
-  Future<void> _onUpdateOwnerName(
-    UpdateOwnerName event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    final updatedData = state.onboardingData.copyWith(
-      ownerName: event.ownerName,
-    );
-    emit(state.copyWith(onboardingData: updatedData));
-    await _saveData(updatedData);
-  }
-
   Future<void> _onFetchLocation(
     FetchLocation event,
     Emitter<OnboardingState> emit,
   ) async {
     emit(state.copyWith(isLocationLoading: true));
-
     final result = await getCurrentLocation();
-
     result.when(
       failure: (RepositoryError error) => emit(
         state.copyWith(isLocationLoading: false, errorMessage: error.message),
       ),
       success: (location) async {
-        final updatedData = state.onboardingData.copyWith(location: location);
-        emit(
-          state.copyWith(onboardingData: updatedData, isLocationLoading: false),
-        );
-        await _saveData(updatedData);
+        emit(state.copyWith(isLocationLoading: false));
+        await _saveData(emit, (d) => d.copyWith(location: location));
       },
     );
   }
@@ -231,9 +128,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     Emitter<OnboardingState> emit,
   ) async {
     emit(state.copyWith(status: OnboardingStatus.submitting));
-
     final result = await submitSubscription(state.onboardingData);
-
     result.when(
       failure: (RepositoryError error) => emit(
         state.copyWith(
@@ -241,25 +136,27 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
           errorMessage: error.message,
         ),
       ),
-      success: (success) async {
+      success: (_) async {
         emit(state.copyWith(status: OnboardingStatus.success));
-        await _saveData(const OnboardingData());
+        await _saveData(emit, (_) => const OnboardingData());
       },
     );
   }
 
-  Future<void> _onResetBreed(
-    ResetBreed event,
-    Emitter<OnboardingState> emit,
-  ) async {
-    const resetData = OnboardingData();
-    emit(state.copyWith(onboardingData: resetData));
-    await _saveData(resetData);
+  void _updateData<T extends OnboardingEvent>(
+    OnboardingData Function(OnboardingData, T) updater,
+  ) {
+    on<T>((event, emit) => _saveData(emit, (data) => updater(data, event)));
   }
 
-  Future<void> _saveData(OnboardingData data) async {
+  Future<void> _saveData(
+    Emitter<OnboardingState> emit,
+    OnboardingData Function(OnboardingData) updater,
+  ) async {
+    final updated = updater(state.onboardingData);
+    emit(state.copyWith(onboardingData: updated));
     try {
-      await saveOnboardingData(data);
+      await saveOnboardingData(updated);
     } catch (e) {
       debugPrint('Failed to save onboarding data: $e');
     }
