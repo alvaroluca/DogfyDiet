@@ -105,51 +105,51 @@ dart format .
 
 ## 📁 Estructura de carpetas detallada
 
-| Carpeta/Archivo                                                      | Descripción breve                                                      |
-|----------------------------------------------------------------------|------------------------------------------------------------------------|
-| lib/                                                                 | Código fuente principal de la app.                                     |
-| ├─ core/                                                             | Configuración global, rutas, localización, temas, DI, tipos y widgets. |
-| │   ├─ config/                                                       | Temas, helpers y configuración global.                                 |
-| │   ├─ constants/                                                    | Constantes globales.                                                   |
-| │   ├─ di/                                                           | Inyección de dependencias (get_it).                                    |
-| │   ├─ l10n/                                                         | Archivos y generación de localización.                                 |
-| │   ├─ routes/                                                       | Definición de rutas y navegación (GoRouter).                           |
-| │   ├─ types/                                                        | Tipos y enums globales.                                                |
-| │   ├─ widgets/                                                      | Widgets reutilizables compartidos entre features.                      |
-| ├─ features/                                                         | Features principales (onboarding, home, etc).                          |
-| │   ├─ home/                                                         | Lógica y UI de la pantalla principal.                                  |
-| │   │   ├─ presentation/pages/                                       | Páginas principales de home.                                           |
-| │   │   ├─ presentation/widgets/                                     | Widgets específicos de home.                                           |
-| │   ├─ onboarding/                                                   | Lógica y UI del flujo de onboarding.                                   |
-| │   │   ├─ data/                                                     | Datasources y repositorios propios de onboarding.                      |
-| │   │   ├─ domain/                                                   | Entidades, repositorios y usecases de onboarding.                      |
-| │   │   ├─ presentation/pages/                                       | Página principal de onboarding.                                        |
-| │   │   ├─ presentation/steps/                                       | Steps/widgets del flujo de onboarding.                                 |
-| │   │   ├─ presentation/steps/cubit/                                 | Cubits específicos de cada step.                                       |
-| │   │   ├─ presentation/cubit/                                       | Cubits generales de onboarding.                                        |
-| │   │   ├─ presentation/widgets/                                     | Widgets reutilizables de onboarding.                                   |
-| │   ├─ top_blocs/                                                    | BLoCs globales (ej. idioma) y sus providers en la raíz de la app.      |
-| test/                                                                | Tests unitarios, de widgets y de integración.                          |
-| ├─ features/                                                         | Tests organizados por feature.                                         |
-| │   ├─ home/                                                         | Tests de home.                                                         |
-| │   ├─ onboarding/                                                   | Tests de onboarding (steps, cubits, etc).                              |
-| ├─ utils/                                                            | Helpers y utilidades para tests.                                       |
-| assets/                                                              | Recursos estáticos: imágenes, iconos, lotties, mocks.                  |
-| ├─ icons/                                                            | Iconos de la app.                                                      |
-| ├─ images/                                                           | Imágenes estáticas.                                                    |
-| ├─ lotties/                                                          | Animaciones Lottie.                                                    |
-| ├─ mocks/                                                            | Datos de ejemplo y mocks para tests/desarrollo.                        |
-| .vscode/                                                             | Configuración de VS Code (launch.json, etc).                           |
-| screenshots/                                                         | Capturas de pantalla y grabaciones de la app.                          |
-| pubspec.yaml                                                         | Configuración de dependencias y assets de Flutter.                     |
-| README.md                                                            | Documentación principal del proyecto.                                  |
+```text
+lib/
+├── core/                         # Núcleo de la app (configuración y servicios compartidos)
+│   ├── config/                   # Temas, helpers y configuración global
+│   ├── constants/                # Constantes globales
+│   ├── di/                       # Inyección de dependencias (get_it)
+│   ├── l10n/                     # Localización (ARB, AppLocalizations, gen-l10n)
+│   ├── routes/                   # Definición de rutas y navegación (GoRouter)
+│   ├── types/                    # Tipos y enums compartidos
+│   └── widgets/                  # Widgets reutilizables entre features (AppBar, botones, etc.)
+│
+├── features/                     # Módulos de funcionalidad
+│   ├── home/                     # Pantalla principal
+│   │   └── presentation/         # UI y lógica de presentación de home
+│   │       ├── pages/            # Páginas principales de home
+│   │       └── widgets/          # Widgets específicos de home
+│   │
+│   ├── onboarding/               # Flujo de onboarding del perro
+│   │   ├── data/                 # Capa de datos (repositorios, datasources, modelos)
+│   │   ├── domain/               # Capa de dominio (entidades, repositorios, usecases)
+│   │   └── presentation/         # Capa de presentación (BLoC/Cubits + UI)
+│   │       ├── bloc/             # OnboardingBloc y sus eventos/estados
+│   │       ├── cubit/            # Cubits generales de onboarding
+│   │       ├── pages/            # Páginas principales del flujo de onboarding
+│   │       ├── steps/            # Steps del flujo (DogName, BirthDate, Weight, etc.)
+│   │       └── widgets/          # Widgets reutilizables dentro de onboarding
+│   │
+│   └── top_blocs/                # BLoCs globales (ej. idioma) y MultiBlocProvider raíz
+│
+└── test/                         # Tests unitarios, de widgets y de integración
+	├── features/                 # Tests organizados por feature
+	│   ├── home/                 # Tests de home
+	│   └── onboarding/           # Tests de onboarding (steps, cubits, bloc, etc.)
+	└── utils/                    # Helpers y utilidades comunes para tests
+```
 
 ## 🏗️ Arquitectura y decisiones de diseño
 Este proyecto sigue los principios de **Clean Architecture** y DDD (Domain-Driven Design) para garantizar mantenibilidad, escalabilidad y testabilidad. Las principales decisiones y patrones son:
 
 - **Separación por capas:**
-	- `lib/core/`: Configuración global, rutas, localización, DI, temas, tipos y widgets compartidos.
-	- `lib/features/`: Features de la app (onboarding, home, etc.), cada una con sus propias capas internas de data/domain/presentation.
+	- `lib/core/`: Núcleo de la app (configuración global, rutas, localización, DI, temas, tipos, servicios y widgets compartidos).
+	- `lib/features/`: Módulos de funcionalidad (onboarding, home, etc.), cada uno organizado internamente en:
+		- `data/`: Capa de datos (repositorios, datasources, modelos/DTOs).
+		- `domain/`: Capa de dominio (entidades, contratos de repositorio, casos de uso).
+		- `presentation/`: Capa de presentación (BLoC/Cubits, páginas, steps y widgets de UI).
 
 - **Gestión de estado:**
 	- Uso de **Bloc/Cubit** (flutter_bloc) para aislar la lógica de negocio de la UI.
