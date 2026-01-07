@@ -108,13 +108,14 @@ dart format .
 | Carpeta/Archivo                                                      | Descripción breve                                                      |
 |----------------------------------------------------------------------|------------------------------------------------------------------------|
 | lib/                                                                 | Código fuente principal de la app.                                     |
-| ├─ app/                                                              | Configuración global, rutas, localización, temas, DI, tipos.           |
+| ├─ core/                                                             | Configuración global, rutas, localización, temas, DI, tipos y widgets. |
 | │   ├─ config/                                                       | Temas, helpers y configuración global.                                 |
 | │   ├─ constants/                                                    | Constantes globales.                                                   |
 | │   ├─ di/                                                           | Inyección de dependencias (get_it).                                    |
 | │   ├─ l10n/                                                         | Archivos y generación de localización.                                 |
 | │   ├─ routes/                                                       | Definición de rutas y navegación (GoRouter).                           |
 | │   ├─ types/                                                        | Tipos y enums globales.                                                |
+| │   ├─ widgets/                                                      | Widgets reutilizables compartidos entre features.                      |
 | ├─ features/                                                         | Features principales (onboarding, home, etc).                          |
 | │   ├─ home/                                                         | Lógica y UI de la pantalla principal.                                  |
 | │   │   ├─ presentation/pages/                                       | Páginas principales de home.                                           |
@@ -127,16 +128,11 @@ dart format .
 | │   │   ├─ presentation/steps/cubit/                                 | Cubits específicos de cada step.                                       |
 | │   │   ├─ presentation/cubit/                                       | Cubits generales de onboarding.                                        |
 | │   │   ├─ presentation/widgets/                                     | Widgets reutilizables de onboarding.                                   |
-| ├─ shared/                                                           | Código y recursos reutilizables entre features.                        |
-| │   ├─ bloc/                                                         | Blocs/cubits compartidos 												|
-| │   ├─ data/                                                         | Modelos, repositorios y datasources compartidos.                       |
-| │   ├─ domain/                                                       | Entidades, repositorios y usecases compartidos.                        |
-| │   ├─ widgets/                                                      | Widgets reutilizables globalmente.                                     |
+| │   ├─ top_blocs/                                                    | BLoCs globales (ej. idioma) y sus providers en la raíz de la app.      |
 | test/                                                                | Tests unitarios, de widgets y de integración.                          |
 | ├─ features/                                                         | Tests organizados por feature.                                         |
 | │   ├─ home/                                                         | Tests de home.                                                         |
 | │   ├─ onboarding/                                                   | Tests de onboarding (steps, cubits, etc).                              |
-| ├─ shared/                                                           | Tests de lógica/modelos compartidos.                                   |
 | ├─ utils/                                                            | Helpers y utilidades para tests.                                       |
 | assets/                                                              | Recursos estáticos: imágenes, iconos, lotties, mocks.                  |
 | ├─ icons/                                                            | Iconos de la app.                                                      |
@@ -152,9 +148,8 @@ dart format .
 Este proyecto sigue los principios de **Clean Architecture** y DDD (Domain-Driven Design) para garantizar mantenibilidad, escalabilidad y testabilidad. Las principales decisiones y patrones son:
 
 - **Separación por capas:**
-	- `lib/app/`: Configuración global, rutas, localización, DI, temas, tipos y constantes.
+	- `lib/core/`: Configuración global, rutas, localización, DI, temas, tipos y widgets compartidos.
 	- `lib/features/`: Features de la app (onboarding, home, etc.), cada una con sus propias capas internas de data/domain/presentation.
-	- `lib/shared/`: Código compartido entre features (bloc/cubits, modelos, repositorios, datasources, entidades, usecases y widgets reutilizables).
 
 - **Gestión de estado:**
 	- Uso de **Bloc/Cubit** (flutter_bloc) para aislar la lógica de negocio de la UI.
