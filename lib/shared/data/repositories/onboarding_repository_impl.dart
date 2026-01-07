@@ -16,9 +16,9 @@ class OnboardingRepositoryImpl implements OnboardingRepository {
   );
 
   @override
-  Future<Result<OnboardingData>> getOnboardingData() async {
+  Result<OnboardingData> getOnboardingData() {
     try {
-      final dataModel = await onboardingLocalDataSource.getOnboardingData();
+      final dataModel = onboardingLocalDataSource.getOnboardingData();
       return Result.success(dataModel.toEntity());
     } on Exception catch (e) {
       return Result.failure(

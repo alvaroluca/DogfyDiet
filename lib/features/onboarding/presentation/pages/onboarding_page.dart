@@ -104,7 +104,7 @@ class OnboardingPage extends StatelessWidget {
               appBar: DogfyAppBar(
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
-                  onPressed: () async {
+                  onPressed: () {
                     if (currentStep == 0) {
                       showExitDialog(
                         context: context,

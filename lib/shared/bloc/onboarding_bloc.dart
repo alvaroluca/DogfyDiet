@@ -61,13 +61,13 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     );
   }
 
-  Future<void> _onLoadOnboardingData(
+  void _onLoadOnboardingData(
     LoadOnboardingData event,
     Emitter<OnboardingState> emit,
-  ) async {
+  ) {
     emit(state.copyWith(status: OnboardingStatus.loading));
 
-    final result = await getOnboardingData();
+    final result = getOnboardingData();
 
     result.when(
       failure: (RepositoryError error) => emit(

@@ -7,7 +7,7 @@ class SubmitSubscription {
 
   SubmitSubscription(this.repository);
 
-  Future<Result<bool>> call(OnboardingData data) async {
-    return await repository.submitSubscription(data);
+  Future<Result<bool>> call(OnboardingData data) {
+    return repository.submitSubscription(data);
   }
 }

@@ -7,7 +7,7 @@ class GetDogBreeds {
 
   GetDogBreeds(this.repository);
 
-  Future<Result<List<DogBreed>>> call() async {
-    return await repository.getDogBreeds();
+  Future<Result<List<DogBreed>>> call() {
+    return repository.getDogBreeds();
   }
 }

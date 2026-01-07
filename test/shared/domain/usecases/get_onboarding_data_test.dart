@@ -28,22 +28,22 @@ void main() {
       activityLevel: ActivityLevelType.high,
     );
 
-    test('calls repository.getOnboardingData', () async {
+    test('calls repository.getOnboardingData', () {
       when(
         () => mockRepository.getOnboardingData(),
-      ).thenAnswer((_) async => const Result.success(testData));
+      ).thenAnswer((_) => const Result.success(testData));
 
-      await usecase();
+      usecase();
 
       verify(() => mockRepository.getOnboardingData()).called(1);
     });
 
-    test('returns success with onboarding data', () async {
+    test('returns success with onboarding data', () {
       when(
         () => mockRepository.getOnboardingData(),
-      ).thenAnswer((_) async => const Result.success(testData));
+      ).thenAnswer((_) => const Result.success(testData));
 
-      final result = await usecase();
+      final result = usecase();
 
       expect(result, isA<Result<OnboardingData>>());
       expect(
@@ -52,13 +52,13 @@ void main() {
       );
     });
 
-    test('returns empty data when no data is saved', () async {
+    test('returns empty data when no data is saved', () {
       const emptyData = OnboardingData();
       when(
         () => mockRepository.getOnboardingData(),
-      ).thenAnswer((_) async => const Result.success(emptyData));
+      ).thenAnswer((_) => const Result.success(emptyData));
 
-      final result = await usecase();
+      final result = usecase();
 
       final data = result.when(
         success: (data) => data,
@@ -67,14 +67,13 @@ void main() {
       expect(data?.dogName, isNull);
       expect(data?.ownerName, isNull);
     });
-
-    test('returns error when repository fails', () async {
+    test('returns error when repository fails', () {
       const error = RepositoryError.unknown(message: 'Storage error');
       when(
         () => mockRepository.getOnboardingData(),
-      ).thenAnswer((_) async => const Result.failure(error: error));
+      ).thenAnswer((_) => const Result.failure(error: error));
 
-      final result = await usecase();
+      final result = usecase();
 
       expect(result, isA<Result<OnboardingData>>());
       expect(
@@ -83,12 +82,12 @@ void main() {
       );
     });
 
-    test('preserves all onboarding data fields on success', () async {
+    test('preserves all onboarding data fields on success', () {
       when(
         () => mockRepository.getOnboardingData(),
-      ).thenAnswer((_) async => const Result.success(testData));
+      ).thenAnswer((_) => const Result.success(testData));
 
-      final result = await usecase();
+      final result = usecase();
 
       final data = result.when(
         success: (data) => data,

@@ -17,10 +17,10 @@ class LanguagesBloc extends Bloc<LanguageEvent, LanguageState> {
     add(const LanguageEvent.loadSavedLanguage());
   }
 
-  Future<void> _onLoadSavedLanguage(
+  void _onLoadSavedLanguage(
     LoadSavedLanguage event,
     Emitter<LanguageState> emit,
-  ) async {
+  ) {
     final languageCode = _prefs.getString(AppConstants.languageKey) ?? 'es';
     emit(state.copyWith(locale: Locale(languageCode, '')));
   }

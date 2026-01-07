@@ -84,7 +84,7 @@ void main() {
         (tester) async {
           when(
             () => mockGetOnboardingData(),
-          ).thenAnswer((_) async => const Result.success(testOnboardingData));
+          ).thenAnswer((_) => const Result.success(testOnboardingData));
           onboardingBloc.add(const LoadOnboardingData());
           await tester.pump();
           expect(
@@ -99,7 +99,7 @@ void main() {
         setUp: () {
           when(
             () => mockGetOnboardingData(),
-          ).thenAnswer((_) async => const Result.success(testOnboardingData));
+          ).thenAnswer((_) => const Result.success(testOnboardingData));
         },
         build: () => onboardingBloc,
         act: (bloc) => bloc.add(const LoadOnboardingData()),
@@ -132,7 +132,7 @@ void main() {
           const error = RepositoryError.unknown(message: 'Load failed');
           when(
             () => mockGetOnboardingData(),
-          ).thenAnswer((_) async => const Result.failure(error: error));
+          ).thenAnswer((_) => const Result.failure(error: error));
         },
         build: () => onboardingBloc,
         act: (bloc) => bloc.add(const LoadOnboardingData()),

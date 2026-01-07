@@ -4,7 +4,7 @@ import 'package:dogfydiet/shared/data/models/onboarding_data_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class OnboardingLocalDataSource {
-  Future<OnboardingDataModel> getOnboardingData();
+  OnboardingDataModel getOnboardingData();
   Future<void> saveOnboardingData(OnboardingDataModel onboardingDataModel);
   Future<void> clearOnboardingData();
 }
@@ -15,7 +15,7 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
   OnboardingLocalDataSourceImpl(this.sharedPreferences);
 
   @override
-  Future<OnboardingDataModel> getOnboardingData() async {
+  OnboardingDataModel getOnboardingData() {
     final jsonString = sharedPreferences.getString(
       AppConstants.onboardingDataKey,
     );

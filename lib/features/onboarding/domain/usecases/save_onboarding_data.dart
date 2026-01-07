@@ -7,7 +7,7 @@ class SaveOnboardingData {
 
   SaveOnboardingData(this.repository);
 
-  Future<Result<bool>> call(OnboardingData data) async {
-    return await repository.saveOnboardingData(data);
+  Future<Result<bool>> call(OnboardingData data) {
+    return repository.saveOnboardingData(data);
   }
 }

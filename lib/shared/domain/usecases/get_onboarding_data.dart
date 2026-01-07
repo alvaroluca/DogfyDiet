@@ -7,7 +7,7 @@ class GetOnboardingData {
 
   GetOnboardingData(this.repository);
 
-  Future<Result<OnboardingData>> call() async {
-    return await repository.getOnboardingData();
+  Result<OnboardingData> call() {
+    return repository.getOnboardingData();
   }
 }

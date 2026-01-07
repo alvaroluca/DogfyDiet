@@ -6,7 +6,7 @@ class GetCurrentLocation {
 
   GetCurrentLocation(this.repository);
 
-  Future<Result<String>> call() async {
-    return await repository.getCurrentLocation();
+  Future<Result<String>> call() {
+    return repository.getCurrentLocation();
   }
 }

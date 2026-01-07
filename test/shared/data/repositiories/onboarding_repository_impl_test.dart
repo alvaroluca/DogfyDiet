@@ -43,11 +43,11 @@ void main() {
   final testEntity = testModel.toEntity();
 
   group('OnboardingRepositoryImpl - getOnboardingData', () {
-    test('getOnboardingData returns success with data', () async {
+    test('getOnboardingData returns success with data', () {
       when(
         () => mockLocalDataSource.getOnboardingData(),
-      ).thenAnswer((_) async => testModel);
-      final result = await repository.getOnboardingData();
+      ).thenAnswer((_) => testModel);
+      final result = repository.getOnboardingData();
       expect(result, isA<Result<OnboardingData>>());
       expect(
         result.when(success: (data) => data.dogName, failure: (error) => null),
@@ -56,11 +56,11 @@ void main() {
       verify(() => mockLocalDataSource.getOnboardingData()).called(1);
     });
 
-    test('getOnboardingData returns failure when datasource throws', () async {
+    test('getOnboardingData returns failure when datasource throws', () {
       when(
         () => mockLocalDataSource.getOnboardingData(),
       ).thenThrow(Exception('Storage error'));
-      final result = await repository.getOnboardingData();
+      final result = repository.getOnboardingData();
       expect(result, isA<Result<OnboardingData>>());
       expect(
         result.when(success: (data) => null, failure: (error) => error),
