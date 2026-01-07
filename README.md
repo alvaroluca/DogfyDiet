@@ -152,10 +152,9 @@ dart format .
 Este proyecto sigue los principios de **Clean Architecture** y DDD (Domain-Driven Design) para garantizar mantenibilidad, escalabilidad y testabilidad. Las principales decisiones y patrones son:
 
 - **Separación por capas:**
-	- `lib/app/`: Configuración global, rutas, localización, DI, temas.
-	- `lib/domain/`: Entidades y casos de uso puros, sin dependencias de Flutter.
-	- `lib/data/`: Implementaciones concretas de repositorios, modelos y datasources.
-	- `lib/presentation/`: UI, widgets, lógica de presentación y gestión de estado.
+	- `lib/app/`: Configuración global, rutas, localización, DI, temas, tipos y constantes.
+	- `lib/features/`: Features de la app (onboarding, home, etc.), cada una con sus propias capas internas de data/domain/presentation.
+	- `lib/shared/`: Código compartido entre features (bloc/cubits, modelos, repositorios, datasources, entidades, usecases y widgets reutilizables).
 
 - **Gestión de estado:**
 	- Uso de **Bloc/Cubit** (flutter_bloc) para aislar la lógica de negocio de la UI.
