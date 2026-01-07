@@ -1,4 +1,4 @@
-import 'package:dogfydiet/shared/domain/entities/dog_breed.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/dog_breed.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'dog_breed_model.g.dart';

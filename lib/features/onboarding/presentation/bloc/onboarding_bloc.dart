@@ -1,11 +1,11 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/get_current_location.dart';
+import 'package:dogfydiet/features/onboarding/domain/usecases/get_dog_breeds.dart';
+import 'package:dogfydiet/features/onboarding/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/save_onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/submit_subscription.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
-import 'package:dogfydiet/shared/domain/usecases/get_dog_breeds.dart';
-import 'package:dogfydiet/shared/domain/usecases/get_onboarding_data.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

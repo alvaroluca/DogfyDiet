@@ -1,8 +1,8 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
-import 'package:dogfydiet/shared/domain/entities/dog_breed.dart';
-import 'package:dogfydiet/shared/domain/repositories/dog_breed_repository.dart';
-import 'package:dogfydiet/shared/domain/usecases/get_dog_breeds.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/dog_breed.dart';
+import 'package:dogfydiet/features/onboarding/domain/repositories/dog_breed_repository.dart';
+import 'package:dogfydiet/features/onboarding/domain/usecases/get_dog_breeds.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,7 +1,7 @@
 import 'package:dogfydiet/features/onboarding/domain/entities/activity_level_type.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/food_profile_type.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/weight_shape_type.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'onboarding_data_model.g.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dogfydiet/app/constants/app_mocks.dart';
-import 'package:dogfydiet/shared/data/models/dog_breed_model.dart';
+import 'package:dogfydiet/features/onboarding/data/models/dog_breed_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 abstract class DogBreedRemoteDataSource {

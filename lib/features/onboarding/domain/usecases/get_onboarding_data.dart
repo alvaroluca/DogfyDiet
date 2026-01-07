@@ -1,6 +1,6 @@
 import 'package:dogfydiet/app/types/result.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
-import 'package:dogfydiet/shared/domain/repositories/onboarding_repository.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/domain/repositories/onboarding_repository.dart';
 
 class GetOnboardingData {
   final OnboardingRepository repository;

@@ -1,11 +1,11 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/features/onboarding/data/datasources/local_data_source/onboarding_local_data_source.dart';
 import 'package:dogfydiet/features/onboarding/data/datasources/remote_data_source/subscription_remote_data_source.dart';
+import 'package:dogfydiet/features/onboarding/data/models/onboarding_data_model.dart';
+import 'package:dogfydiet/features/onboarding/data/repositories/onboarding_repository_impl.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/activity_level_type.dart';
-import 'package:dogfydiet/shared/data/datasources/local_data_source/onboarding_local_data_source.dart';
-import 'package:dogfydiet/shared/data/models/onboarding_data_model.dart';
-import 'package:dogfydiet/shared/data/repositories/onboarding_repository_impl.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,8 +1,8 @@
 import 'package:dogfydiet/features/onboarding/domain/entities/food_profile_type.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_bloc.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_event.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_state.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,4 +1,4 @@
-import 'package:dogfydiet/shared/data/models/onboarding_data_model.dart';
+import 'package:dogfydiet/features/onboarding/data/models/onboarding_data_model.dart';
 
 abstract class SubscriptionRemoteDataSource {
   Future<bool> submitSubscription(OnboardingDataModel onboardingDataModel);

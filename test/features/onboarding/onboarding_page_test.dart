@@ -1,7 +1,7 @@
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:dogfydiet/features/onboarding/presentation/cubit/onboarding_step_cubit.dart';
 import 'package:dogfydiet/features/onboarding/presentation/pages/onboarding_page.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_bloc.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,10 +1,10 @@
 import 'package:dogfydiet/app/types/repository_error.dart';
 import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/features/onboarding/data/datasources/local_data_source/onboarding_local_data_source.dart';
 import 'package:dogfydiet/features/onboarding/data/datasources/remote_data_source/subscription_remote_data_source.dart';
-import 'package:dogfydiet/shared/data/datasources/local_data_source/onboarding_local_data_source.dart';
-import 'package:dogfydiet/shared/data/models/onboarding_data_model.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
-import 'package:dogfydiet/shared/domain/repositories/onboarding_repository.dart';
+import 'package:dogfydiet/features/onboarding/data/models/onboarding_data_model.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/domain/repositories/onboarding_repository.dart';
 
 class OnboardingRepositoryImpl implements OnboardingRepository {
   final OnboardingLocalDataSource onboardingLocalDataSource;

@@ -1,12 +1,12 @@
 import 'package:dogfydiet/app/constants/app_assets.dart';
 import 'package:dogfydiet/app/l10n/l10n.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:dogfydiet/features/onboarding/presentation/steps/cubit/dog_name/dog_name_cubit.dart';
 import 'package:dogfydiet/features/onboarding/presentation/widgets/onboarding_circle_image.dart';
 import 'package:dogfydiet/features/onboarding/presentation/widgets/onboarding_info_box.dart';
 import 'package:dogfydiet/features/onboarding/presentation/widgets/onboarding_step_header.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_bloc.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_event.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

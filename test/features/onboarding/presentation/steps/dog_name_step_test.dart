@@ -1,13 +1,13 @@
 import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/get_current_location.dart';
+import 'package:dogfydiet/features/onboarding/domain/usecases/get_dog_breeds.dart';
+import 'package:dogfydiet/features/onboarding/domain/usecases/get_onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/save_onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/submit_subscription.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_bloc.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_event.dart';
-import 'package:dogfydiet/shared/bloc/onboarding_state.dart';
-import 'package:dogfydiet/shared/domain/entities/onboarding_data.dart';
-import 'package:dogfydiet/shared/domain/usecases/get_dog_breeds.dart';
-import 'package:dogfydiet/shared/domain/usecases/get_onboarding_data.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';
+import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
