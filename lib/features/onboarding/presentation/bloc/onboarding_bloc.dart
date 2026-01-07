@@ -137,8 +137,18 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         ),
       ),
       success: (_) async {
-        emit(state.copyWith(status: OnboardingStatus.success));
-        await _saveData(emit, (_) => const OnboardingData());
+        const cleared = OnboardingData();
+        emit(
+          state.copyWith(
+            status: OnboardingStatus.success,
+            onboardingData: cleared,
+          ),
+        );
+        try {
+          await saveOnboardingData(cleared);
+        } catch (e) {
+          debugPrint('Failed to save onboarding data: $e');
+        }
       },
     );
   }

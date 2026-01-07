@@ -313,11 +313,17 @@ void main() {
             'status',
             OnboardingStatus.submitting,
           ),
-          isA<OnboardingState>().having(
-            (state) => state.status,
-            'status',
-            OnboardingStatus.success,
-          ),
+          isA<OnboardingState>()
+              .having(
+                (state) => state.status,
+                'status',
+                OnboardingStatus.success,
+              )
+              .having(
+                (state) => state.onboardingData,
+                'onboardingData',
+                const OnboardingData(),
+              ),
         ],
         verify: (_) {
           verify(() => mockSubmitSubscription(any())).called(1);
