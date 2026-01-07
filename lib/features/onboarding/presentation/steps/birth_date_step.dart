@@ -18,13 +18,12 @@ class BirthDateStep extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final bloc = context.read<OnboardingBloc>();
-    return BlocBuilder<OnboardingBloc, OnboardingState>(
-      builder: (context, onboardingState) {
-        return BlocProvider(
-          create: (_) => BirthDateCubit(
-            initialBirthDate: onboardingState.onboardingData.birthDate,
-          ),
-          child: BlocBuilder<BirthDateCubit, BirthDateState>(
+    return BlocProvider(
+      create: (_) =>
+          BirthDateCubit(initialBirthDate: bloc.state.onboardingData.birthDate),
+      child: BlocBuilder<OnboardingBloc, OnboardingState>(
+        builder: (context, onboardingState) {
+          return BlocBuilder<BirthDateCubit, BirthDateState>(
             builder: (context, state) {
               void updateDate(int year, int month) {
                 context.read<BirthDateCubit>().updateDate(year, month);
@@ -96,9 +95,9 @@ class BirthDateStep extends StatelessWidget {
                 ),
               );
             },
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

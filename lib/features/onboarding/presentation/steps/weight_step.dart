@@ -16,26 +16,29 @@ class WeightStep extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final bloc = context.read<OnboardingBloc>();
-    return BlocBuilder<OnboardingBloc, OnboardingState>(
-      builder: (context, state) {
-        final dogName = state.onboardingData.dogName ?? '';
-        final selectedIndex = state.onboardingData.weightShape.index;
-        const options = WeightShapeType.values;
-        final weight =
-            state.onboardingData.weightValue ??
-            options[selectedIndex].defaultWeight;
-        return BlocProvider<WeightCubit>(
-          create: (_) => WeightCubit(
-            weight: weight,
-            onChanged: (value) {
-              if (value > 0) {
-                bloc.add(OnboardingEvent.updateWeightValue(value));
-              } else {
-                bloc.add(const OnboardingEvent.updateWeightValue(-1));
-              }
-            },
-          ),
-          child: BlocBuilder<WeightCubit, double>(
+    const options = WeightShapeType.values;
+    final selectedIndex = bloc.state.onboardingData.weightShape.index;
+    final initialWeight =
+        bloc.state.onboardingData.weightValue ??
+        options[selectedIndex].defaultWeight;
+
+    return BlocProvider<WeightCubit>(
+      create: (_) => WeightCubit(
+        weight: initialWeight,
+        onChanged: (value) {
+          if (value > 0) {
+            bloc.add(OnboardingEvent.updateWeightValue(value));
+          } else {
+            bloc.add(const OnboardingEvent.updateWeightValue(-1));
+          }
+        },
+      ),
+      child: BlocBuilder<OnboardingBloc, OnboardingState>(
+        builder: (context, state) {
+          final dogName = state.onboardingData.dogName ?? '';
+          final selectedIndex = state.onboardingData.weightShape.index;
+
+          return BlocBuilder<WeightCubit, double>(
             builder: (context, value) {
               final cubit = context.read<WeightCubit>();
               return SingleChildScrollView(
@@ -84,9 +87,9 @@ class WeightStep extends StatelessWidget {
                 ),
               );
             },
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

@@ -27,7 +27,14 @@ class OwnerInfoStep extends StatelessWidget {
         onLocationChanged: (value) =>
             bloc.add(OnboardingEvent.updateLocation(value)),
       ),
-      child: BlocBuilder<OnboardingBloc, OnboardingState>(
+      child: BlocConsumer<OnboardingBloc, OnboardingState>(
+        listenWhen: (previous, current) =>
+            previous.onboardingData.location != current.onboardingData.location,
+        listener: (context, state) {
+          final cubit = context.read<OwnerInfoCubit>();
+          final location = state.onboardingData.location ?? '';
+          cubit.setLocation(location);
+        },
         buildWhen: (previous, current) =>
             previous.onboardingData.ownerName !=
                 current.onboardingData.ownerName ||
@@ -38,10 +45,6 @@ class OwnerInfoStep extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<OwnerInfoCubit>();
           final dogName = state.onboardingData.dogName ?? '';
-          final location = state.onboardingData.location ?? '';
-          if (cubit.locationController.text != location) {
-            cubit.locationController.text = location;
-          }
 
           return SingleChildScrollView(
             padding: EdgeInsets.only(
