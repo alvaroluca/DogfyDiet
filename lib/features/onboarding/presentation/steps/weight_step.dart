@@ -1,4 +1,4 @@
-import 'package:dogfydiet/app/l10n/l10n.dart';
+import 'package:dogfydiet/core/l10n/l10n.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/weight_shape_type.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';

@@ -1,4 +1,4 @@
-import 'package:dogfydiet/app/constants/app_colors.dart';
+import 'package:dogfydiet/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// position: 0 = left, 1 = right

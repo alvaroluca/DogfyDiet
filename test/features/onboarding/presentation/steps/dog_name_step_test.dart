@@ -1,4 +1,4 @@
-import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/core/types/result.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/onboarding_data.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/get_current_location.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/get_dog_breeds.dart';

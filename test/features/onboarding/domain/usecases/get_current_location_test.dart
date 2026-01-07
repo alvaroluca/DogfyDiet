@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/types/repository_error.dart';
-import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/core/types/repository_error.dart';
+import 'package:dogfydiet/core/types/result.dart';
 import 'package:dogfydiet/features/onboarding/domain/repositories/location_repository.dart';
 import 'package:dogfydiet/features/onboarding/domain/usecases/get_current_location.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/constants/app_assets.dart';
-import 'package:dogfydiet/app/l10n/l10n.dart';
+import 'package:dogfydiet/core/constants/app_assets.dart';
+import 'package:dogfydiet/core/l10n/l10n.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';

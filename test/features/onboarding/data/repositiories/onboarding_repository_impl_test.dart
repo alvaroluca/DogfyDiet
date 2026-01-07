@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/types/repository_error.dart';
-import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/core/types/repository_error.dart';
+import 'package:dogfydiet/core/types/result.dart';
 import 'package:dogfydiet/features/onboarding/data/datasources/local_data_source/onboarding_local_data_source.dart';
 import 'package:dogfydiet/features/onboarding/data/datasources/remote_data_source/subscription_remote_data_source.dart';
 import 'package:dogfydiet/features/onboarding/data/models/onboarding_data_model.dart';

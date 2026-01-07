@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:dogfydiet/app/constants/app_constants.dart';
+import 'package:dogfydiet/core/constants/app_constants.dart';
 import 'package:dogfydiet/features/onboarding/data/models/onboarding_data_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,8 +1,8 @@
-import 'package:dogfydiet/app/config/app_theme.dart';
-import 'package:dogfydiet/app/constants/app_constants.dart';
-import 'package:dogfydiet/app/di/di.dart' as di;
-import 'package:dogfydiet/app/l10n/app_localizations.dart';
-import 'package:dogfydiet/app/routes/app_routes.dart';
+import 'package:dogfydiet/core/config/app_theme.dart';
+import 'package:dogfydiet/core/constants/app_constants.dart';
+import 'package:dogfydiet/core/di/di.dart' as di;
+import 'package:dogfydiet/core/l10n/app_localizations.dart';
+import 'package:dogfydiet/core/routes/app_routes.dart';
 import 'package:dogfydiet/features/top_blocs/languages_bloc/language_bloc.dart';
 import 'package:dogfydiet/features/top_blocs/languages_bloc/language_state.dart';
 import 'package:dogfydiet/features/top_blocs/top_bloc_provider.dart';

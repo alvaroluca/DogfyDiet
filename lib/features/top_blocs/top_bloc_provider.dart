@@ -1,4 +1,4 @@
-import 'package:dogfydiet/app/di/di.dart';
+import 'package:dogfydiet/core/di/di.dart';
 import 'package:dogfydiet/features/top_blocs/languages_bloc/language_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

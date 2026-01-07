@@ -1,6 +1,7 @@
-import 'package:dogfydiet/app/constants/app_colors.dart';
-import 'package:dogfydiet/app/l10n/l10n.dart';
-import 'package:dogfydiet/app/routes/app_path.dart';
+import 'package:dogfydiet/core/constants/app_colors.dart';
+import 'package:dogfydiet/core/l10n/l10n.dart';
+import 'package:dogfydiet/core/routes/app_path.dart';
+import 'package:dogfydiet/core/widgets/dogfy_app_bar.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_state.dart';
@@ -15,7 +16,6 @@ import 'package:dogfydiet/features/onboarding/presentation/steps/owner_info_step
 import 'package:dogfydiet/features/onboarding/presentation/steps/pathologies_step.dart';
 import 'package:dogfydiet/features/onboarding/presentation/steps/weight_step.dart';
 import 'package:dogfydiet/features/onboarding/presentation/widgets/navigation_button.dart';
-import 'package:dogfydiet/shared/widgets/dogfy_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

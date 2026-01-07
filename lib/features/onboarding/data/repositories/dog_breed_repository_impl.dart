@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/types/repository_error.dart';
-import 'package:dogfydiet/app/types/result.dart';
+import 'package:dogfydiet/core/types/repository_error.dart';
+import 'package:dogfydiet/core/types/result.dart';
 import 'package:dogfydiet/features/onboarding/data/datasources/remote_data_source/dog_breed_remote_data_source.dart';
 import 'package:dogfydiet/features/onboarding/domain/entities/dog_breed.dart';
 import 'package:dogfydiet/features/onboarding/domain/repositories/dog_breed_repository.dart';

@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/l10n/l10n.dart';
-import 'package:dogfydiet/shared/widgets/custom_button.dart';
+import 'package:dogfydiet/core/l10n/l10n.dart';
+import 'package:dogfydiet/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class NavigationButtons extends StatelessWidget {

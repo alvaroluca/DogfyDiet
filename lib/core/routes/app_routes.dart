@@ -1,5 +1,5 @@
-import 'package:dogfydiet/app/di/di.dart' as di;
-import 'package:dogfydiet/app/routes/app_path.dart';
+import 'package:dogfydiet/core/di/di.dart' as di;
+import 'package:dogfydiet/core/routes/app_path.dart';
 import 'package:dogfydiet/features/home/presentation/pages/home_page.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:dogfydiet/features/onboarding/presentation/bloc/onboarding_event.dart';

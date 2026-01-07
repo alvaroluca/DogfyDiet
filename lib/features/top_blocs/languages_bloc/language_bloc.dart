@@ -1,4 +1,4 @@
-import 'package:dogfydiet/app/constants/app_constants.dart';
+import 'package:dogfydiet/core/constants/app_constants.dart';
 import 'package:dogfydiet/features/top_blocs/languages_bloc/language_event.dart';
 import 'package:dogfydiet/features/top_blocs/languages_bloc/language_state.dart';
 import 'package:flutter/material.dart';
